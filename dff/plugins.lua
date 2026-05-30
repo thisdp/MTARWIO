@@ -11,7 +11,13 @@ BinMeshSplit = RawStruct:define({
 BinMeshPLG = Section:define(0x50E, {
     { name = "faceType",          type = uint32 },
     { name = "materialSplitCount",type = uint32, sync = "materialSplits" },
-    { name = "vertexCount",       type = uint32, sync = {"materialSplits"} },
+    { name = "vertexCount",       type = uint32, sync = function(self)
+        local total = 0
+        for _, split in ipairs(self.materialSplits or {}) do
+            total = total + (split.faceCount or 0)
+        end
+        return total
+    end },
     { name = "materialSplits",    type = BinMeshSplit, count = "materialSplitCount" },
 })
 
@@ -21,14 +27,7 @@ SectionRegistry.registerPlugin("GeometryExtension", BinMeshPLG)
 -- ====== BoneMatrix (4x4 骨骼变换, 无 Section 头) ======
 BoneMatrix = RawStruct:define({
     { name = "_vcUnused", type = uint32, cond = {{"parent.parent.version", "~=", GTASA}} },
-    { name = "m11", type = float32 }, { name = "m12", type = float32 },
-    { name = "m13", type = float32 }, { name = "m14", type = float32 },
-    { name = "m21", type = float32 }, { name = "m22", type = float32 },
-    { name = "m23", type = float32 }, { name = "m24", type = float32 },
-    { name = "m31", type = float32 }, { name = "m32", type = float32 },
-    { name = "m33", type = float32 }, { name = "m34", type = float32 },
-    { name = "m41", type = float32 }, { name = "m42", type = float32 },
-    { name = "m43", type = float32 }, { name = "m44", type = float32 },
+    { name = "m", type = mat4x4 },
 })
 
 -- 骨骼索引 (4 u8 per vertex, 无 Section 头)

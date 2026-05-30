@@ -13,7 +13,7 @@ local scalarReaders = {
     f32 = "f32",
     rgba   = "rgba",   bool32 = "bool32", bool8 = "bool8",
     vec2   = "vec2",   vec3   = "vec3",   vec4   = "vec4",
-    mat3x3 = "mat3x3",
+    mat3x3 = "mat3x3", mat4x4 = "mat4x4",
 }
 
 local scalarWriters = {
@@ -22,7 +22,7 @@ local scalarWriters = {
     f32 = "f32",
     rgba   = "rgba",   bool32 = "bool32", bool8 = "bool8",
     vec2   = "vec2",   vec3   = "vec3",   vec4   = "vec4",
-    mat3x3 = "mat3x3",
+    mat3x3 = "mat3x3", mat4x4 = "mat4x4",
 }
 
 -- === 条件检查 ===

@@ -149,6 +149,15 @@ function Reader:mat3x3()
     }
 end
 
+function Reader:mat4x4()
+    return {
+        { self:f32(), self:f32(), self:f32(), self:f32() },
+        { self:f32(), self:f32(), self:f32(), self:f32() },
+        { self:f32(), self:f32(), self:f32(), self:f32() },
+        { self:f32(), self:f32(), self:f32(), self:f32() },
+    }
+end
+
 -- 读取 Section 头部 (type, size, version) 并返回
 -- 不创建对象，由调用方根据 type 分配
 function Reader:sectionHeader()

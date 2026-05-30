@@ -135,6 +135,15 @@ function Writer:mat3x3(m)
     return self
 end
 
+function Writer:mat4x4(m)
+    for x = 1, 4 do
+        for y = 1, 4 do
+            self:f32(m[x] and m[x][y] or 0)
+        end
+    end
+    return self
+end
+
 -- 占位符：预留 u32 位置，返回回填函数
 function Writer:reserveU32()
     local idx = #self.buf + 1

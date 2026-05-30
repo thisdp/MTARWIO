@@ -19,6 +19,7 @@ vec2    = { marker = "vec2",    byteSize = 8,  default = function() return {0,0}
 vec3    = { marker = "vec3",    byteSize = 12, default = function() return {0,0,0} end }
 vec4    = { marker = "vec4",    byteSize = 16, default = function() return {0,0,0,0} end }
 mat3x3  = { marker = "mat3x3",  byteSize = 36, default = function() return {{1,0,0},{0,1,0},{0,0,1}} end }
+mat4x4  = { marker = "mat4x4",  byteSize = 64, default = function() return {{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}} end }
 str     = { marker = "str",     default = "" }
 bytes   = { marker = "bytes",   default = "" }
 
