@@ -1,0 +1,84 @@
+======================================================================
+  DFF Structure Dump
+======================================================================
+DFF Version: 0x1803FFFF (GTASA)
+Clump count: 1
+
+======================================================================
+  CLUMP [1/1]
+======================================================================
+--- Clump @0x1  size=103309  version=0x1803FFFF ---
+  --- 0x00000001 @0xD ---
+  --- FrameList @0x25 ---
+    frameCount = 1
+    --- FrameInfo [1] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000000, 0.000000)
+      parentFrame = 0
+      matrixFlags = 0x00020003
+    Frame[1] name = "launch001"
+  --- GeometryList @0x9A ---
+    geometryCount = 1
+    --- Geometry @0xB6 ---
+      header       = 0x006A  bits: bPosition, bVertexColor, bLight, bModulateMaterialColor
+      faceCount    = 2496  vertexCount = 2646  morphTarget = 1
+      bNative      = false  hasV=true  hasN=false
+      boundSphere  = (0.000000, -0.500000, 2.786016, 13.767397)
+      vertices     = 2646 total
+        [1] (-13.4733, 0.0000, 0.0000)
+        [2] (-10.2334, 0.0000, 0.0000)
+        [3] (-10.2334, -0.0000, 0.5652)
+        [4] (-12.8205, -0.0000, 0.5652)
+        [5] (-12.8205, -0.0000, 5.2217)
+        [6] (-13.4733, -0.0000, 5.2217)
+        [7] (-13.4733, -1.0000, -0.0000)
+        [8] (-10.2334, -1.0000, -0.0000)
+        [9] (-10.2334, -1.0000, 0.5652)
+        [10] (-12.8205, -1.0000, 0.5652)
+        ... +2636 more
+      faces        = 2496 total (tri=list)
+        [1] v1=1260 v2=1261 v3=0 mat=1258
+        [2] v1=1259 v2=1258 v3=0 mat=1261
+        [3] v1=2389 v2=2390 v3=0 mat=2383
+        [4] v1=2384 v2=2383 v3=0 mat=2390
+        [5] v1=1290 v2=1291 v3=0 mat=1286
+        [6] v1=1287 v2=1286 v3=0 mat=1291
+        [7] v1=2391 v2=2392 v3=0 mat=2385
+        [8] v1=2386 v2=2385 v3=0 mat=2392
+        [9] v1=1292 v2=1293 v3=0 mat=1288
+        [10] v1=1289 v2=1288 v3=0 mat=1293
+        ... +2486 more
+      vertexColors = 2646 total
+        [1] (R=110 G=110 B=110 A=255)
+        [2] (R=110 G=110 B=110 A=255)
+        [3] (R=110 G=110 B=110 A=255)
+        [4] (R=110 G=110 B=110 A=255)
+        [5] (R=110 G=110 B=110 A=255)
+        ... +2641 more
+      --- MaterialList @0xF456 ---
+        --- Material @0xF476 ---
+          flags       = 0x00000000
+          color       = (R=122 G=255 B=255 A=255)
+          isTextured  = false
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          --- MaterialExtension ---
+          --- Extension @0xF4AA ---
+      --- GeometryExtension ---
+      --- Extension @0xF4B6 ---
+        --- BinMeshPLG @0xF4C2 ---
+        --- Breakable @0x169E2 ---
+        --- NightVertexColor @0x169F2 ---
+  --- Atomic ---
+    frameIndex     = 0
+    geometryIndex  = 0
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x19382 ---
+  --- Extension ---
+
+======================================================================
+  End of DFF Dump
+======================================================================

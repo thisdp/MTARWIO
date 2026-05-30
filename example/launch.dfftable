@@ -1,0 +1,117 @@
+======================================================================
+  DFF Structure Dump: launch.dff
+======================================================================
+DFF Version: 0x1803FFFF (GTASA)
+Clump count: 1
+
+======================================================================
+  CLUMP [1/1]
+======================================================================
+version    = 0x1803FFFF (GTASA)
+type       = 0x00000010 (Clump)
+size       = 103309 bytes
+
+atomicCount  = 1
+lightCount   = 0
+cameraCount  = 0
+
+========== FrameList ==========
+frameCount = 1
+  --- FrameInfo [1] ---
+  rotationMatrix:
+  row1: (0.000000, 1.000000, 0.000000)
+  row2: (0.000000, 0.000000, 1.000000)
+  row3: (0.000000, 0.000000, 0.000000)
+  positionVector       = (-1.#IND00, 0.000000, 0.000000)
+  parentFrame          = 21
+  matrixFlags          = 0x1803FFFF
+
+========== GeometryList ==========
+geometryCount = 1
+
+===== Geometry [1/1] =====
+type = 0x0000000F (Geometry)  size = 103064 bytes
+  --- GeometryStruct ---
+  header               = 106 (0x0000006A)  bits: bPosition, bVertexColor, bLight, bModulateMaterialColor
+  textureCount         = 0
+  nativeFlag           = 0 (bNative=false)
+  faceCount            = 2496
+  vertexCount          = 2646
+  morphTargetCount     = 1
+  vertices             = 2646 total
+    [1] (-13.473282, 0.000000, 0.000000)
+    [2] (-10.233438, 0.000000, 0.000000)
+    [3] (-10.233438, -0.000000, 0.565156)
+    [4] (-12.820470, -0.000000, 0.565156)
+    [5] (-12.820470, -0.000001, 5.221719)
+    [6] (-13.473282, -0.000001, 5.221719)
+    [7] (-13.473282, -1.000000, -0.000000)
+    [8] (-10.233438, -1.000000, -0.000000)
+    [9] (-10.233438, -1.000000, 0.565156)
+    [10] (-12.820470, -1.000000, 0.565156)
+    ... +2636 more
+  faces                = 2496 total (tri=list)
+    [1] v1=1260 v2=1261 v3=0 mat=1258
+    [2] v1=1259 v2=1258 v3=0 mat=1261
+    [3] v1=2389 v2=2390 v3=0 mat=2383
+    [4] v1=2384 v2=2383 v3=0 mat=2390
+    [5] v1=1290 v2=1291 v3=0 mat=1286
+    [6] v1=1287 v2=1286 v3=0 mat=1291
+    [7] v1=2391 v2=2392 v3=0 mat=2385
+    [8] v1=2386 v2=2385 v3=0 mat=2392
+    [9] v1=1292 v2=1293 v3=0 mat=1288
+    [10] v1=1289 v2=1288 v3=0 mat=1293
+    ... +2486 more
+  vertexColors         = 2646 total
+    [1] (R=110, G=110, B=110, A=255)
+    [2] (R=110, G=110, B=110, A=255)
+    [3] (R=110, G=110, B=110, A=255)
+    [4] (R=110, G=110, B=110, A=255)
+    [5] (R=110, G=110, B=110, A=255)
+    ... +2641 more
+  boundingSphere       = (0.000000, -0.500000, 2.786016, 13.767397)
+  hasVertices          = true
+  hasNormals           = false
+
+--- MaterialList: 1 material(s) ---
+  materialIndices: [0]
+  --- Material [1] ---
+  flags                = 0x00000000
+  color                = (R=122, G=255, B=255, A=255)
+  isTextured           = false
+  ambient              = 1.000000
+  specular             = 0.000000
+  diffuse              = 1.000000
+
+--- GeometryExtension Plugins ---
+  --- BinMeshPLG ---
+  faceType             = 0 (0x00000000) (typeID=0x0000050E (BinMeshPLG))
+  materialSplitCount   = 1
+  vertexCount          = 7488
+    Split[1]: faceCount=7488  materialIndex=0  faceIndices=[1261, 1260, 1258, 1258, 1259, 1261, 2390, 2389, 2383, 2383, 2384, 2390, 1291, 1290, 1286, 1286, 1287, 1291, 2392, 2391, 2385, 2385, 2386, 2392 ... +7464 more]
+  --- Breakable ---
+  flags                = 0x00000000
+  --- NightVertexColor ---
+  hasColor             = 4294967295 (0xFFFFFFFF)
+  colors               = 2646 total
+    [1] (R=20, G=20, B=20, A=255)
+    [2] (R=20, G=20, B=20, A=255)
+    [3] (R=20, G=20, B=20, A=255)
+    [4] (R=20, G=20, B=20, A=255)
+    [5] (R=20, G=20, B=20, A=255)
+    ... +2641 more
+
+========== Atomics (1) ==========
+
+--- Atomic [1] ---
+  frameIndex         = 0
+  geometryIndex      = 0
+  flags              = 0x00000005
+  unused             = 0x00000000
+  --- AtomicExtension Plugins ---
+
+--- ClumpExtension ---
+
+======================================================================
+  End of DFF Dump
+======================================================================

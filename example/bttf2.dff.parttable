@@ -1,0 +1,4041 @@
+======================================================================
+  DFF Structure Dump
+======================================================================
+DFF Version: 0x1803FFFF (GTASA)
+Clump count: 1
+
+======================================================================
+  CLUMP [1/1]
+======================================================================
+--- Clump @0x1  size=7379323  version=0x1803FFFF ---
+  --- 0x00000001 @0xD ---
+  --- FrameList @0x25 ---
+    frameCount = 55
+    --- FrameInfo [1] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000000, 0.000000)
+      parentFrame = 0
+      matrixFlags = 0x00020003
+    --- FrameInfo [2] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, -0.000000, 1.000000)
+      position = (0.000000, -0.000070, 0.000557)
+      parentFrame = 0
+      matrixFlags = 0x00000003
+    --- FrameInfo [3] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999848, -0.017452)
+        row3: (0.000000, 0.017452, 0.999848)
+      position = (0.000000, 2.306896, -0.174292)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [4] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [5] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [6] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 2.110179, 0.052598)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [7] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, -0.000000, 1.000000)
+      position = (0.000000, 0.000000, 0.000000)
+      parentFrame = 5
+      matrixFlags = 0x00000003
+    --- FrameInfo [8] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999848, -0.017452)
+        row3: (0.000000, 0.017452, 0.999848)
+      position = (0.000000, -2.299057, -0.043193)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [9] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999848, -0.017452)
+        row3: (0.000000, 0.017452, 0.999848)
+      position = (0.472364, 0.020266, -0.259691)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [10] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999848, -0.017452)
+        row3: (0.000000, 0.017452, 0.999848)
+      position = (0.529904, -1.946305, -0.291682)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [11] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999848, -0.017452)
+        row3: (0.000000, 0.017452, 0.999848)
+      position = (-1.010887, 0.894530, -0.086348)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [12] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999848, -0.017452)
+        row3: (0.000000, 0.017452, 0.999848)
+      position = (1.009982, 0.894530, -0.086348)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [13] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999848, -0.017452)
+        row3: (0.000000, 0.017452, 0.999848)
+      position = (1.029753, -0.770500, 0.003457)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [14] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999848, -0.017452)
+        row3: (0.000000, 0.017452, 0.999848)
+      position = (-1.030625, -0.770477, 0.003473)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [15] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.027495, 0.999621)
+        row3: (0.000000, -0.999621, 0.027495)
+      position = (-0.170929, -0.363148, 0.583523)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [16] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, -0.000000, 1.000000)
+      position = (0.000000, 0.000000, 0.000000)
+      parentFrame = 14
+      matrixFlags = 0x00000003
+    --- FrameInfo [17] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000000, 0.000000)
+      parentFrame = 15
+      matrixFlags = 0x00000003
+    --- FrameInfo [18] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.027495, 0.999621)
+        row3: (0.000000, -0.999621, 0.027495)
+      position = (0.170113, -0.363148, 0.583523)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [19] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, -0.000000, 1.000000)
+      position = (0.000000, 0.000000, 0.000000)
+      parentFrame = 17
+      matrixFlags = 0x00000003
+    --- FrameInfo [20] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000000, 0.000000)
+      parentFrame = 18
+      matrixFlags = 0x00000003
+    --- FrameInfo [21] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999848, -0.017452)
+        row3: (0.000000, 0.017452, 0.999848)
+      position = (0.000000, 0.464808, 0.378155)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [22] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, -0.000000, 1.000000)
+      position = (0.000000, -0.000000, 0.000000)
+      parentFrame = 20
+      matrixFlags = 0x00000003
+    --- FrameInfo [23] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, -1.519339, 0.646110)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [24] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, -0.000000, 1.000000)
+      position = (0.000000, 0.000000, 0.000000)
+      parentFrame = 22
+      matrixFlags = 0x00000003
+    --- FrameInfo [25] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [26] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [27] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [28] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [29] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [30] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999847, -0.017452)
+        row3: (0.000000, 0.017452, 0.999847)
+      position = (-0.474550, 0.245432, 0.050047)
+      parentFrame = 28
+      matrixFlags = 0x00000003
+    --- FrameInfo [31] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [32] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [33] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [34] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [35] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [36] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [37] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [38] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [39] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [40] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999847, -0.017452)
+        row3: (0.000000, 0.017452, 0.999847)
+      position = (0.729123, 2.211443, -0.031234)
+      parentFrame = 38
+      matrixFlags = 0x00000003
+    --- FrameInfo [41] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999847, -0.017452)
+        row3: (0.000000, 0.017452, 0.999847)
+      position = (0.524924, -2.231922, 0.192129)
+      parentFrame = 38
+      matrixFlags = 0x00000003
+    --- FrameInfo [42] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [43] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    --- FrameInfo [44] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, -0.000000, 1.000000)
+      position = (0.769305, 1.352541, -0.325767)
+      parentFrame = 0
+      matrixFlags = 0x00000003
+    --- FrameInfo [45] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000007, -0.000005, 0.000025)
+      parentFrame = 43
+      matrixFlags = 0x00000003
+    --- FrameInfo [46] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, -0.000000, 1.000000)
+      position = (-0.764782, -1.297172, -0.280000)
+      parentFrame = 0
+      matrixFlags = 0x00000003
+    --- FrameInfo [47] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, -0.000000, 1.000000)
+      position = (0.769666, -1.297151, -0.280000)
+      parentFrame = 0
+      matrixFlags = 0x00000003
+    --- FrameInfo [48] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, -0.000000, 1.000000)
+      position = (-0.764683, 1.352541, -0.325767)
+      parentFrame = 0
+      matrixFlags = 0x00000003
+    --- FrameInfo [49] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999847, -0.017452)
+        row3: (0.000000, 0.017452, 0.999847)
+      position = (0.524684, -2.231900, 0.191883)
+      parentFrame = 0
+      matrixFlags = 0x00000003
+    --- FrameInfo [50] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999847, -0.017452)
+        row3: (0.000000, 0.017452, 0.999847)
+      position = (0.590901, 2.258515, -0.196999)
+      parentFrame = 0
+      matrixFlags = 0x00000003
+    --- FrameInfo [51] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999847, -0.017452)
+        row3: (0.000000, 0.017452, 0.999847)
+      position = (0.729133, 2.211631, -0.031190)
+      parentFrame = 0
+      matrixFlags = 0x00000003
+    --- FrameInfo [52] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999847, -0.017452)
+        row3: (0.000000, 0.017452, 0.999847)
+      position = (0.355706, -2.231812, 0.192057)
+      parentFrame = 0
+      matrixFlags = 0x00000003
+    --- FrameInfo [53] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999847, -0.017452)
+        row3: (0.000000, 0.017452, 0.999847)
+      position = (0.698010, -2.231857, 0.192169)
+      parentFrame = 0
+      matrixFlags = 0x00000003
+    --- FrameInfo [54] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 0.999847, -0.017452)
+        row3: (0.000000, 0.017452, 0.999847)
+      position = (0.431024, -2.231858, 0.192169)
+      parentFrame = 0
+      matrixFlags = 0x00000003
+    --- FrameInfo [55] ---
+      rotationMatrix:
+        row1: (1.000000, 0.000000, 0.000000)
+        row2: (0.000000, 1.000000, 0.000000)
+        row3: (0.000000, 0.000000, 1.000000)
+      position = (0.000000, 0.000070, -0.000557)
+      parentFrame = 1
+      matrixFlags = 0x00000003
+    Frame[1] name = "deluxo"
+    Frame[2] name = "chassis_dummy"
+    Frame[3] name = "bump_front_dummy"
+    Frame[4] name = "seats"
+    Frame[5] name = "body"
+    Frame[6] name = "bonnet_dummy"
+    Frame[7] name = "bonnet_hi_ok"
+    Frame[8] name = "bump_rear_dummy"
+    Frame[9] name = "ped_frontseat"
+    Frame[10] name = "exhaust"
+    Frame[11] name = "wing_lf_dummy"
+    Frame[12] name = "wing_rf_dummy"
+    Frame[13] name = "wing_rr_dummy"
+    Frame[14] name = "wing_lr_dummy"
+    Frame[15] name = "gullleft"
+    Frame[16] name = "door_lf_dummy"
+    Frame[17] name = "door_lf_hi_ok"
+    Frame[18] name = "gullright"
+    Frame[19] name = "door_rf_dummy"
+    Frame[20] name = "door_rf_hi_ok"
+    Frame[21] name = "windscreen_dummy"
+    Frame[22] name = "windscreen_hi_ok"
+    Frame[23] name = "boot_dummy"
+    Frame[24] name = "boot_hi_ok"
+    Frame[25] name = "stwheel"
+    Frame[26] name = "clock"
+    Frame[27] name = "steel"
+    Frame[28] name = "underbody_bttf2"
+    Frame[29] name = "chassis_hi"
+    Frame[30] name = "steerwheel_dummy"
+    Frame[31] name = "bttf2_bttf3_brakes"
+    Frame[32] name = "bulkhead"
+    Frame[33] name = "soportes"
+    Frame[34] name = "bttf2"
+    Frame[35] name = "wires_exterior"
+    Frame[36] name = "struts_off"
+    Frame[37] name = "barcode"
+    Frame[38] name = "int_cabling"
+    Frame[39] name = "chassis_vlo"
+    Frame[40] name = "chassis_vlo_headlight"
+    Frame[41] name = "chassis_vlo_taillight"
+    Frame[42] name = "front_rear_chassis"
+    Frame[43] name = "bttfinterior"
+    Frame[44] name = "wheel_rf_dummy"
+    Frame[45] name = "wheel_rf"
+    Frame[46] name = "wheel_lb_dummy"
+    Frame[47] name = "wheel_rb_dummy"
+    Frame[48] name = "wheel_lf_dummy"
+    Frame[49] name = "taillights"
+    Frame[50] name = "indicators_front"
+    Frame[51] name = "headlights"
+    Frame[52] name = "reverselights"
+    Frame[53] name = "indicators_back"
+    Frame[54] name = "brakelights"
+    Frame[55] name = "bttf2parts"
+  --- GeometryList @0x13F8 ---
+    geometryCount = 26
+    --- Geometry @0x1414 ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 8  vertexCount = 6  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000022, -0.000013, 0.000007, 0.050003)
+      vertices     = 6 total
+        [1] (0.0000, 0.0500, 0.0000)
+        [2] (0.0500, -0.0000, 0.0000)
+        [3] (0.0000, -0.0000, 0.0500)
+        [4] (0.0000, -0.0000, -0.0500)
+        [5] (-0.0500, -0.0000, 0.0000)
+        [6] (0.0000, -0.0500, 0.0000)
+      normals      = 6 total
+        [1] (-0.0000, 1.0000, -0.0000)
+        [2] (1.0000, 0.0000, -0.0000)
+        [3] (-0.0000, -0.0000, 1.0000)
+        [4] (-0.0000, -0.0000, -1.0000)
+        [5] (-1.0000, 0.0000, -0.0000)
+        [6] (-0.0000, -1.0000, 0.0000)
+      faces        = 8 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=0 v2=3 v3=0 mat=1
+        [3] v1=0 v2=4 v3=0 mat=3
+        [4] v1=0 v2=2 v3=0 mat=4
+        [5] v1=5 v2=2 v3=0 mat=1
+        [6] v1=5 v2=1 v3=0 mat=3
+        [7] v1=5 v2=3 v3=0 mat=4
+        [8] v1=5 v2=4 v3=0 mat=2
+      texCoords[1] = 6 coords
+        [1] (0.0000, 1.0000)
+        [2] (0.0000, 1.0000)
+        [3] (0.0000, 1.0000)
+        [4] (0.0000, 1.0000)
+        [5] (0.0000, 1.0000)
+        [6] (0.0000, 1.0000)
+      --- MaterialList @0x1554 ---
+        --- Material @0x1574 ---
+          flags       = 0x00000000
+          color       = (R=255 G=175 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1600 ---
+      --- GeometryExtension ---
+      --- Extension @0x160C ---
+        --- BinMeshPLG @0x1618 ---
+        --- Breakable @0x1698 ---
+    --- Geometry @0x16A8 ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 2992  vertexCount = 2424  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, -0.230178, -0.010975, 0.913860)
+      vertices     = 2424 total
+        [1] (-0.5932, -0.5898, 0.3921)
+        [2] (-0.5831, -0.6121, 0.3925)
+        [3] (-0.6040, -0.5935, 0.3904)
+        [4] (-0.5831, -0.6813, 0.3692)
+        [5] (-0.6040, -0.7095, 0.3544)
+        [6] (-0.6175, -0.5767, 0.3827)
+        [7] (-0.6175, -0.7153, 0.3399)
+        [8] (-0.6246, -0.5677, 0.3675)
+        [9] (-0.6246, -0.7131, 0.3269)
+        [10] (-0.6338, -0.5597, 0.3024)
+        ... +2414 more
+      normals      = 2424 total
+        [1] (-0.1048, 0.0049, 0.9945)
+        [2] (-0.1414, -0.1900, 0.9716)
+        [3] (-0.4205, -0.1020, 0.9015)
+        [4] (-0.1126, -0.3611, 0.9257)
+        [5] (-0.2993, -0.6215, 0.7240)
+        [6] (-0.8328, -0.1323, 0.5376)
+        [7] (-0.5225, -0.7747, 0.3562)
+        [8] (-0.9577, -0.0817, 0.2760)
+        [9] (-0.6749, -0.7379, -0.0039)
+        [10] (-0.9981, -0.0178, 0.0583)
+        ... +2414 more
+      faces        = 2992 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=1 v2=3 v3=0 mat=2
+        [3] v1=2 v2=3 v3=0 mat=4
+        [4] v1=2 v2=4 v3=0 mat=5
+        [5] v1=5 v2=4 v3=0 mat=6
+        [6] v1=5 v2=6 v3=0 mat=7
+        [7] v1=7 v2=6 v3=0 mat=8
+        [8] v1=9 v2=10 v3=0 mat=11
+        [9] v1=10 v2=8 v3=0 mat=11
+        [10] v1=7 v2=8 v3=0 mat=10
+        ... +2982 more
+      texCoords[1] = 2424 coords
+        [1] (0.6997, 0.6332)
+        [2] (0.7101, 0.6405)
+        [3] (0.7020, 0.6336)
+        [4] (0.7502, 0.6514)
+        [5] (0.7682, 0.6535)
+        [6] (0.6965, 0.6246)
+        [7] (0.7755, 0.6484)
+        [8] (0.6970, 0.6145)
+        [9] (0.7786, 0.6416)
+        [10] (0.7140, 0.5812)
+        ... +2414 more
+      --- MaterialList @0x1A368 ---
+        --- Material @0x1A394 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1A41C ---
+        --- Material @0x1A428 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1A4B4 ---
+        --- Material @0x1A4C0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1A544 ---
+        --- Material @0x1A550 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1A5DC ---
+      --- GeometryExtension ---
+      --- Extension @0x1A5E8 ---
+        --- BinMeshPLG @0x1A5F4 ---
+        --- Breakable @0x2326C ---
+    --- Geometry @0x2327C ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 2616  vertexCount = 1571  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, -0.618283, 0.076430, 1.914774)
+      vertices     = 1571 total
+        [1] (0.9661, 0.9792, -0.3409)
+        [2] (0.9286, 0.9681, -0.4599)
+        [3] (0.9660, 0.9563, -0.3405)
+        [4] (0.9286, 0.9417, -0.4595)
+        [5] (0.9659, 0.9258, -0.3399)
+        [6] (0.9331, 0.9044, -0.4349)
+        [7] (0.9264, 0.9003, -0.4594)
+        [8] (0.9663, 0.7447, -0.3345)
+        [9] (0.9343, 0.7440, -0.4300)
+        [10] (0.9278, 0.7437, -0.4566)
+        ... +1561 more
+      normals      = 1571 total
+        [1] (0.9538, -0.0086, -0.3003)
+        [2] (0.9539, -0.0056, -0.3000)
+        [3] (0.9539, -0.0092, -0.2998)
+        [4] (0.9552, -0.0361, -0.2938)
+        [5] (0.9501, -0.0174, -0.3114)
+        [6] (0.9555, -0.0378, -0.2925)
+        [7] (0.9656, -0.0227, -0.2590)
+        [8] (0.9479, -0.0054, -0.3185)
+        [9] (0.9600, -0.0062, -0.2799)
+        [10] (0.9720, -0.0055, -0.2351)
+        ... +1561 more
+      faces        = 2616 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=2 v2=1 v3=0 mat=3
+        [3] v1=2 v2=3 v3=0 mat=4
+        [4] v1=4 v2=3 v3=0 mat=5
+        [5] v1=5 v2=3 v3=0 mat=6
+        [6] v1=4 v2=5 v3=0 mat=7
+        [7] v1=5 v2=6 v3=0 mat=8
+        [8] v1=7 v2=5 v3=0 mat=8
+        [9] v1=8 v2=6 v3=0 mat=9
+        [10] v1=7 v2=8 v3=0 mat=10
+        ... +2606 more
+      texCoords[1] = 1571 coords
+        [1] (0.2548, 0.4724)
+        [2] (0.2536, 0.4203)
+        [3] (0.2665, 0.4718)
+        [4] (0.2661, 0.4199)
+        [5] (0.2915, 0.4720)
+        [6] (0.2946, 0.4322)
+        [7] (0.3006, 0.3936)
+        [8] (0.3563, 0.4699)
+        [9] (0.3547, 0.4300)
+        [10] (0.3557, 0.3920)
+        ... +1561 more
+      --- MaterialList @0x348DC ---
+        --- Material @0x34914 ---
+          flags       = 0x00000000
+          color       = (R=60 G=255 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x34998 ---
+            --- MaterialEffectPLG @0x349A4 ---
+            --- ReflectionMaterial @0x34A1C ---
+            --- SpecularMaterial @0x34A40 ---
+        --- Material @0x34A68 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x34AE8 ---
+        --- Material @0x34AF4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x34B80 ---
+        --- Material @0x34B8C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x34C10 ---
+        --- Material @0x34C1C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x34C9C ---
+            --- MaterialEffectPLG @0x34CA8 ---
+        --- Material @0x34D18 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x34DA4 ---
+        --- Material @0x34DB0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x34E30 ---
+            --- MaterialEffectPLG @0x34E3C ---
+      --- GeometryExtension ---
+      --- Extension @0x34EB0 ---
+        --- BinMeshPLG @0x34EBC ---
+        --- Breakable @0x3C9AC ---
+    --- Geometry @0x3C9BC ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 492  vertexCount = 330  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, -0.662016, 0.094586, 1.086096)
+      vertices     = 330 total
+        [1] (0.8073, -0.1980, 0.0358)
+        [2] (0.7865, -0.0063, 0.0006)
+        [3] (0.8058, -0.1986, 0.0312)
+        [4] (0.7851, -0.0080, -0.0044)
+        [5] (0.8221, -0.4038, 0.0641)
+        [6] (0.8206, -0.4051, 0.0594)
+        [7] (0.8327, -0.5854, 0.0855)
+        [8] (0.8317, -0.5861, 0.0801)
+        [9] (0.8404, -0.7033, 0.0999)
+        [10] (0.8393, -0.7039, 0.0942)
+        ... +320 more
+      normals      = 330 total
+        [1] (0.9490, 0.0350, -0.3134)
+        [2] (0.6638, 0.6270, -0.4076)
+        [3] (0.9490, 0.0358, -0.3133)
+        [4] (0.6114, 0.6771, -0.4096)
+        [5] (0.9506, 0.0244, -0.3094)
+        [6] (0.9503, 0.0241, -0.3105)
+        [7] (0.9824, 0.0384, -0.1830)
+        [8] (0.9822, 0.0383, -0.1841)
+        [9] (0.9816, 0.0297, -0.1888)
+        [10] (0.9817, 0.0299, -0.1880)
+        ... +320 more
+      faces        = 492 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=2 v2=1 v3=0 mat=3
+        [3] v1=4 v2=0 v3=0 mat=5
+        [4] v1=5 v2=0 v3=0 mat=2
+        [5] v1=6 v2=4 v3=0 mat=7
+        [6] v1=7 v2=4 v3=0 mat=5
+        [7] v1=8 v2=6 v3=0 mat=9
+        [8] v1=9 v2=6 v3=0 mat=7
+        [9] v1=10 v2=8 v3=0 mat=11
+        [10] v1=11 v2=8 v3=0 mat=9
+        ... +482 more
+      texCoords[1] = 330 coords
+        [1] (0.3643, 0.7220)
+        [2] (0.4247, 0.7135)
+        [3] (0.3641, 0.7215)
+        [4] (0.4242, 0.7131)
+        [5] (0.2994, 0.7286)
+        [6] (0.2990, 0.7282)
+        [7] (0.2421, 0.7337)
+        [8] (0.2419, 0.7334)
+        [9] (0.2049, 0.7373)
+        [10] (0.2048, 0.7370)
+        ... +320 more
+      --- MaterialList @0x4029C ---
+        --- Material @0x402C0 ---
+          flags       = 0x00000000
+          color       = (R=60 G=255 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x40344 ---
+            --- MaterialEffectPLG @0x40350 ---
+            --- ReflectionMaterial @0x403C8 ---
+            --- SpecularMaterial @0x403EC ---
+        --- Material @0x40414 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x40498 ---
+            --- MaterialEffectPLG @0x404A4 ---
+            --- ReflectionMaterial @0x4051C ---
+            --- SpecularMaterial @0x40540 ---
+      --- GeometryExtension ---
+      --- Extension @0x40568 ---
+        --- BinMeshPLG @0x40574 ---
+        --- Breakable @0x41CAC ---
+    --- Geometry @0x41CBC ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 4303  vertexCount = 2878  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (-0.449035, -0.434964, -0.394926, 0.974241)
+      vertices     = 2878 total
+        [1] (-0.6833, -0.6619, -0.4777)
+        [2] (-0.6848, -0.6492, -0.4736)
+        [3] (-0.6864, -0.6349, -0.5694)
+        [4] (-0.6571, -0.6352, -0.5694)
+        [5] (-0.6589, -0.6485, -0.5685)
+        [6] (-0.6589, -0.6485, -0.5685)
+        [7] (-0.6833, -0.6619, -0.4777)
+        [8] (-0.6839, -0.6483, -0.5686)
+        [9] (-0.6595, -0.6501, -0.4744)
+        [10] (-0.6834, -0.6500, -0.4678)
+        ... +2868 more
+      normals      = 2878 total
+        [1] (0.6828, 0.2981, -0.6670)
+        [2] (0.1527, 0.9773, -0.1468)
+        [3] (-0.1103, 0.9144, 0.3894)
+        [4] (-0.0420, 0.9161, 0.3988)
+        [5] (-0.7190, 0.1408, 0.6806)
+        [6] (0.0143, 0.9887, 0.1489)
+        [7] (0.0395, 0.9871, 0.1554)
+        [8] (0.0088, 0.9890, 0.1475)
+        [9] (-0.2620, 0.9518, -0.1594)
+        [10] (-0.0061, 0.9920, 0.1263)
+        ... +2868 more
+      faces        = 4303 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=3 v2=4 v3=0 mat=2
+        [3] v1=5 v2=6 v3=0 mat=7
+        [4] v1=8 v2=9 v3=0 mat=1
+        [5] v1=2 v2=1 v3=0 mat=10
+        [6] v1=1 v2=9 v3=0 mat=11
+        [7] v1=12 v2=3 v3=0 mat=2
+        [8] v1=1 v2=11 v3=0 mat=10
+        [9] v1=12 v2=13 v3=0 mat=14
+        [10] v1=15 v2=16 v3=0 mat=17
+        ... +4293 more
+      texCoords[1] = 2878 coords
+        [1] (0.0657, 0.4337)
+        [2] (0.0681, 0.4275)
+        [3] (0.0707, 0.5793)
+        [4] (0.0242, 0.5794)
+        [5] (0.0271, 0.5778)
+        [6] (0.0271, 0.1615)
+        [7] (0.0657, 0.1304)
+        [8] (0.0666, 0.1617)
+        [9] (0.0280, 0.4288)
+        [10] (0.0658, 0.4184)
+        ... +2868 more
+      --- MaterialList @0x60B34 ---
+        --- Material @0x60B90 ---
+          flags       = 0x00000000
+          color       = (R=60 G=255 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x60C14 ---
+            --- MaterialEffectPLG @0x60C20 ---
+            --- ReflectionMaterial @0x60C98 ---
+            --- SpecularMaterial @0x60CBC ---
+        --- Material @0x60CE4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x60D64 ---
+        --- Material @0x60D70 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x60DFC ---
+        --- Material @0x60E08 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x60E8C ---
+        --- Material @0x60E98 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x60F18 ---
+            --- MaterialEffectPLG @0x60F24 ---
+        --- Material @0x60F94 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x61020 ---
+        --- Material @0x6102C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x610AC ---
+        --- Material @0x610B8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x6113C ---
+        --- Material @0x61148 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x611CC ---
+        --- Material @0x611D8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x61258 ---
+            --- MaterialEffectPLG @0x61264 ---
+        --- Material @0x612D4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x6135C ---
+        --- Material @0x61368 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x613F4 ---
+        --- Material @0x61400 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x61484 ---
+        --- Material @0x61490 ---
+          flags       = 0x00000000
+          color       = (R=0 G=0 B=0 A=187)
+          isTextured  = false
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          --- MaterialExtension ---
+          --- Extension @0x614C4 ---
+            --- MaterialEffectPLG @0x614D0 ---
+            --- ReflectionMaterial @0x61548 ---
+            --- SpecularMaterial @0x6156C ---
+        --- Material @0x61594 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x61620 ---
+        --- Material @0x6162C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x616AC ---
+            --- MaterialEffectPLG @0x616B8 ---
+      --- GeometryExtension ---
+      --- Extension @0x6172C ---
+        --- BinMeshPLG @0x61738 ---
+        --- Breakable @0x6E184 ---
+    --- Geometry @0x6E194 ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 4263  vertexCount = 2850  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.449851, -0.434963, -0.394926, 0.974241)
+      vertices     = 2850 total
+        [1] (0.6856, -0.6492, -0.4736)
+        [2] (0.6841, -0.6619, -0.4777)
+        [3] (0.6872, -0.6349, -0.5694)
+        [4] (0.6597, -0.6485, -0.5685)
+        [5] (0.6579, -0.6352, -0.5694)
+        [6] (0.6841, -0.6619, -0.4777)
+        [7] (0.6597, -0.6485, -0.5685)
+        [8] (0.6847, -0.6483, -0.5686)
+        [9] (0.6842, -0.6500, -0.4678)
+        [10] (0.6603, -0.6501, -0.4744)
+        ... +2840 more
+      normals      = 2850 total
+        [1] (-0.1527, 0.9773, -0.1468)
+        [2] (-0.6829, 0.2981, -0.6670)
+        [3] (0.1109, 0.9144, 0.3894)
+        [4] (0.7190, 0.1409, 0.6806)
+        [5] (0.0420, 0.9161, 0.3988)
+        [6] (-0.0395, 0.9871, 0.1555)
+        [7] (-0.0143, 0.9887, 0.1489)
+        [8] (-0.0087, 0.9890, 0.1475)
+        [9] (0.0062, 0.9920, 0.1263)
+        [10] (0.2619, 0.9519, -0.1592)
+        ... +2840 more
+      faces        = 4263 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=3 v2=4 v3=0 mat=2
+        [3] v1=5 v2=6 v3=0 mat=7
+        [4] v1=8 v2=9 v3=0 mat=0
+        [5] v1=0 v2=2 v3=0 mat=10
+        [6] v1=8 v2=0 v3=0 mat=11
+        [7] v1=4 v2=12 v3=0 mat=2
+        [8] v1=11 v2=0 v3=0 mat=10
+        [9] v1=13 v2=12 v3=0 mat=14
+        [10] v1=15 v2=16 v3=0 mat=17
+        ... +4253 more
+      texCoords[1] = 2850 coords
+        [1] (0.0681, 0.4275)
+        [2] (0.0657, 0.4337)
+        [3] (0.0707, 0.5793)
+        [4] (0.0271, 0.5778)
+        [5] (0.0242, 0.5794)
+        [6] (0.0657, 0.1304)
+        [7] (0.0271, 0.1615)
+        [8] (0.0666, 0.1617)
+        [9] (0.0658, 0.4184)
+        [10] (0.0280, 0.4288)
+        ... +2840 more
+      --- MaterialList @0x8CB4C ---
+        --- Material @0x8CBA8 ---
+          flags       = 0x00000000
+          color       = (R=60 G=255 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8CC2C ---
+            --- MaterialEffectPLG @0x8CC38 ---
+            --- ReflectionMaterial @0x8CCB0 ---
+            --- SpecularMaterial @0x8CCD4 ---
+        --- Material @0x8CCFC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8CD7C ---
+        --- Material @0x8CD88 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8CE14 ---
+        --- Material @0x8CE20 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8CEA4 ---
+        --- Material @0x8CEB0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8CF30 ---
+            --- MaterialEffectPLG @0x8CF3C ---
+        --- Material @0x8CFAC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8D038 ---
+        --- Material @0x8D044 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8D0C4 ---
+        --- Material @0x8D0D0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8D154 ---
+        --- Material @0x8D160 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8D1E4 ---
+        --- Material @0x8D1F0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8D270 ---
+            --- MaterialEffectPLG @0x8D27C ---
+        --- Material @0x8D2EC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8D374 ---
+        --- Material @0x8D380 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8D40C ---
+        --- Material @0x8D418 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8D49C ---
+        --- Material @0x8D4A8 ---
+          flags       = 0x00000000
+          color       = (R=0 G=0 B=0 A=187)
+          isTextured  = false
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          --- MaterialExtension ---
+          --- Extension @0x8D4DC ---
+            --- MaterialEffectPLG @0x8D4E8 ---
+            --- ReflectionMaterial @0x8D560 ---
+            --- SpecularMaterial @0x8D584 ---
+        --- Material @0x8D5AC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8D638 ---
+        --- Material @0x8D644 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x8D6C4 ---
+            --- MaterialEffectPLG @0x8D6D0 ---
+      --- GeometryExtension ---
+      --- Extension @0x8D744 ---
+        --- BinMeshPLG @0x8D750 ---
+        --- Breakable @0x99FBC ---
+    --- Geometry @0x99FCC ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 101  vertexCount = 75  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, -0.000004, 0.000003, 0.935408)
+      vertices     = 75 total
+        [1] (0.0224, -0.2759, 0.1379)
+        [2] (-0.0222, -0.2759, 0.1379)
+        [3] (-0.0000, -0.2435, 0.1237)
+        [4] (-0.0222, -0.2467, 0.1251)
+        [5] (0.0224, -0.2467, 0.1251)
+        [6] (0.5352, -0.3664, 0.1495)
+        [7] (0.6294, -0.1466, 0.0637)
+        [8] (0.6156, -0.2906, 0.1151)
+        [9] (0.7270, 0.1644, -0.0754)
+        [10] (0.7789, 0.3305, -0.1629)
+        ... +65 more
+      normals      = 75 total
+        [1] (-0.0001, 0.4019, 0.9157)
+        [2] (0.0001, 0.4019, 0.9157)
+        [3] (0.0000, 0.4019, 0.9157)
+        [4] (0.0002, 0.4019, 0.9157)
+        [5] (-0.0002, 0.4019, 0.9157)
+        [6] (0.0941, 0.3230, 0.9417)
+        [7] (0.0864, 0.3531, 0.9316)
+        [8] (0.0983, 0.3234, 0.9411)
+        [9] (0.0855, 0.4203, 0.9033)
+        [10] (0.1454, 0.4312, 0.8905)
+        ... +65 more
+      faces        = 101 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=2 v2=1 v3=0 mat=3
+        [3] v1=2 v2=4 v3=0 mat=0
+        [4] v1=5 v2=6 v3=0 mat=7
+        [5] v1=8 v2=9 v3=0 mat=10
+        [6] v1=6 v2=8 v3=0 mat=11
+        [7] v1=7 v2=6 v3=0 mat=12
+        [8] v1=12 v2=6 v3=0 mat=11
+        [9] v1=11 v2=8 v3=0 mat=10
+        [10] v1=10 v2=9 v3=0 mat=13
+        ... +91 more
+      texCoords[1] = 75 coords
+        [1] (0.9150, 0.9163)
+        [2] (0.9150, 0.9163)
+        [3] (0.9343, 0.9167)
+        [4] (0.9310, 0.9181)
+        [5] (0.9310, 0.9181)
+        [6] (0.2100, 0.8929)
+        [7] (0.1595, 0.6309)
+        [8] (0.1669, 0.8025)
+        [9] (0.1072, 0.2602)
+        [10] (0.0794, 0.0622)
+        ... +65 more
+      --- MaterialList @0x9AC94 ---
+        --- Material @0x9ACB8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x9AD3C ---
+            --- MaterialEffectPLG @0x9AD48 ---
+            --- ReflectionMaterial @0x9ADC0 ---
+            --- SpecularMaterial @0x9ADE4 ---
+        --- Material @0x9AE0C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=242)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x9AE98 ---
+            --- MaterialEffectPLG @0x9AEA4 ---
+            --- ReflectionMaterial @0x9AF1C ---
+            --- SpecularMaterial @0x9AF40 ---
+      --- GeometryExtension ---
+      --- Extension @0x9AF68 ---
+        --- BinMeshPLG @0x9AF74 ---
+        --- Breakable @0x9B458 ---
+    --- Geometry @0x9B468 ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 1848  vertexCount = 1533  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000146, -0.143550, 0.186606, 0.250558)
+      vertices     = 1533 total
+        [1] (0.0641, -0.1573, 0.3063)
+        [2] (0.0634, -0.1471, 0.3083)
+        [3] (-0.0641, -0.1573, 0.3063)
+        [4] (-0.0634, -0.1471, 0.3083)
+        [5] (0.0622, -0.1386, 0.3141)
+        [6] (-0.0622, -0.1386, 0.3141)
+        [7] (0.0609, -0.1329, 0.3227)
+        [8] (-0.0609, -0.1329, 0.3227)
+        [9] (0.0608, -0.1309, 0.3328)
+        [10] (-0.0608, -0.1309, 0.3328)
+        ... +1523 more
+      normals      = 1533 total
+        [1] (0.6430, 0.0019, -0.7659)
+        [2] (0.6247, 0.3466, -0.6997)
+        [3] (-0.6430, 0.0019, -0.7659)
+        [4] (-0.6247, 0.3466, -0.6997)
+        [5] (0.6002, 0.6099, -0.5175)
+        [6] (-0.6002, 0.6099, -0.5175)
+        [7] (0.5739, 0.7694, -0.2806)
+        [8] (-0.5739, 0.7694, -0.2806)
+        [9] (0.5828, 0.8126, 0.0021)
+        [10] (-0.5828, 0.8126, 0.0021)
+        ... +1523 more
+      faces        = 1848 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=3 v2=2 v3=0 mat=1
+        [3] v1=1 v2=4 v3=0 mat=3
+        [4] v1=5 v2=3 v3=0 mat=4
+        [5] v1=4 v2=6 v3=0 mat=5
+        [6] v1=7 v2=5 v3=0 mat=6
+        [7] v1=6 v2=8 v3=0 mat=7
+        [8] v1=9 v2=7 v3=0 mat=8
+        [9] v1=8 v2=10 v3=0 mat=9
+        [10] v1=11 v2=9 v3=0 mat=10
+        ... +1838 more
+      texCoords[1] = 1533 coords
+        [1] (0.7083, 0.8727)
+        [2] (0.7315, 0.8773)
+        [3] (0.7083, 0.8727)
+        [4] (0.7315, 0.8773)
+        [5] (0.7512, 0.8905)
+        [6] (0.7512, 0.8905)
+        [7] (0.7644, 0.9102)
+        [8] (0.7644, 0.9102)
+        [9] (0.7690, 0.9334)
+        [10] (0.7690, 0.9334)
+        ... +1523 more
+      --- MaterialList @0xAAE08 ---
+        --- Material @0xAAE30 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xAAEBC ---
+            --- MaterialEffectPLG @0xAAEC8 ---
+            --- ReflectionMaterial @0xAAF40 ---
+            --- SpecularMaterial @0xAAF64 ---
+        --- Material @0xAAF8C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xAB010 ---
+            --- MaterialEffectPLG @0xAB01C ---
+            --- ReflectionMaterial @0xAB094 ---
+            --- SpecularMaterial @0xAB0B8 ---
+        --- Material @0xAB0E0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xAB160 ---
+            --- MaterialEffectPLG @0xAB16C ---
+            --- ReflectionMaterial @0xAB1E4 ---
+            --- SpecularMaterial @0xAB208 ---
+      --- GeometryExtension ---
+      --- Extension @0xAB230 ---
+        --- BinMeshPLG @0xAB23C ---
+        --- Breakable @0xB090C ---
+    --- Geometry @0xB091C ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 6901  vertexCount = 4354  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, 0.120250, 0.055637, 1.265114)
+      vertices     = 4354 total
+        [1] (-0.4959, 0.2678, -0.0157)
+        [2] (-0.4737, 0.2678, -0.0157)
+        [3] (-0.4960, 0.2619, -0.0223)
+        [4] (-0.5731, 0.2763, 0.0669)
+        [5] (-0.5509, 0.2852, 0.0775)
+        [6] (-0.5483, 0.2744, 0.0260)
+        [7] (-0.5548, 0.2722, 0.0257)
+        [8] (-0.5295, 0.2930, 0.0849)
+        [9] (-0.5418, 0.2765, 0.0241)
+        [10] (-0.5224, 0.2951, 0.0869)
+        ... +4344 more
+      normals      = 4354 total
+        [1] (-0.3251, -0.7719, 0.5463)
+        [2] (0.0000, -0.7790, 0.6270)
+        [3] (-0.3786, -0.8974, 0.2265)
+        [4] (-0.2578, -0.8748, 0.4103)
+        [5] (0.0764, -0.8271, 0.5569)
+        [6] (0.3081, -0.9508, -0.0335)
+        [7] (-0.2276, -0.9481, -0.2218)
+        [8] (0.1202, -0.8567, 0.5015)
+        [9] (0.2154, -0.9736, -0.0750)
+        [10] (0.0741, -0.8679, 0.4912)
+        ... +4344 more
+      faces        = 6901 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=3 v2=4 v3=0 mat=5
+        [3] v1=6 v2=3 v3=0 mat=5
+        [4] v1=5 v2=7 v3=0 mat=8
+        [5] v1=5 v2=4 v3=0 mat=7
+        [6] v1=8 v2=9 v3=0 mat=10
+        [7] v1=8 v2=7 v3=0 mat=9
+        [8] v1=11 v2=12 v3=0 mat=13
+        [9] v1=10 v2=9 v3=0 mat=12
+        [10] v1=10 v2=12 v3=0 mat=11
+        ... +6891 more
+      texCoords[1] = 4354 coords
+        [1] (0.7516, 0.3908)
+        [2] (0.7256, 0.3908)
+        [3] (0.7516, 0.3818)
+        [4] (0.8418, 0.4874)
+        [5] (0.8158, 0.5016)
+        [6] (0.8128, 0.4402)
+        [7] (0.8205, 0.4392)
+        [8] (0.7908, 0.5120)
+        [9] (0.8052, 0.4384)
+        [10] (0.7826, 0.5148)
+        ... +4344 more
+      --- MaterialList @0xE0144 ---
+        --- Material @0xE01A0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE0220 ---
+        --- Material @0xE022C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE02B0 ---
+        --- Material @0xE02BC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE033C ---
+        --- Material @0xE0348 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE03D4 ---
+        --- Material @0xE03E0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE0460 ---
+        --- Material @0xE046C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE04EC ---
+        --- Material @0xE04F8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE057C ---
+        --- Material @0xE0588 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE060C ---
+        --- Material @0xE0618 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE06A0 ---
+        --- Material @0xE06AC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE0738 ---
+        --- Material @0xE0744 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE07C8 ---
+        --- Material @0xE07D4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE0858 ---
+        --- Material @0xE0864 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE08EC ---
+        --- Material @0xE08F8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE0978 ---
+        --- Material @0xE0984 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE0A10 ---
+        --- Material @0xE0A1C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xE0A9C ---
+      --- GeometryExtension ---
+      --- Extension @0xE0AA8 ---
+        --- BinMeshPLG @0xE0AB4 ---
+        --- Breakable @0xF4EC8 ---
+    --- Geometry @0xF4ED8 ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 1144  vertexCount = 645  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (-0.167057, 0.437864, 0.273151, 0.063342)
+      vertices     = 645 total
+        [1] (-0.2073, 0.4586, 0.2648)
+        [2] (-0.2016, 0.4607, 0.2796)
+        [3] (-0.2076, 0.4659, 0.2636)
+        [4] (-0.2018, 0.4681, 0.2789)
+        [5] (-0.1907, 0.4615, 0.2912)
+        [6] (-0.1905, 0.4689, 0.2909)
+        [7] (-0.1763, 0.4608, 0.2980)
+        [8] (-0.1756, 0.4681, 0.2979)
+        [9] (-0.1605, 0.4587, 0.2988)
+        [10] (-0.1593, 0.4660, 0.2988)
+        ... +635 more
+      normals      = 645 total
+        [1] (0.9846, 0.0213, -0.1736)
+        [2] (0.8488, -0.0301, -0.5279)
+        [3] (-0.0737, 0.9844, -0.1598)
+        [4] (-0.0439, 0.9957, -0.0822)
+        [5] (0.5878, -0.0485, -0.8076)
+        [6] (0.0133, 0.9997, -0.0208)
+        [7] (0.2414, -0.0312, -0.9699)
+        [8] (0.0892, 0.9959, 0.0148)
+        [9] (-0.1377, 0.0192, -0.9903)
+        [10] (0.1723, 0.9849, 0.0192)
+        ... +635 more
+      faces        = 1144 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=3 v2=2 v3=0 mat=1
+        [3] v1=1 v2=4 v3=0 mat=3
+        [4] v1=5 v2=3 v3=0 mat=4
+        [5] v1=4 v2=6 v3=0 mat=5
+        [6] v1=7 v2=5 v3=0 mat=6
+        [7] v1=6 v2=8 v3=0 mat=7
+        [8] v1=9 v2=7 v3=0 mat=8
+        [9] v1=8 v2=10 v3=0 mat=9
+        [10] v1=11 v2=9 v3=0 mat=10
+        ... +1134 more
+      texCoords[1] = 645 coords
+        [1] (0.8062, 0.3688)
+        [2] (0.8062, 0.3906)
+        [3] (0.8163, 0.3688)
+        [4] (0.8163, 0.3914)
+        [5] (0.8062, 0.4091)
+        [6] (0.8163, 0.4105)
+        [7] (0.8062, 0.4214)
+        [8] (0.8163, 0.4233)
+        [9] (0.8063, 0.4257)
+        [10] (0.8164, 0.4277)
+        ... +635 more
+      --- MaterialList @0xFC378 ---
+        --- Material @0xFC3A0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xFC42C ---
+        --- Material @0xFC438 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0xFC4C8 ---
+            --- MaterialEffectPLG @0xFC4D4 ---
+        --- Material @0xFC548 ---
+          flags       = 0x00000000
+          color       = (R=0 G=0 B=0 A=119)
+          isTextured  = false
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          --- MaterialExtension ---
+          --- Extension @0xFC57C ---
+            --- MaterialEffectPLG @0xFC588 ---
+      --- GeometryExtension ---
+      --- Extension @0xFC5FC ---
+        --- BinMeshPLG @0xFC608 ---
+        --- Breakable @0xFFBD8 ---
+    --- Geometry @0xFFBE8 ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 2796  vertexCount = 2026  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, 0.006887, 0.109896, 2.311006)
+      vertices     = 2026 total
+        [1] (-0.9517, 1.9086, -0.0921)
+        [2] (-0.9736, 1.7002, -0.0856)
+        [3] (-0.9639, 1.7935, -0.0946)
+        [4] (-0.9681, 1.7967, -0.1162)
+        [5] (-0.9368, 2.0486, -0.1287)
+        [6] (-0.9364, 2.0493, -0.1112)
+        [7] (-0.9525, 1.9078, -0.1302)
+        [8] (-0.9252, 2.1006, -0.1394)
+        [9] (-0.9320, 2.0516, -0.1323)
+        [10] (-0.9247, 2.1013, -0.1036)
+        ... +2016 more
+      normals      = 2026 total
+        [1] (-0.8992, 0.1355, 0.4161)
+        [2] (-0.9289, 0.1150, 0.3519)
+        [3] (-0.9943, 0.1051, 0.0155)
+        [4] (-0.8906, -0.2834, -0.3557)
+        [5] (-0.8368, 0.4194, -0.3519)
+        [6] (-0.7831, 0.4776, 0.3984)
+        [7] (-0.9923, 0.1142, -0.0470)
+        [8] (-0.9902, 0.1387, -0.0187)
+        [9] (-0.9899, 0.1407, 0.0160)
+        [10] (-0.9124, 0.1432, 0.3834)
+        ... +2016 more
+      faces        = 2796 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=3 v2=4 v3=0 mat=5
+        [3] v1=6 v2=7 v3=0 mat=8
+        [4] v1=7 v2=9 v3=0 mat=10
+        [5] v1=11 v2=0 v3=0 mat=12
+        [6] v1=11 v2=1 v3=0 mat=0
+        [7] v1=13 v2=12 v3=0 mat=9
+        [8] v1=12 v2=0 v3=0 mat=9
+        [9] v1=14 v2=13 v3=0 mat=15
+        [10] v1=14 v2=16 v3=0 mat=12
+        ... +2786 more
+      texCoords[1] = 2026 coords
+        [1] (0.5231, 0.8594)
+        [2] (0.4438, 0.8604)
+        [3] (0.4794, 0.8576)
+        [4] (0.0405, 0.5618)
+        [5] (0.3497, 0.5613)
+        [6] (0.3504, 0.5990)
+        [7] (0.5230, 0.8449)
+        [8] (0.5938, 0.8427)
+        [9] (0.5777, 0.8450)
+        [10] (0.5938, 0.8563)
+        ... +2016 more
+      --- MaterialList @0x1150C8 ---
+        --- Material @0x1150FC ---
+          flags       = 0x00000000
+          color       = (R=60 G=255 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x115180 ---
+            --- MaterialEffectPLG @0x11518C ---
+            --- ReflectionMaterial @0x115204 ---
+            --- SpecularMaterial @0x115228 ---
+        --- Material @0x115250 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1152D0 ---
+        --- Material @0x1152DC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x115360 ---
+        --- Material @0x11536C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1153EC ---
+        --- Material @0x1153F8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x115480 ---
+        --- Material @0x11548C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x11550C ---
+      --- GeometryExtension ---
+      --- Extension @0x115518 ---
+        --- BinMeshPLG @0x115524 ---
+        --- Breakable @0x11D87C ---
+    --- Geometry @0x11D88C ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 8332  vertexCount = 6777  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, 0.008981, 0.047309, 2.420070)
+      vertices     = 6777 total
+        [1] (0.9675, 0.0293, -0.3171)
+        [2] (0.9593, 0.0293, -0.3168)
+        [3] (0.9676, 0.2164, -0.3204)
+        [4] (0.9581, 0.0292, -0.3213)
+        [5] (0.9593, 0.2164, -0.3200)
+        [6] (0.9581, 0.2163, -0.3246)
+        [7] (0.9416, 0.2072, -0.3238)
+        [8] (0.9511, 0.2072, -0.3196)
+        [9] (0.9519, 0.2071, -0.3242)
+        [10] (0.9519, 0.2163, -0.3243)
+        ... +6767 more
+      normals      = 6777 total
+        [1] (0.0391, 0.0175, 0.9991)
+        [2] (-0.5959, 0.0142, 0.8030)
+        [3] (0.0389, 0.0155, 0.9991)
+        [4] (-0.9676, 0.0046, 0.2526)
+        [5] (-0.5901, 0.0128, 0.8073)
+        [6] (-0.9636, 0.0045, 0.2674)
+        [7] (-0.7348, -0.6454, 0.2087)
+        [8] (0.5298, -0.5793, 0.6195)
+        [9] (0.7390, -0.6584, 0.1430)
+        [10] (0.0389, 0.0155, 0.9991)
+        ... +6767 more
+      faces        = 8332 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=1 v2=3 v3=0 mat=4
+        [3] v1=3 v2=5 v3=0 mat=4
+        [4] v1=6 v2=7 v3=0 mat=8
+        [5] v1=9 v2=10 v3=0 mat=11
+        [6] v1=7 v2=12 v3=0 mat=13
+        [7] v1=7 v2=13 v3=0 mat=8
+        [8] v1=14 v2=11 v3=0 mat=15
+        [9] v1=16 v2=12 v3=0 mat=7
+        [10] v1=16 v2=7 v3=0 mat=6
+        ... +8322 more
+      texCoords[1] = 6777 coords
+        [1] (0.0486, 0.6181)
+        [2] (0.0531, 0.6181)
+        [3] (0.0486, 0.5392)
+        [4] (0.0538, 0.6181)
+        [5] (0.0531, 0.5392)
+        [6] (0.0538, 0.5392)
+        [7] (0.0627, 0.5431)
+        [8] (0.0576, 0.5431)
+        [9] (0.0571, 0.5431)
+        [10] (0.3213, 0.2141)
+        ... +6767 more
+      --- MaterialList @0x162C4C ---
+        --- Material @0x162CA0 ---
+          flags       = 0x00000000
+          color       = (R=60 G=255 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x162D20 ---
+        --- Material @0x162D2C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x162DAC ---
+        --- Material @0x162DB8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x162E3C ---
+        --- Material @0x162E48 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x162ED4 ---
+        --- Material @0x162EE0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x162F60 ---
+        --- Material @0x162F6C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x162FEC ---
+        --- Material @0x162FF8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x163078 ---
+        --- Material @0x163084 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x163108 ---
+        --- Material @0x163114 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x16319C ---
+        --- Material @0x1631A8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x163234 ---
+        --- Material @0x163240 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1632C8 ---
+        --- Material @0x1632D4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x163364 ---
+            --- MaterialEffectPLG @0x163370 ---
+        --- Material @0x1633E4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x163470 ---
+        --- Material @0x16347C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1634FC ---
+            --- MaterialEffectPLG @0x163508 ---
+      --- GeometryExtension ---
+      --- Extension @0x16357C ---
+        --- BinMeshPLG @0x163588 ---
+        --- Breakable @0x17BCA0 ---
+    --- Geometry @0x17BCB0 ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 4101  vertexCount = 3259  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, 0.060142, -0.186741, 2.316351)
+      vertices     = 3259 total
+        [1] (0.7502, 0.3954, -0.5261)
+        [2] (0.4949, 0.6421, -0.5304)
+        [3] (0.7502, 0.3966, -0.4577)
+        [4] (0.4949, 0.9029, -0.5350)
+        [5] (0.4949, 0.6433, -0.4620)
+        [6] (0.4949, 0.9041, -0.4666)
+        [7] (0.7502, 0.3966, -0.4577)
+        [8] (0.4949, 0.6433, -0.4620)
+        [9] (0.8281, 0.3966, -0.4577)
+        [10] (0.4949, 0.9041, -0.4666)
+        ... +3249 more
+      normals      = 3259 total
+        [1] (-0.3748, -0.9270, 0.0162)
+        [2] (-0.9206, -0.3905, 0.0068)
+        [3] (-0.3748, -0.9270, 0.0162)
+        [4] (-0.7071, 0.7070, -0.0123)
+        [5] (-0.9206, -0.3905, 0.0068)
+        [6] (-0.7071, 0.7070, -0.0123)
+        [7] (0.0000, 0.0175, 0.9998)
+        [8] (0.0000, 0.0175, 0.9998)
+        [9] (0.0000, 0.0175, 0.9998)
+        [10] (0.0000, 0.0175, 0.9998)
+        ... +3249 more
+      faces        = 4101 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=1 v2=3 v3=0 mat=4
+        [3] v1=1 v2=4 v3=0 mat=2
+        [4] v1=3 v2=5 v3=0 mat=4
+        [5] v1=6 v2=7 v3=0 mat=8
+        [6] v1=7 v2=9 v3=0 mat=10
+        [7] v1=7 v2=10 v3=0 mat=8
+        [8] v1=11 v2=12 v3=0 mat=13
+        [9] v1=12 v2=14 v3=0 mat=13
+        [10] v1=13 v2=0 v3=0 mat=2
+        ... +4091 more
+      texCoords[1] = 3259 coords
+        [1] (0.5316, 0.0059)
+        [2] (0.6309, 0.0059)
+        [3] (0.5316, 0.0374)
+        [4] (0.7361, 0.0059)
+        [5] (0.6309, 0.0374)
+        [6] (0.7361, 0.0374)
+        [7] (0.5912, 0.8850)
+        [8] (0.6864, 0.9834)
+        [9] (0.5912, 0.8549)
+        [10] (0.7869, 0.9834)
+        ... +3249 more
+      --- MaterialList @0x19D478 ---
+        --- Material @0x19D4A8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x19D528 ---
+            --- MaterialEffectPLG @0x19D534 ---
+        --- Material @0x19D5A4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x19D628 ---
+        --- Material @0x19D634 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x19D6C0 ---
+            --- MaterialEffectPLG @0x19D6CC ---
+        --- Material @0x19D740 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x19D7CC ---
+        --- Material @0x19D7D8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x19D860 ---
+      --- GeometryExtension ---
+      --- Extension @0x19D86C ---
+        --- BinMeshPLG @0x19D878 ---
+        --- Breakable @0x1A98F4 ---
+    --- Geometry @0x1A9904 ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 304  vertexCount = 168  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, 0.020246, -0.293308, 1.724699)
+      vertices     = 168 total
+        [1] (0.8293, 1.4531, -0.4497)
+        [2] (0.8293, 1.5076, -0.4080)
+        [3] (0.8293, 1.4441, -0.4224)
+        [4] (0.8293, 1.5050, -0.3707)
+        [5] (0.8626, 1.5076, -0.4080)
+        [6] (0.8626, 1.5050, -0.3707)
+        [7] (0.8626, 1.4531, -0.4497)
+        [8] (0.8626, 1.4441, -0.4224)
+        [9] (0.8293, 1.4389, -0.3267)
+        [10] (0.8293, 1.5070, -0.3278)
+        ... +158 more
+      normals      = 168 total
+        [1] (-0.5877, -0.3198, -0.7432)
+        [2] (-0.6420, 0.7289, -0.2376)
+        [3] (-0.6784, -0.7218, -0.1369)
+        [4] (-0.7206, 0.6933, 0.0084)
+        [5] (0.6421, 0.7285, -0.2388)
+        [6] (0.7206, 0.6933, 0.0084)
+        [7] (0.5880, -0.3185, -0.7435)
+        [8] (0.6784, -0.7218, -0.1369)
+        [9] (-0.6912, -0.7225, 0.0127)
+        [10] (-0.7005, 0.7135, -0.0125)
+        ... +158 more
+      faces        = 304 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=3 v2=2 v3=0 mat=1
+        [3] v1=1 v2=4 v3=0 mat=3
+        [4] v1=5 v2=3 v3=0 mat=4
+        [5] v1=4 v2=6 v3=0 mat=5
+        [6] v1=7 v2=5 v3=0 mat=6
+        [7] v1=6 v2=0 v3=0 mat=7
+        [8] v1=2 v2=7 v3=0 mat=0
+        [9] v1=2 v2=3 v3=0 mat=8
+        [10] v1=9 v2=8 v3=0 mat=3
+        ... +294 more
+      texCoords[1] = 168 coords
+        [1] (0.3985, 0.3799)
+        [2] (0.3742, 0.2893)
+        [3] (0.4310, 0.3578)
+        [4] (0.4082, 0.2511)
+        [5] (0.3742, 0.2893)
+        [6] (0.4082, 0.2511)
+        [7] (0.3985, 0.3799)
+        [8] (0.4310, 0.3578)
+        [9] (0.5165, 0.2585)
+        [10] (0.4417, 0.2030)
+        ... +158 more
+      --- MaterialList @0x1AB7C4 ---
+        --- Material @0x1AB7E4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1AB864 ---
+      --- GeometryExtension ---
+      --- Extension @0x1AB870 ---
+        --- BinMeshPLG @0x1AB87C ---
+        --- Breakable @0x1AC6DC ---
+    --- Geometry @0x1AC6EC ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 172  vertexCount = 124  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.016963, -0.785124, 0.236142, 0.897437)
+      vertices     = 124 total
+        [1] (0.0000, -0.8680, -0.0823)
+        [2] (0.0000, -0.8580, -0.0838)
+        [3] (-0.8180, -0.8680, -0.0823)
+        [4] (-0.8180, -0.8580, -0.0838)
+        [5] (-0.8300, -0.8659, 0.0387)
+        [6] (-0.8300, -0.8559, 0.0376)
+        [7] (-0.8324, -0.8638, 0.1632)
+        [8] (-0.8324, -0.8537, 0.1626)
+        [9] (-0.8228, -0.8617, 0.2782)
+        [10] (-0.8228, -0.8517, 0.2780)
+        ... +114 more
+      normals      = 124 total
+        [1] (-0.0012, -0.7653, -0.6437)
+        [2] (-0.0015, -0.1516, -0.9884)
+        [3] (-0.5511, -0.6286, -0.5487)
+        [4] (-0.6399, -0.1181, -0.7593)
+        [5] (-0.7129, -0.7007, -0.0282)
+        [6] (-0.9981, -0.0067, -0.0611)
+        [7] (-0.7184, -0.6947, 0.0361)
+        [8] (-0.9995, 0.0018, 0.0304)
+        [9] (-0.7116, -0.6466, 0.2747)
+        [10] (-0.9378, 0.0061, 0.3471)
+        ... +114 more
+      faces        = 172 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=1 v2=3 v3=0 mat=2
+        [3] v1=2 v2=3 v3=0 mat=4
+        [4] v1=4 v2=5 v3=0 mat=6
+        [5] v1=6 v2=5 v3=0 mat=7
+        [6] v1=8 v2=9 v3=0 mat=10
+        [7] v1=10 v2=11 v3=0 mat=12
+        [8] v1=4 v2=3 v3=0 mat=5
+        [9] v1=8 v2=6 v3=0 mat=7
+        [10] v1=8 v2=7 v3=0 mat=9
+        ... +162 more
+      texCoords[1] = 124 coords
+        [1] (0.3413, 0.3608)
+        [2] (0.3413, 0.3602)
+        [3] (0.6515, 0.3608)
+        [4] (0.6515, 0.3602)
+        [5] (0.6561, 0.4067)
+        [6] (0.6561, 0.4063)
+        [7] (0.6570, 0.4539)
+        [8] (0.6570, 0.4537)
+        [9] (0.6534, 0.4975)
+        [10] (0.6534, 0.4975)
+        ... +114 more
+      --- MaterialList @0x1ADC0C ---
+        --- Material @0x1ADC30 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1ADCBC ---
+        --- Material @0x1ADCC8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1ADD58 ---
+      --- GeometryExtension ---
+      --- Extension @0x1ADD64 ---
+        --- BinMeshPLG @0x1ADD70 ---
+        --- Breakable @0x1AE5A8 ---
+    --- Geometry @0x1AE5B8 ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 936  vertexCount = 1008  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, 0.161024, 0.205582, 2.440565)
+      vertices     = 1008 total
+        [1] (0.2115, 2.2927, -0.2443)
+        [2] (0.2115, 2.3672, -0.2456)
+        [3] (0.1850, 2.2927, -0.2443)
+        [4] (0.1850, 2.3672, -0.2456)
+        [5] (0.1850, 2.2927, -0.2443)
+        [6] (0.1850, 2.3672, -0.2456)
+        [7] (0.1850, 2.3761, -0.2400)
+        [8] (0.1850, 2.3787, -0.2302)
+        [9] (0.1850, 2.3620, -0.2282)
+        [10] (0.1850, 2.3743, -0.2200)
+        ... +998 more
+      normals      = 1008 total
+        [1] (0.0000, -0.7324, -0.6809)
+        [2] (0.0000, 0.2678, -0.9635)
+        [3] (0.0000, -0.7324, -0.6809)
+        [4] (0.0000, 0.2678, -0.9635)
+        [5] (-1.0000, 0.0000, 0.0000)
+        [6] (-1.0000, 0.0000, 0.0000)
+        [7] (-1.0000, 0.0000, 0.0000)
+        [8] (-1.0000, 0.0000, 0.0000)
+        [9] (-1.0000, 0.0000, 0.0000)
+        [10] (-1.0000, 0.0000, 0.0000)
+        ... +998 more
+      faces        = 936 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=1 v2=3 v3=0 mat=2
+        [3] v1=4 v2=5 v3=0 mat=6
+        [4] v1=4 v2=6 v3=0 mat=7
+        [5] v1=8 v2=7 v3=0 mat=9
+        [6] v1=4 v2=7 v3=0 mat=8
+        [7] v1=4 v2=8 v3=0 mat=10
+        [8] v1=4 v2=10 v3=0 mat=11
+        [9] v1=10 v2=12 v3=0 mat=11
+        [10] v1=12 v2=13 v3=0 mat=11
+        ... +926 more
+      texCoords[1] = 1008 coords
+        [1] (0.5382, 0.6744)
+        [2] (0.5382, 0.6744)
+        [3] (0.5060, 0.6744)
+        [4] (0.5060, 0.6744)
+        [5] (0.5757, 0.6579)
+        [6] (0.5757, 0.7391)
+        [7] (0.5828, 0.7494)
+        [8] (0.5943, 0.7515)
+        [9] (0.5957, 0.7332)
+        [10] (0.6055, 0.7465)
+        ... +998 more
+      --- MaterialList @0x1B8138 ---
+        --- Material @0x1B8158 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1B81E4 ---
+      --- GeometryExtension ---
+      --- Extension @0x1B81F0 ---
+        --- BinMeshPLG @0x1B81FC ---
+        --- Breakable @0x1BADFC ---
+    --- Geometry @0x1BAE0C ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 3106  vertexCount = 2679  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, -1.505145, 0.484701, 0.715106)
+      vertices     = 2679 total
+        [1] (0.1447, -1.2857, 0.3107)
+        [2] (0.1447, -1.1203, 0.3111)
+        [3] (-0.1447, -1.2857, 0.3107)
+        [4] (-0.1447, -1.1203, 0.3111)
+        [5] (-0.1447, -1.2857, 0.3107)
+        [6] (-0.1447, -1.1203, 0.3111)
+        [7] (-0.1447, -1.2861, 0.4975)
+        [8] (-0.1447, -1.1208, 0.4979)
+        [9] (-0.1447, -1.2861, 0.4975)
+        [10] (-0.1447, -1.1208, 0.4979)
+        ... +2669 more
+      normals      = 2679 total
+        [1] (0.7071, 0.0018, -0.7071)
+        [2] (0.7071, 0.0018, -0.7071)
+        [3] (0.0000, 0.0025, -1.0000)
+        [4] (0.0000, 0.0025, -1.0000)
+        [5] (-1.0000, 0.0000, 0.0000)
+        [6] (-1.0000, 0.0000, 0.0000)
+        [7] (-1.0000, 0.0000, 0.0000)
+        [8] (-1.0000, 0.0000, 0.0000)
+        [9] (0.0000, -0.0025, 1.0000)
+        [10] (0.0000, -0.0025, 1.0000)
+        ... +2669 more
+      faces        = 3106 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=1 v2=3 v3=0 mat=2
+        [3] v1=4 v2=5 v3=0 mat=6
+        [4] v1=5 v2=7 v3=0 mat=6
+        [5] v1=8 v2=9 v3=0 mat=10
+        [6] v1=9 v2=11 v3=0 mat=10
+        [7] v1=10 v2=11 v3=0 mat=0
+        [8] v1=11 v2=1 v3=0 mat=0
+        [9] v1=12 v2=13 v3=0 mat=14
+        [10] v1=14 v2=15 v3=0 mat=12
+        ... +3096 more
+      texCoords[1] = 2679 coords
+        [1] (0.0034, 0.1459)
+        [2] (0.1884, 0.1459)
+        [3] (0.0034, 0.1459)
+        [4] (0.1884, 0.1459)
+        [5] (0.1878, 0.1459)
+        [6] (0.3410, 0.1459)
+        [7] (0.1878, 0.3550)
+        [8] (0.3410, 0.3550)
+        [9] (0.0034, 0.3550)
+        [10] (0.1884, 0.3550)
+        ... +2669 more
+      --- MaterialList @0x1D5E3C ---
+        --- Material @0x1D5E68 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1D5EEC ---
+            --- MaterialEffectPLG @0x1D5EF8 ---
+            --- ReflectionMaterial @0x1D5F70 ---
+            --- SpecularMaterial @0x1D5F94 ---
+        --- Material @0x1D5FBC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1D6048 ---
+            --- MaterialEffectPLG @0x1D6054 ---
+            --- ReflectionMaterial @0x1D60CC ---
+            --- SpecularMaterial @0x1D60F0 ---
+        --- Material @0x1D6118 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1D61A0 ---
+            --- MaterialEffectPLG @0x1D61AC ---
+            --- ReflectionMaterial @0x1D6224 ---
+            --- SpecularMaterial @0x1D6248 ---
+        --- Material @0x1D6270 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x1D6300 ---
+            --- MaterialEffectPLG @0x1D630C ---
+            --- ReflectionMaterial @0x1D6384 ---
+            --- SpecularMaterial @0x1D63A8 ---
+      --- GeometryExtension ---
+      --- Extension @0x1D63D0 ---
+        --- BinMeshPLG @0x1D63DC ---
+        --- Breakable @0x1DF5AC ---
+    --- Geometry @0x1DF5BC ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 14588  vertexCount = 8697  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000001, -0.148763, 0.074364, 2.297160)
+      vertices     = 8697 total
+        [1] (0.9474, 1.7287, 0.0053)
+        [2] (0.9449, 1.7323, 0.0166)
+        [3] (0.9539, 1.7295, 0.0098)
+        [4] (0.9390, 1.7290, 0.0040)
+        [5] (0.9334, 1.7308, 0.0083)
+        [6] (0.9328, 1.7333, 0.0164)
+        [7] (0.9358, 1.7352, 0.0235)
+        [8] (0.9452, 1.7368, 0.0313)
+        [9] (0.9544, 1.7367, 0.0336)
+        [10] (0.9600, 1.7349, 0.0293)
+        ... +8687 more
+      normals      = 8697 total
+        [1] (0.2161, -0.8528, -0.4754)
+        [2] (-0.0816, -0.9537, 0.2894)
+        [3] (0.5030, -0.8179, -0.2793)
+        [4] (-0.2618, -0.7998, -0.5402)
+        [5] (-0.7398, -0.6489, -0.1779)
+        [6] (-0.7940, -0.5341, 0.2903)
+        [7] (-0.6592, -0.4512, 0.6016)
+        [8] (-0.3909, -0.4048, 0.8267)
+        [9] (0.1265, -0.3837, 0.9147)
+        [10] (0.4176, -0.4997, 0.7589)
+        ... +8687 more
+      faces        = 14588 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=3 v2=1 v3=0 mat=0
+        [3] v1=4 v2=1 v3=0 mat=3
+        [4] v1=5 v2=1 v3=0 mat=4
+        [5] v1=6 v2=1 v3=0 mat=5
+        [6] v1=7 v2=1 v3=0 mat=6
+        [7] v1=8 v2=1 v3=0 mat=7
+        [8] v1=9 v2=1 v3=0 mat=8
+        [9] v1=10 v2=1 v3=0 mat=11
+        [10] v1=2 v2=1 v3=0 mat=10
+        ... +14578 more
+      texCoords[1] = 8697 coords
+        [1] (0.0042, 0.6410)
+        [2] (0.0042, 0.6704)
+        [3] (0.0042, 0.6521)
+        [4] (0.0042, 0.6381)
+        [5] (0.0042, 0.6495)
+        [6] (0.0042, 0.6706)
+        [7] (0.0042, 0.6887)
+        [8] (0.0042, 0.7084)
+        [9] (0.0042, 0.7137)
+        [10] (0.0042, 0.7024)
+        ... +8687 more
+      --- MaterialList @0x23FCFC ---
+        --- Material @0x23FD20 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x23FDA8 ---
+        --- Material @0x23FDB4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x23FE44 ---
+      --- GeometryExtension ---
+      --- Extension @0x23FE50 ---
+        --- BinMeshPLG @0x23FE5C ---
+        --- Breakable @0x26AA54 ---
+    --- Geometry @0x26AA64 ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 5560  vertexCount = 4284  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, 0.027681, -0.162492, 1.653032)
+      vertices     = 4284 total
+        [1] (0.7584, 1.3529, -0.2759)
+        [2] (0.7600, 1.3610, -0.2745)
+        [3] (0.6503, 1.3547, -0.1690)
+        [4] (0.6518, 1.3629, -0.1677)
+        [5] (0.7642, 1.3670, -0.2705)
+        [6] (0.6561, 1.3689, -0.1636)
+        [7] (0.7700, 1.3693, -0.2649)
+        [8] (0.6619, 1.3711, -0.1580)
+        [9] (0.7759, 1.3672, -0.2592)
+        [10] (0.6677, 1.3691, -0.1524)
+        ... +4274 more
+      normals      = 4284 total
+        [1] (-0.7029, -0.0124, -0.7112)
+        [2] (-0.6082, 0.4906, -0.6241)
+        [3] (-0.7029, -0.0124, -0.7112)
+        [4] (-0.6093, 0.4876, -0.6252)
+        [5] (-0.3497, 0.8611, -0.3690)
+        [6] (-0.3533, 0.8581, -0.3726)
+        [7] (0.0024, 0.9999, -0.0150)
+        [8] (-0.0024, 0.9998, -0.0199)
+        [9] (0.3533, 0.8706, 0.3424)
+        [10] (0.3497, 0.8735, 0.3387)
+        ... +4274 more
+      faces        = 5560 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=3 v2=2 v3=0 mat=1
+        [3] v1=1 v2=4 v3=0 mat=3
+        [4] v1=5 v2=3 v3=0 mat=4
+        [5] v1=4 v2=6 v3=0 mat=5
+        [6] v1=7 v2=5 v3=0 mat=6
+        [7] v1=6 v2=8 v3=0 mat=7
+        [8] v1=9 v2=7 v3=0 mat=8
+        [9] v1=8 v2=10 v3=0 mat=9
+        [10] v1=11 v2=9 v3=0 mat=10
+        ... +5550 more
+      texCoords[1] = 4284 coords
+        [1] (0.8604, 0.1715)
+        [2] (0.8045, 0.1714)
+        [3] (0.8654, 0.9884)
+        [4] (0.8095, 0.9883)
+        [5] (0.6516, 0.1712)
+        [6] (0.6567, 0.9881)
+        [7] (0.4429, 0.1709)
+        [8] (0.4480, 0.9879)
+        [9] (0.2341, 0.1706)
+        [10] (0.2392, 0.9876)
+        ... +4274 more
+      --- MaterialList @0x296FE4 ---
+        --- Material @0x297010 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x297090 ---
+            --- MaterialEffectPLG @0x29709C ---
+        --- Material @0x29710C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x297190 ---
+        --- Material @0x29719C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x29722C ---
+        --- Material @0x297238 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x2972C4 ---
+      --- GeometryExtension ---
+      --- Extension @0x2972D0 ---
+        --- BinMeshPLG @0x2972DC ---
+        --- Breakable @0x2A77B4 ---
+    --- Geometry @0x2A77C4 ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 44  vertexCount = 36  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (-0.000016, -2.209217, 0.188503, 0.177188)
+      vertices     = 36 total
+        [1] (0.1605, -2.2247, 0.1152)
+        [2] (0.1605, -2.2227, 0.1148)
+        [3] (0.1508, -2.2253, 0.1123)
+        [4] (0.1508, -2.2233, 0.1119)
+        [5] (-0.1506, -2.2253, 0.1123)
+        [6] (-0.1506, -2.2233, 0.1119)
+        [7] (-0.1606, -2.2247, 0.1152)
+        [8] (-0.1606, -2.2227, 0.1148)
+        [9] (-0.1640, -2.2226, 0.1256)
+        [10] (-0.1640, -2.2206, 0.1252)
+        ... +26 more
+      normals      = 36 total
+        [1] (0.5516, -0.7145, -0.4304)
+        [2] (0.6999, -0.1416, -0.7000)
+        [3] (0.1081, -0.8055, -0.5827)
+        [4] (0.1467, -0.1961, -0.9695)
+        [5] (-0.1052, -0.8062, -0.5822)
+        [6] (-0.1429, -0.1962, -0.9701)
+        [7] (-0.5505, -0.7141, -0.4324)
+        [8] (-0.6980, -0.1420, -0.7019)
+        [9] (-0.7299, -0.6833, 0.0186)
+        [10] (-0.9879, -0.0308, -0.1522)
+        ... +26 more
+      faces        = 44 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=2 v2=3 v3=0 mat=4
+        [3] v1=2 v2=1 v3=0 mat=3
+        [4] v1=4 v2=3 v3=0 mat=5
+        [5] v1=4 v2=5 v3=0 mat=6
+        [6] v1=5 v2=7 v3=0 mat=6
+        [7] v1=6 v2=7 v3=0 mat=8
+        [8] v1=8 v2=9 v3=0 mat=10
+        [9] v1=8 v2=7 v3=0 mat=9
+        [10] v1=10 v2=9 v3=0 mat=11
+        ... +34 more
+      texCoords[1] = 36 coords
+        [1] (0.7696, 0.6137)
+        [2] (0.7696, 0.6128)
+        [3] (0.7466, 0.6063)
+        [4] (0.7466, 0.6053)
+        [5] (0.0364, 0.6063)
+        [6] (0.0364, 0.6053)
+        [7] (0.0128, 0.6137)
+        [8] (0.0128, 0.6128)
+        [9] (0.0048, 0.6405)
+        [10] (0.0048, 0.6396)
+        ... +26 more
+      --- MaterialList @0x2A7DE4 ---
+        --- Material @0x2A7E04 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x2A7E94 ---
+      --- GeometryExtension ---
+      --- Extension @0x2A7EA0 ---
+        --- BinMeshPLG @0x2A7EAC ---
+        --- Breakable @0x2A80DC ---
+    --- Geometry @0x2A80EC ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 26912  vertexCount = 16149  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.001159, 0.034396, 0.076654, 1.226307)
+      vertices     = 16149 total
+        [1] (-0.0344, -0.5575, 0.5447)
+        [2] (-0.0642, -0.5560, 0.5447)
+        [3] (-0.0346, -0.5605, 0.5465)
+        [4] (-0.0646, -0.5590, 0.5465)
+        [5] (-0.0344, -0.5574, 0.5482)
+        [6] (-0.0642, -0.5560, 0.5481)
+        [7] (-0.0818, -0.5527, 0.5446)
+        [8] (-0.0826, -0.5556, 0.5464)
+        [9] (-0.0818, -0.5527, 0.5481)
+        [10] (-0.0924, -0.5490, 0.5446)
+        ... +16139 more
+      normals      = 16149 total
+        [1] (0.5746, 0.3754, -0.7272)
+        [2] (0.0554, 0.4524, -0.8901)
+        [3] (0.5129, -0.8583, 0.0150)
+        [4] (-0.1175, -0.9929, 0.0173)
+        [5] (0.5746, 0.4006, 0.7137)
+        [6] (0.0554, 0.4832, 0.8738)
+        [7] (0.1215, 0.4359, -0.8917)
+        [8] (-0.2599, -0.9655, 0.0169)
+        [9] (0.1215, 0.4668, 0.8760)
+        [10] (0.1614, 0.4648, -0.8706)
+        ... +16139 more
+      faces        = 26912 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=3 v2=2 v3=0 mat=1
+        [3] v1=4 v2=5 v3=0 mat=0
+        [4] v1=1 v2=0 v3=0 mat=5
+        [5] v1=2 v2=3 v3=0 mat=4
+        [6] v1=5 v2=4 v3=0 mat=3
+        [7] v1=1 v2=6 v3=0 mat=3
+        [8] v1=7 v2=3 v3=0 mat=6
+        [9] v1=5 v2=8 v3=0 mat=1
+        [10] v1=6 v2=1 v3=0 mat=8
+        ... +26902 more
+      texCoords[1] = 16149 coords
+        [1] (0.4693, 0.2322)
+        [2] (0.4991, 0.2320)
+        [3] (0.4694, 0.2413)
+        [4] (0.4994, 0.2411)
+        [5] (0.4693, 0.2322)
+        [6] (0.4991, 0.2320)
+        [7] (0.5166, 0.2318)
+        [8] (0.5174, 0.2406)
+        [9] (0.5166, 0.2318)
+        [10] (0.5273, 0.2317)
+        ... +16139 more
+      --- MaterialList @0x35ACCC ---
+        --- Material @0x35ACF4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x35AD84 ---
+        --- Material @0x35AD90 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x35AE1C ---
+        --- Material @0x35AE28 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x35AEB8 ---
+      --- GeometryExtension ---
+      --- Extension @0x35AEC4 ---
+        --- BinMeshPLG @0x35AED0 ---
+        --- Breakable @0x3A9C80 ---
+    --- Geometry @0x3A9C90 ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 452  vertexCount = 429  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, -0.011936, -0.022721, 2.470027)
+      vertices     = 429 total
+        [1] (0.9193, -0.8734, -0.4742)
+        [2] (0.9193, -0.2154, -0.4742)
+        [3] (0.0000, -0.8734, -0.4742)
+        [4] (0.0000, -0.2154, -0.4742)
+        [5] (0.9193, 0.5072, -0.4742)
+        [6] (0.0000, 0.5072, -0.4742)
+        [7] (0.8798, 2.2860, -0.2379)
+        [8] (0.0000, 2.2860, -0.2379)
+        [9] (0.2006, 0.0166, 0.6348)
+        [10] (0.5589, 0.0166, 0.6348)
+        ... +419 more
+      normals      = 429 total
+        [1] (0.0000, -0.0857, -0.9963)
+        [2] (0.0000, 0.0000, -1.0000)
+        [3] (0.0000, -0.0851, -0.9964)
+        [4] (0.0000, 0.0000, -1.0000)
+        [5] (0.0000, 0.0655, -0.9979)
+        [6] (0.0000, 0.0660, -0.9978)
+        [7] (0.0000, 0.1317, -0.9913)
+        [8] (0.0000, 0.1317, -0.9913)
+        [9] (0.0000, -0.0000, 1.0000)
+        [10] (0.0000, -0.0000, 1.0000)
+        ... +419 more
+      faces        = 452 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=2 v2=1 v3=0 mat=3
+        [3] v1=1 v2=4 v3=0 mat=3
+        [4] v1=4 v2=5 v3=0 mat=3
+        [5] v1=6 v2=5 v3=0 mat=4
+        [6] v1=6 v2=7 v3=0 mat=5
+        [7] v1=8 v2=9 v3=0 mat=10
+        [8] v1=11 v2=12 v3=0 mat=13
+        [9] v1=14 v2=8 v3=0 mat=10
+        [10] v1=15 v2=11 v3=0 mat=13
+        ... +442 more
+      texCoords[1] = 429 coords
+        [1] (0.6161, 0.4128)
+        [2] (0.6161, 0.3318)
+        [3] (0.7817, 0.4128)
+        [4] (0.7817, 0.3318)
+        [5] (0.6161, 0.2429)
+        [6] (0.7817, 0.2429)
+        [7] (0.6232, 0.0240)
+        [8] (0.7817, 0.0240)
+        [9] (0.7357, 0.6504)
+        [10] (0.7369, 0.5418)
+        ... +419 more
+      --- MaterialList @0x3AE090 ---
+        --- Material @0x3AE0D4 ---
+          flags       = 0x00000000
+          color       = (R=60 G=255 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3AE154 ---
+            --- MaterialEffectPLG @0x3AE160 ---
+            --- ReflectionMaterial @0x3AE1D8 ---
+            --- SpecularMaterial @0x3AE1FC ---
+        --- Material @0x3AE224 ---
+          flags       = 0x00000000
+          color       = (R=60 G=255 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3AE2A8 ---
+            --- MaterialEffectPLG @0x3AE2B4 ---
+            --- ReflectionMaterial @0x3AE32C ---
+            --- SpecularMaterial @0x3AE350 ---
+        --- Material @0x3AE378 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3AE3F8 ---
+            --- MaterialEffectPLG @0x3AE404 ---
+            --- ReflectionMaterial @0x3AE47C ---
+            --- SpecularMaterial @0x3AE4A0 ---
+        --- Material @0x3AE4C8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3AE54C ---
+            --- MaterialEffectPLG @0x3AE558 ---
+            --- ReflectionMaterial @0x3AE5D0 ---
+            --- SpecularMaterial @0x3AE5F4 ---
+        --- Material @0x3AE61C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3AE6A0 ---
+            --- MaterialEffectPLG @0x3AE6AC ---
+            --- ReflectionMaterial @0x3AE724 ---
+            --- SpecularMaterial @0x3AE748 ---
+        --- Material @0x3AE770 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3AE7F0 ---
+        --- Material @0x3AE7FC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3AE884 ---
+            --- MaterialEffectPLG @0x3AE890 ---
+            --- ReflectionMaterial @0x3AE908 ---
+            --- SpecularMaterial @0x3AE92C ---
+        --- Material @0x3AE954 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3AE9DC ---
+            --- MaterialEffectPLG @0x3AE9E8 ---
+            --- ReflectionMaterial @0x3AEA60 ---
+            --- SpecularMaterial @0x3AEA84 ---
+        --- Material @0x3AEAAC ---
+          flags       = 0x00000000
+          color       = (R=0 G=0 B=0 A=0)
+          isTextured  = false
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          --- MaterialExtension ---
+          --- Extension @0x3AEAE0 ---
+            --- MaterialEffectPLG @0x3AEAEC ---
+            --- ReflectionMaterial @0x3AEB64 ---
+            --- SpecularMaterial @0x3AEB88 ---
+        --- Material @0x3AEBB0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3AEC30 ---
+            --- MaterialEffectPLG @0x3AEC3C ---
+            --- ReflectionMaterial @0x3AECB4 ---
+            --- SpecularMaterial @0x3AECD8 ---
+      --- GeometryExtension ---
+      --- Extension @0x3AED00 ---
+        --- BinMeshPLG @0x3AED0C ---
+        --- Breakable @0x3B02A4 ---
+    --- Geometry @0x3B02B4 ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 4845  vertexCount = 3578  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, 0.001688, -0.060307, 2.448878)
+      vertices     = 3578 total
+        [1] (0.0000, 0.0000, 0.0000)
+        [2] (0.0000, 0.0000, 0.0000)
+        [3] (0.6353, 2.2064, -0.0826)
+        [4] (0.6351, 2.2081, 0.0157)
+        [5] (0.0000, 0.0000, 0.0000)
+        [6] (0.6410, 2.2082, 0.0209)
+        [7] (0.0000, 0.0000, 0.0000)
+        [8] (0.8160, 2.2082, 0.0207)
+        [9] (0.0000, 0.0000, 0.0000)
+        [10] (0.8215, 2.2081, 0.0153)
+        ... +3568 more
+      normals      = 3578 total
+        [1] (0.0000, 0.0000, 0.0000)
+        [2] (0.0000, 0.0000, 0.0000)
+        [3] (-0.9265, -0.0066, -0.3763)
+        [4] (-0.9110, 0.0072, 0.4123)
+        [5] (0.0000, 0.0000, 0.0000)
+        [6] (-0.3509, 0.0163, 0.9363)
+        [7] (0.0000, 0.0000, 0.0000)
+        [8] (0.3810, 0.0161, 0.9244)
+        [9] (0.0000, 0.0000, 0.0000)
+        [10] (0.9233, 0.0067, 0.3839)
+        ... +3568 more
+      faces        = 4845 total (tri=list)
+        [1] v1=2 v2=3 v3=0 mat=16
+        [2] v1=17 v2=16 v3=0 mat=3
+        [3] v1=3 v2=5 v3=0 mat=17
+        [4] v1=18 v2=17 v3=0 mat=5
+        [5] v1=5 v2=7 v3=0 mat=18
+        [6] v1=19 v2=18 v3=0 mat=7
+        [7] v1=7 v2=9 v3=0 mat=19
+        [8] v1=20 v2=19 v3=0 mat=9
+        [9] v1=9 v2=11 v3=0 mat=20
+        [10] v1=21 v2=20 v3=0 mat=11
+        ... +4835 more
+      texCoords[1] = 3578 coords
+        [1] (0.0000, 1.0000)
+        [2] (0.0000, 1.0000)
+        [3] (0.9726, 0.2824)
+        [4] (0.9738, 0.7693)
+        [5] (0.0000, 1.0000)
+        [6] (0.9446, 0.7948)
+        [7] (0.0000, 1.0000)
+        [8] (0.0783, 0.7939)
+        [9] (0.0000, 1.0000)
+        [10] (0.0512, 0.7671)
+        ... +3568 more
+      --- MaterialList @0x3D599C ---
+        --- Material @0x3D59F0 ---
+          flags       = 0x00000000
+          color       = (R=60 G=255 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D5A70 ---
+        --- Material @0x3D5A7C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D5AFC ---
+        --- Material @0x3D5B08 ---
+          flags       = 0x00000000
+          color       = (R=60 G=255 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D5B90 ---
+            --- MaterialEffectPLG @0x3D5B9C ---
+            --- ReflectionMaterial @0x3D5C14 ---
+            --- SpecularMaterial @0x3D5C38 ---
+        --- Material @0x3D5C60 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D5CE4 ---
+            --- MaterialEffectPLG @0x3D5CF0 ---
+            --- ReflectionMaterial @0x3D5D68 ---
+            --- SpecularMaterial @0x3D5D8C ---
+        --- Material @0x3D5DB4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D5E38 ---
+        --- Material @0x3D5E44 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D5EC4 ---
+        --- Material @0x3D5ED0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=100)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D5F50 ---
+        --- Material @0x3D5F5C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D5FE8 ---
+        --- Material @0x3D5FF4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D6080 ---
+        --- Material @0x3D608C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D610C ---
+        --- Material @0x3D6118 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D6198 ---
+        --- Material @0x3D61A4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=175 B=0 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D6230 ---
+        --- Material @0x3D623C ---
+          flags       = 0x00000000
+          color       = (R=0 G=255 B=200 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D62C8 ---
+        --- Material @0x3D62D4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x3D6354 ---
+      --- GeometryExtension ---
+      --- Extension @0x3D6360 ---
+        --- BinMeshPLG @0x3D636C ---
+        --- Breakable @0x3E4710 ---
+    --- Geometry @0x3E4720 ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 29880  vertexCount = 20487  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.064097, -0.065829, 0.215299, 1.108287)
+      vertices     = 20487 total
+        [1] (0.0977, 0.2982, 0.0292)
+        [2] (0.0999, 0.3076, 0.0267)
+        [3] (-0.1457, 0.3527, 0.0283)
+        [4] (0.1396, 0.3827, 0.0254)
+        [5] (0.1344, 0.3827, 0.0254)
+        [6] (0.1045, 0.3282, 0.0264)
+        [7] (0.1344, 0.3827, 0.0254)
+        [8] (0.1314, 0.3833, 0.0634)
+        [9] (-0.1304, 0.3961, 0.0632)
+        [10] (-0.1335, 0.3826, 0.0254)
+        ... +20477 more
+      normals      = 20487 total
+        [1] (-0.1617, -0.7349, -0.6587)
+        [2] (-0.0260, -0.1336, -0.9907)
+        [3] (-0.1617, -0.7349, -0.6587)
+        [4] (0.7301, -0.2261, -0.6449)
+        [5] (-0.3837, -0.0162, -0.9233)
+        [6] (0.9223, -0.3861, -0.0158)
+        [7] (0.0353, 0.7908, -0.6110)
+        [8] (0.0358, 0.7239, -0.6890)
+        [9] (0.0025, 0.5833, -0.8123)
+        [10] (-0.0001, 0.4770, -0.8789)
+        ... +20477 more
+      faces        = 29880 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=3 v2=4 v3=0 mat=5
+        [3] v1=6 v2=7 v3=0 mat=8
+        [4] v1=6 v2=8 v3=0 mat=9
+        [5] v1=6 v2=9 v3=0 mat=10
+        [6] v1=11 v2=12 v3=0 mat=13
+        [7] v1=1 v2=10 v3=0 mat=14
+        [8] v1=10 v2=9 v3=0 mat=14
+        [9] v1=1 v2=14 v3=0 mat=2
+        [10] v1=15 v2=16 v3=0 mat=17
+        ... +29870 more
+      texCoords[1] = 20487 coords
+        [1] (0.2867, 0.5140)
+        [2] (0.2801, 0.5126)
+        [3] (0.2488, 0.6837)
+        [4] (0.2278, 0.3562)
+        [5] (0.2278, 0.3562)
+        [6] (0.2658, 0.3562)
+        [7] (0.2278, 0.4885)
+        [8] (0.2278, 0.4906)
+        [9] (0.2189, 0.6731)
+        [10] (0.2278, 0.6752)
+        ... +20477 more
+      --- MaterialList @0x4BEE00 ---
+        --- Material @0x4BEE54 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BEED4 ---
+        --- Material @0x4BEEE0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BEF60 ---
+        --- Material @0x4BEF6C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BEFF8 ---
+        --- Material @0x4BF004 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BF088 ---
+        --- Material @0x4BF094 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BF124 ---
+        --- Material @0x4BF130 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BF1C0 ---
+        --- Material @0x4BF1CC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BF250 ---
+        --- Material @0x4BF25C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BF2E0 ---
+        --- Material @0x4BF2EC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BF378 ---
+        --- Material @0x4BF384 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BF414 ---
+        --- Material @0x4BF420 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BF4B0 ---
+        --- Material @0x4BF4BC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BF53C ---
+        --- Material @0x4BF548 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x4BF5D0 ---
+        --- Material @0x4BF5DC ---
+          flags       = 0x00000000
+          color       = (R=0 G=0 B=0 A=100)
+          isTextured  = false
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          --- MaterialExtension ---
+          --- Extension @0x4BF610 ---
+      --- GeometryExtension ---
+      --- Extension @0x4BF61C ---
+        --- BinMeshPLG @0x4BF628 ---
+        --- Breakable @0x516F50 ---
+    --- Geometry @0x516F60 ---
+      header       = 0x0036  bits: bPosition, bTextured, bNormal, bLight
+      faceCount    = 6109  vertexCount = 3814  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.073594, -0.000177, -0.000118, 0.366111)
+      vertices     = 3814 total
+        [1] (0.0671, 0.0399, -0.0966)
+        [2] (0.0671, -0.0001, -0.1046)
+        [3] (0.0675, -0.0001, -0.1614)
+        [4] (0.0675, 0.0616, -0.1491)
+        [5] (0.0671, 0.0738, -0.0740)
+        [6] (0.0675, 0.0616, -0.1491)
+        [7] (0.0675, 0.1139, -0.1141)
+        [8] (0.0671, 0.0964, -0.0401)
+        [9] (0.0675, 0.1489, -0.0618)
+        [10] (0.0671, 0.1044, -0.0001)
+        ... +3804 more
+      normals      = 3814 total
+        [1] (-1.0000, 0.0032, -0.0077)
+        [2] (-1.0000, 0.0000, -0.0083)
+        [3] (-0.6630, -0.0000, -0.7487)
+        [4] (-0.6557, 0.1473, -0.7405)
+        [5] (-1.0000, 0.0059, -0.0059)
+        [6] (-0.6557, 0.4195, -0.6278)
+        [7] (-0.6630, 0.5294, -0.5294)
+        [8] (-1.0000, 0.0077, -0.0032)
+        [9] (-0.6630, 0.6917, -0.2865)
+        [10] (-1.0000, 0.0083, -0.0000)
+        ... +3804 more
+      faces        = 6109 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=2 v2=3 v3=0 mat=0
+        [3] v1=4 v2=0 v3=0 mat=5
+        [4] v1=5 v2=6 v3=0 mat=4
+        [5] v1=7 v2=4 v3=0 mat=6
+        [6] v1=6 v2=8 v3=0 mat=7
+        [7] v1=9 v2=7 v3=0 mat=8
+        [8] v1=8 v2=10 v3=0 mat=9
+        [9] v1=11 v2=9 v3=0 mat=10
+        [10] v1=10 v2=12 v3=0 mat=11
+        ... +6099 more
+      texCoords[1] = 3814 coords
+        [1] (0.9186, 0.1277)
+        [2] (0.9186, 0.3244)
+        [3] (0.7442, 0.3244)
+        [4] (0.7442, 0.1277)
+        [5] (0.9186, 0.3244)
+        [6] (0.7442, 0.1277)
+        [7] (0.7442, 0.3244)
+        [8] (0.9186, 0.1277)
+        [9] (0.7442, 0.1277)
+        [10] (0.9186, 0.3244)
+        ... +3804 more
+      --- MaterialList @0x540B48 ---
+        --- Material @0x540B80 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x540C00 ---
+            --- MaterialEffectPLG @0x540C0C ---
+            --- ReflectionMaterial @0x540C84 ---
+            --- SpecularMaterial @0x540CA8 ---
+        --- Material @0x540CD0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x540D50 ---
+        --- Material @0x540D5C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x540DE4 ---
+        --- Material @0x540DF0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x540E78 ---
+        --- Material @0x540E84 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x540F10 ---
+        --- Material @0x540F1C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x540FA0 ---
+        --- Material @0x540FAC ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x541038 ---
+      --- GeometryExtension ---
+      --- Extension @0x541044 ---
+        --- BinMeshPLG @0x541050 ---
+        --- Breakable @0x552EFC ---
+    --- Geometry @0x552F0C ---
+      header       = 0x0076  bits: bPosition, bTextured, bNormal, bLight, bModulateMaterialColor
+      faceCount    = 43274  vertexCount = 28456  morphTarget = 1
+      bNative      = false  hasV=true  hasN=true
+      boundSphere  = (0.000000, -0.001883, 0.135560, 2.532235)
+      vertices     = 28456 total
+        [1] (0.7242, -1.1476, 0.3442)
+        [2] (0.7223, -1.1440, 0.3446)
+        [3] (0.7216, -1.1497, 0.3443)
+        [4] (0.7185, -1.1471, 0.3449)
+        [5] (0.7336, -1.1446, 0.4223)
+        [6] (0.7355, -1.1482, 0.4219)
+        [7] (0.7329, -1.1503, 0.4221)
+        [8] (0.7298, -1.1477, 0.4227)
+        [9] (0.7200, -1.1526, 0.3443)
+        [10] (0.7162, -1.1515, 0.3451)
+        ... +28446 more
+      normals      = 28456 total
+        [1] (0.2454, -0.5351, -0.8084)
+        [2] (-0.4153, 0.6904, -0.5923)
+        [3] (0.4062, -0.3633, -0.8385)
+        [4] (-0.6557, 0.5084, -0.5582)
+        [5] (-0.2462, 0.6359, 0.7315)
+        [6] (0.3974, -0.6020, 0.6926)
+        [7] (0.5813, -0.4747, 0.6609)
+        [8] (-0.4740, 0.4355, 0.7653)
+        [9] (0.5085, -0.1386, -0.8499)
+        [10] (-0.8071, 0.2534, -0.5332)
+        ... +28446 more
+      faces        = 43274 total (tri=list)
+        [1] v1=0 v2=1 v3=0 mat=2
+        [2] v1=1 v2=3 v3=0 mat=2
+        [3] v1=4 v2=5 v3=0 mat=6
+        [4] v1=7 v2=4 v3=0 mat=6
+        [5] v1=2 v2=3 v3=0 mat=8
+        [6] v1=3 v2=9 v3=0 mat=8
+        [7] v1=7 v2=6 v3=0 mat=10
+        [8] v1=11 v2=7 v3=0 mat=10
+        [9] v1=8 v2=9 v3=0 mat=12
+        [10] v1=9 v2=13 v3=0 mat=12
+        ... +43264 more
+      texCoords[1] = 28456 coords
+        [1] (0.5450, 0.5086)
+        [2] (0.5499, 0.5091)
+        [3] (0.5421, 0.5084)
+        [4] (0.5457, 0.5091)
+        [5] (0.5473, 0.6164)
+        [6] (0.5423, 0.6159)
+        [7] (0.5395, 0.6158)
+        [8] (0.5430, 0.6165)
+        [9] (0.5381, 0.5082)
+        [10] (0.5397, 0.5089)
+        ... +28446 more
+      --- MaterialList @0x685C9C ---
+        --- Material @0x685CE0 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x685D6C ---
+            --- MaterialEffectPLG @0x685D78 ---
+            --- ReflectionMaterial @0x685DF0 ---
+            --- SpecularMaterial @0x685E14 ---
+        --- Material @0x685E3C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x685EC8 ---
+            --- MaterialEffectPLG @0x685ED4 ---
+            --- ReflectionMaterial @0x685F4C ---
+            --- SpecularMaterial @0x685F70 ---
+        --- Material @0x685F98 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x686018 ---
+            --- MaterialEffectPLG @0x686024 ---
+            --- ReflectionMaterial @0x68609C ---
+            --- SpecularMaterial @0x6860C0 ---
+        --- Material @0x6860E8 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x686170 ---
+            --- MaterialEffectPLG @0x68617C ---
+            --- ReflectionMaterial @0x6861F4 ---
+            --- SpecularMaterial @0x686218 ---
+        --- Material @0x686240 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x6862C4 ---
+            --- MaterialEffectPLG @0x6862D0 ---
+            --- ReflectionMaterial @0x686348 ---
+            --- SpecularMaterial @0x68636C ---
+        --- Material @0x686394 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x686424 ---
+            --- MaterialEffectPLG @0x686430 ---
+            --- ReflectionMaterial @0x6864A8 ---
+            --- SpecularMaterial @0x6864CC ---
+        --- Material @0x6864F4 ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x68657C ---
+            --- MaterialEffectPLG @0x686588 ---
+            --- ReflectionMaterial @0x686600 ---
+            --- SpecularMaterial @0x686624 ---
+        --- Material @0x68664C ---
+          flags       = 0x00000000
+          color       = (R=255 G=255 B=255 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.4000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x6866CC ---
+            --- MaterialEffectPLG @0x6866D8 ---
+            --- ReflectionMaterial @0x686750 ---
+            --- SpecularMaterial @0x686774 ---
+        --- Material @0x68679C ---
+          flags       = 0x00000000
+          color       = (R=255 G=0 B=175 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x68682C ---
+            --- MaterialEffectPLG @0x686838 ---
+            --- ReflectionMaterial @0x6868B0 ---
+            --- SpecularMaterial @0x6868D4 ---
+        --- Material @0x6868FC ---
+          flags       = 0x00000000
+          color       = (R=255 G=0 B=175 A=255)
+          isTextured  = true
+          ambient=1.0000 specular=0.0000 diffuse=1.0000
+          texture:
+            name = ""
+            mask = ""
+          --- MaterialExtension ---
+          --- Extension @0x68698C ---
+            --- MaterialEffectPLG @0x686998 ---
+            --- ReflectionMaterial @0x686A10 ---
+            --- SpecularMaterial @0x686A34 ---
+      --- GeometryExtension ---
+      --- Extension @0x686A5C ---
+        --- BinMeshPLG @0x686A68 ---
+        --- Breakable @0x705748 ---
+  --- Atomic ---
+    frameIndex     = 2
+    geometryIndex  = 0
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705780 ---
+  --- Atomic ---
+    frameIndex     = 3
+    geometryIndex  = 1
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x7057B4 ---
+  --- Atomic ---
+    frameIndex     = 4
+    geometryIndex  = 2
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x7057E8 ---
+      --- Pipline @0x7057F4 ---
+      --- MaterialEffectPLG @0x705808 ---
+  --- Atomic ---
+    frameIndex     = 6
+    geometryIndex  = 3
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705840 ---
+      --- Pipline @0x70584C ---
+      --- MaterialEffectPLG @0x705860 ---
+  --- Atomic ---
+    frameIndex     = 16
+    geometryIndex  = 4
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705898 ---
+      --- Pipline @0x7058A4 ---
+      --- MaterialEffectPLG @0x7058B8 ---
+  --- Atomic ---
+    frameIndex     = 19
+    geometryIndex  = 5
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x7058F0 ---
+      --- Pipline @0x7058FC ---
+      --- MaterialEffectPLG @0x705910 ---
+  --- Atomic ---
+    frameIndex     = 21
+    geometryIndex  = 6
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705948 ---
+      --- Pipline @0x705954 ---
+      --- MaterialEffectPLG @0x705968 ---
+  --- Atomic ---
+    frameIndex     = 23
+    geometryIndex  = 7
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x7059A0 ---
+      --- Pipline @0x7059AC ---
+      --- MaterialEffectPLG @0x7059C0 ---
+  --- Atomic ---
+    frameIndex     = 24
+    geometryIndex  = 8
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x7059F8 ---
+  --- Atomic ---
+    frameIndex     = 25
+    geometryIndex  = 9
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705A2C ---
+      --- Pipline @0x705A38 ---
+      --- MaterialEffectPLG @0x705A4C ---
+  --- Atomic ---
+    frameIndex     = 26
+    geometryIndex  = 10
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705A84 ---
+      --- Pipline @0x705A90 ---
+      --- MaterialEffectPLG @0x705AA4 ---
+  --- Atomic ---
+    frameIndex     = 27
+    geometryIndex  = 11
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705ADC ---
+      --- Pipline @0x705AE8 ---
+      --- MaterialEffectPLG @0x705AFC ---
+  --- Atomic ---
+    frameIndex     = 28
+    geometryIndex  = 12
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705B34 ---
+      --- Pipline @0x705B40 ---
+      --- MaterialEffectPLG @0x705B54 ---
+  --- Atomic ---
+    frameIndex     = 30
+    geometryIndex  = 13
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705B8C ---
+  --- Atomic ---
+    frameIndex     = 31
+    geometryIndex  = 14
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705BC0 ---
+  --- Atomic ---
+    frameIndex     = 32
+    geometryIndex  = 15
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705BF4 ---
+  --- Atomic ---
+    frameIndex     = 33
+    geometryIndex  = 16
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705C28 ---
+      --- Pipline @0x705C34 ---
+      --- MaterialEffectPLG @0x705C48 ---
+  --- Atomic ---
+    frameIndex     = 34
+    geometryIndex  = 17
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705C80 ---
+  --- Atomic ---
+    frameIndex     = 35
+    geometryIndex  = 18
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705CB4 ---
+      --- Pipline @0x705CC0 ---
+      --- MaterialEffectPLG @0x705CD4 ---
+  --- Atomic ---
+    frameIndex     = 36
+    geometryIndex  = 19
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705D0C ---
+  --- Atomic ---
+    frameIndex     = 37
+    geometryIndex  = 20
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705D40 ---
+  --- Atomic ---
+    frameIndex     = 38
+    geometryIndex  = 21
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705D74 ---
+      --- Pipline @0x705D80 ---
+      --- MaterialEffectPLG @0x705D94 ---
+  --- Atomic ---
+    frameIndex     = 41
+    geometryIndex  = 22
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705DCC ---
+      --- Pipline @0x705DD8 ---
+      --- MaterialEffectPLG @0x705DEC ---
+  --- Atomic ---
+    frameIndex     = 42
+    geometryIndex  = 23
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705E24 ---
+  --- Atomic ---
+    frameIndex     = 44
+    geometryIndex  = 24
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705E58 ---
+      --- Pipline @0x705E64 ---
+      --- MaterialEffectPLG @0x705E78 ---
+  --- Atomic ---
+    frameIndex     = 54
+    geometryIndex  = 25
+    flags          = 0x00000005
+    --- AtomicExtension ---
+    --- Extension @0x705EB0 ---
+      --- Pipline @0x705EBC ---
+      --- MaterialEffectPLG @0x705ED0 ---
+  --- Extension ---
+    --- COLSection @0x705EEC ---
+      --- Collision ---
+      version    = "COL3"
+      modelName  = "infernusq"
+      modelID    = 12868
+      bound:
+        radius   = 2.7062
+        center   = (0.000000, -0.007813, 0.218750)
+        min      = (-1.080000, -2.382813, -0.500000)
+        max      = (1.080000, 2.367188, 0.937500)
+      spheres   = 26  boxes = 20
+      vertices  = 874  faces = 1068
+      faceGroups= 0
+      spheres:
+        [1] center=(-0.660000, -2.000000, 0.050000) radius=0.3000
+        [2] center=(0.660000, -2.000000, 0.050000) radius=0.3000
+        [3] center=(0.000000, -2.000000, 0.050000) radius=0.3000
+        [4] center=(-0.430000, -1.200000, 0.050000) radius=0.5200
+        [5] center=(0.000000, -1.200000, 0.050000) radius=0.5200
+        ... +21 more
+      boxes:
+        [1] min=(-0.839000, 2.273000, -0.109500) max=(-0.401000, 2.281000, 0.015500)
+        [2] min=(0.401000, 2.273000, -0.109500) max=(0.839000, 2.281000, 0.015500)
+        [3] min=(-0.351500, -0.935000, 0.562000) max=(0.351500, -0.775000, 0.648000)
+        [4] min=(-0.771000, -2.238000, 0.055000) max=(0.779000, -2.222000, 0.305000)
+        [5] min=(0.500000, 2.273438, -0.210938) max=(0.671875, 2.273438, -0.156250)
+        ... +15 more
+      vertices = 874 total
+        [1] (76.000000, -302.000000, 26.000000)
+        [2] (76.000000, -274.000000, 16.000000)
+        [3] (29.000000, -302.000000, 26.000000)
+        [4] (29.000000, -274.000000, 16.000000)
+        [5] (76.000000, -242.000000, 60.000000)
+        [6] (29.000000, -242.000000, 60.000000)
+        [7] (76.000000, -287.000000, 83.000000)
+        [8] (29.000000, -287.000000, 83.000000)
+        [9] (76.000000, -278.000000, 54.000000)
+        [10] (29.000000, -278.000000, 54.000000)
+        ... +864 more
+      faces = 1068 total
+        [1] a=213 b=219 c=220 mat=63
+        [2] a=220 b=219 c=221 mat=63
+        [3] a=220 b=221 c=222 mat=63
+        [4] a=222 b=221 c=227 mat=63
+        [5] a=222 b=227 c=228 mat=63
+        [6] a=227 b=236 c=237 mat=63
+        [7] a=228 b=227 c=237 mat=63
+        [8] a=228 b=237 c=238 mat=63
+        [9] a=321 b=324 c=325 mat=63
+        [10] a=218 b=325 c=219 mat=63
+        ... +1058 more
+
+======================================================================
+  End of DFF Dump
+======================================================================

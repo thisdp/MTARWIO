@@ -1,16 +1,51 @@
 <meta>
-	<info author="thisdp" name="MTA Lua RW Loader" />
-	<script src="classlib.lua" type="client" />
-	<script src="utils.lua" type="client" />
-	<script src="IMGLoader.lua" type="client" />
-	<script src="2DFX.lua" type="client" />
-	<script src="DDSMipmaps.lua" type="client" />
-	<script src="TXDStructure.lua" type="client" />
-	<script src="DFFStructure.lua" type="client" />
-	<script src="COLStructure.lua" type="client" />
-	<script src="BMP.lua" type="client" />
-	<script src="test.lua" type="client" />
-	<!--<file src="test.dff" type="client" />-->
-	
-	<oop>true</oop>
+    <info author="thisdp" name="MTA Lua RW Loader v2" description="RenderWare binary format loader with declarative Schema engine" />
+
+    <!-- Core: Binary I/O -->
+    <script src="core/binary/reader.lua" type="client" />
+    <script src="core/binary/writer.lua" type="client" />
+
+    <!-- Utils -->
+    <script src="utils/bitops.lua" type="client" />
+    <script src="utils/math3d.lua" type="client" />
+    <script src="utils/tableutil.lua" type="client" />
+
+    <!-- Core: Schema System -->
+    <script src="core/schema/types.lua" type="client" />
+    <script src="core/schema/registry.lua" type="client" />
+    <script src="core/schema/engine.lua" type="client" />
+
+    <!-- Core: Base Classes -->
+    <script src="core/base.lua" type="client" />
+
+    <!-- DFF Module -->
+    <script src="dff/enums.lua" type="client" />
+    <script src="dff/primitives.lua" type="client" />
+    <script src="dff/plugins.lua" type="client" />
+    <script src="dff/material.lua" type="client" />
+    <script src="dff/uvanim.lua" type="client" />
+    <script src="dff/framelist.lua" type="client" />
+    <script src="dff/geometry.lua" type="client" />
+    <script src="dff/atomic.lua" type="client" />
+    <script src="dff/clump.lua" type="client" />
+    <script src="dff/dffio.lua" type="client" />
+
+    <!-- TXD Module -->
+    <script src="txd/txdio.lua" type="client" />
+
+    <!-- TXD Platform Support (before texture modules for decoder priority) -->
+    <script src="txd/platform/mta.lua" type="client" />
+
+    <!-- Texture Module -->
+    <script src="texture/dds.lua" type="client" />
+    <script src="texture/bmp.lua" type="client" />
+    <script src="texture/png.lua" type="client" />
+
+    <!-- COL Module -->
+    <script src="col/colio.lua" type="client" />
+
+    <!-- IMG Module -->
+    <script src="img/imgloader.lua" type="client" />
+
+    <oop>true</oop>
 </meta>

@@ -1,0 +1,16 @@
+<meta>
+	<info author="thisdp" name="MTA Lua RW Loader" />
+	<script src="classlib.lua" type="client" />
+	<script src="utils.lua" type="client" />
+	<script src="IMGLoader.lua" type="client" />
+	<script src="2DFX.lua" type="client" />
+	<script src="DDSMipmaps.lua" type="client" />
+	<script src="TXDStructure.lua" type="client" />
+	<script src="DFFStructure.lua" type="client" />
+	<script src="COLStructure.lua" type="client" />
+	<script src="BMP.lua" type="client" />
+	<script src="test.lua" type="client" />
+	<!--<file src="test.dff" type="client" />-->
+	
+	<oop>true</oop>
+</meta>
