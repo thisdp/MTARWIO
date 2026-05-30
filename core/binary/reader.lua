@@ -93,7 +93,7 @@ end
 
 function Reader:i32()
     local v = self:u32()
-    return v >= 0x80000000 and v - 0x100000000 or v
+    return v >= 2147483648 and v - 4294967296.0 or v
 end
 
 -- 浮点数

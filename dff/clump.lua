@@ -2,8 +2,8 @@
 
 -- ====== ClumpStruct (0x01) ======
 ClumpStruct = Struct:define({
-    { name = "atomicCount", type = int32, sync = "parent.atomics" },
-    { name = "lightCount",  type = int32, sync = "parent.lights" },
+    { name = "atomicCount", type = int32, sync = function(self) return #(self.parent.atomics) end },
+    { name = "lightCount",  type = int32, sync = function(self) return #(self.parent.lights) end },
     { name = "cameraCount", type = int32 },
 })
 
@@ -137,28 +137,22 @@ function Clump:read(r)
 
         if typeID == ClumpExtension.typeID then
             local ext = ClumpExtension:new()
-            ext.type = typeID
-            ext.size = size
-            ext.version = version
+            ext.type = typeID; ext.size = size; ext.version = version
+            ext["@"] = r.pos - 12; ext.parent = self
             ext:read(r)
-            ext.parent = self
             self.extension = ext
             break
         elseif typeID == Atomic.typeID then
             local atomic = Atomic:new()
-            atomic.type = typeID
-            atomic.size = size
-            atomic.version = version
-            pcall(atomic.read, atomic, r)  -- pcall 保护单个 Atomic 失败
-            atomic.parent = self
+            atomic.type = typeID; atomic.size = size; atomic.version = version
+            atomic["@"] = r.pos - 12; atomic.parent = self
+            pcall(atomic.read, atomic, r)
             self.atomics[#self.atomics + 1] = atomic
         elseif typeID == Struct.typeID then
             local idx = IndexStruct:new()
-            idx.type = typeID
-            idx.size = size
-            idx.version = version
+            idx.type = typeID; idx.size = size; idx.version = version
+            idx["@"] = r.pos - 12; idx.parent = self
             idx:read(r)
-            idx.parent = self
             self.indexStructs[#self.indexStructs + 1] = idx
 
             -- 紧接着是 Light

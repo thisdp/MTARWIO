@@ -151,7 +151,6 @@ function String:read(r)
 end
 
 function String:write(w)
-    self.size = #self.string
     w:u32(self.type)
     w:u32(self.size)
     w:u32(self.version)
@@ -159,7 +158,6 @@ function String:write(w)
 end
 
 function String:getSize()
-    self.size = #self.string
     return self.size + 12
 end
 

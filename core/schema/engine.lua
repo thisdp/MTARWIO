@@ -87,7 +87,7 @@ function Engine.parseField(f)
         return { kind = "bits", marker = ftype.marker, byteSize = ftype.byteSize, bits = f.bits }
 
     -- === 新语法数组: 显式 count 属性 ===
-    --   { name = "faces", type = Face, count = "faceCount", raw = true }
+    --   { name = "faces", type = Face, count = "faceCount" }
     --   { name = "frameInfo", type = FrameInfo, count = "frameCount" }
     elseif f.count ~= nil then
         return { kind = "array", element = ftype, count = f.count, cond = f.cond, raw = f.raw }
@@ -355,11 +355,24 @@ function Engine._readField(self, r, p)
                 self[p._name] = nil
             end
         else
-            local obj = Class:new()
-            if p.sizeFrom then obj.size = self[p.sizeFrom] end
-            obj:read(r)
-            obj.parent = self
-            self[p._name] = obj
+            -- 用 sizeFrom 限制的 sub-reader 防止 schema 与文件不匹配时超读
+            local readLimit = p.sizeFrom and self[p.sizeFrom]
+            if readLimit and readLimit > 0 then
+                local effectBody = r:raw(readLimit)
+                local subR = Reader.new(effectBody)
+                local obj = Class:new()
+                obj:read(subR)
+                if subR.pos <= #effectBody then
+                    obj._trailingData = string.sub(effectBody, subR.pos)
+                end
+                obj.parent = self
+                self[p._name] = obj
+            else
+                local obj = Class:new()
+                obj:read(r)
+                obj.parent = self
+                self[p._name] = obj
+            end
         end
 
     elseif p.kind == "extlist" then

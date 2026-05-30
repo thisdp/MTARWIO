@@ -61,7 +61,7 @@ function Writer:u16(v)
 end
 
 function Writer:u32(v)
-    if v < 0 then v = v + 0x100000000 end
+    if v < 0 then v = v + 4294967296.0 end
     self.buf[#self.buf + 1] = writeNumLE(v, 4)
     return self
 end

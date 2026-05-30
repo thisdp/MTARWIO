@@ -16,7 +16,7 @@ MaterialExtension = Extension:define({
 
 Material = Section:define(0x07, {
     { name = "struct", type = MaterialStruct },
-    { name = "texture", type = Texture, count = 1,
+    { name = "texture", type = Texture, optional = true,
       cond = {{"struct.isTextured", "==", true}} },
     { name = "extension", type = MaterialExtension },
 })
