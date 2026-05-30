@@ -58,13 +58,15 @@ function Section:define(typeID, fields)
         w:u32(self.size)
         w:u32(self.version)
         self:_writeBody(w)
+        if self._trailingData then w:raw(self._trailingData) end
     end
 
     -- 实例方法：计算总大小（头部12 + body）
     function cls:getSize()
         local bodySize = self:_calcSize()
-        self.size = bodySize
-        return bodySize + 12
+        local trailingSize = self._trailingData and #self._trailingData or 0
+        self.size = bodySize + trailingSize
+        return bodySize + trailingSize + 12
     end
 
     return cls
@@ -338,7 +340,19 @@ function Section:dump(out, lvl, limits)
     local indent = _dIndent(lvl)
     local typeName = self._typeName or string.format("0x%08X", self.type or 0)
     local at = self["@"] and string.format(" @0x%X", self["@"]) or ""
-    out[#out+1] = indent .. "--- " .. typeName .. at .. " ---"
+    out[#out+1] = indent .. "--- " .. typeName .. at .. string.format("  size=%d", self.size or 0) .. " ---"
+    -- 未知类型: 展示原始二进制数据
+    if self.rawData and #self.rawData > 0 then
+        local maxShow = limits and limits.maxRawBytes or 64
+        local hex = {}
+        local n = math.min(#self.rawData, maxShow)
+        for i = 1, n do
+            hex[i] = string.format("%02X", self.rawData:byte(i))
+        end
+        local suffix = #self.rawData > maxShow and (" ... +" .. (#self.rawData - maxShow) .. " bytes") or ""
+        out[#out+1] = indent .. "  " .. string.format("raw: %d bytes", #self.rawData)
+        out[#out+1] = indent .. "  " .. table.concat(hex, " ") .. suffix
+    end
 end
 
 -- Struct dump 同上

@@ -1,6 +1,6 @@
 -- dff/framelist.lua — 框架层次系统
 
-FrameInfo = Struct:define({
+FrameInfo = RawStruct:define({
     { name = "rotationMatrix", type = mat3x3 },
     { name = "positionVector", type = vec3 },
     { name = "parentFrame",    type = int32 },
@@ -9,7 +9,7 @@ FrameInfo = Struct:define({
 
 FrameListStruct = Struct:define({
     { name = "frameCount", type = uint32, sync = "frameInfo" },
-    { name = "frameInfo",  type = FrameInfo, count = "frameCount", raw = true },
+    { name = "frameInfo",  type = FrameInfo, count = "frameCount" },
 })
 
 Frame = Section:define(0x253F2FE, {
@@ -21,7 +21,7 @@ function Frame:setName(name)
     return self
 end
 
-HAnimNode = Struct:define({
+HAnimNode = RawStruct:define({
     { name = "nodeID",    type = uint32 },
     { name = "nodeIndex", type = uint32 },
     { name = "flags",     type = uint32 },
@@ -34,7 +34,7 @@ HAnimPLG = Section:define(0x11E, {
     { name = "flags",        type = uint32, cond = {{"nodeCount", "~=", 0}} },
     { name = "keyFrameSize", type = uint32, cond = {{"nodeCount", "~=", 0}} },
     { name = "nodes",        type = HAnimNode, count = "nodeCount",
-      cond = {{"nodeCount", "~=", 0}}, raw = true },
+      cond = {{"nodeCount", "~=", 0}} },
 })
 
 FrameListExtension = Extension:define({

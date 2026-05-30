@@ -1,7 +1,7 @@
 -- dff/plugins.lua — DFF 所有插件 Section 定义
 
 -- BinMesh 材质分割子结构 (必须在 BinMeshPLG 之前定义)
-BinMeshSplit = Struct:define({
+BinMeshSplit = RawStruct:define({
     { name = "faceCount",     type = uint32, sync = "faceList" },
     { name = "materialIndex", type = uint32 },
     { name = "faceList",      type = uint32, count = "faceCount" },
@@ -12,14 +12,14 @@ BinMeshPLG = Section:define(0x50E, {
     { name = "faceType",          type = uint32 },
     { name = "materialSplitCount",type = uint32, sync = "materialSplits" },
     { name = "vertexCount",       type = uint32, sync = {"materialSplits"} },
-    { name = "materialSplits",    type = BinMeshSplit, count = "materialSplitCount", raw = true },
+    { name = "materialSplits",    type = BinMeshSplit, count = "materialSplitCount" },
 })
 
 BinMeshPLG._typeName = "BinMeshPLG"
 SectionRegistry.registerPlugin("GeometryExtension", BinMeshPLG)
 
--- ====== BoneMatrix (4x4 骨骼变换) ======
-BoneMatrix = Struct:define({
+-- ====== BoneMatrix (4x4 骨骼变换, 无 Section 头) ======
+BoneMatrix = RawStruct:define({
     { name = "_vcUnused", type = uint32, cond = {{"parent.parent.version", "~=", GTASA}} },
     { name = "m11", type = float32 }, { name = "m12", type = float32 },
     { name = "m13", type = float32 }, { name = "m14", type = float32 },
@@ -31,16 +31,16 @@ BoneMatrix = Struct:define({
     { name = "m43", type = float32 }, { name = "m44", type = float32 },
 })
 
--- 骨骼索引 (4 u8 per vertex, 数组形式)
-BoneIndices = Struct:define({
+-- 骨骼索引 (4 u8 per vertex, 无 Section 头)
+BoneIndices = RawStruct:define({
     { name = 1, type = uint8 },
     { name = 2, type = uint8 },
     { name = 3, type = uint8 },
     { name = 4, type = uint8 },
 })
 
--- 骨骼权重 (4 f32 per vertex, 数组形式)
-BoneWeight = Struct:define({
+-- 骨骼权重 (4 f32 per vertex, 无 Section 头)
+BoneWeight = RawStruct:define({
     { name = 1, type = float32 },
     { name = 2, type = float32 },
     { name = 3, type = float32 },
@@ -72,7 +72,7 @@ MorphPLG._typeName = "MorphPLG"
 SectionRegistry.registerPlugin("GeometryExtension", MorphPLG)
 
 -- 可破坏物体面 (3 u16, 数组形式)
-BreakableFace = Struct:define({
+BreakableFace = RawStruct:define({
     { name = 1, type = uint16 },
     { name = 2, type = uint16 },
     { name = 3, type = uint16 },
@@ -244,7 +244,7 @@ Effect2DEntry = RawStruct:define({
 local _Effects = Effect2D.Effects
 Effect2D = Section:define(0x0253F2F8, {
     { name = "count",   type = uint32, sync = "effects" },
-    { name = "effects", type = Effect2DEntry, count = "count", raw = true },
+    { name = "effects", type = Effect2DEntry, count = "count" },
 })
 
 Effect2D._typeName = "Effect2D"

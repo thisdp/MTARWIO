@@ -36,6 +36,7 @@ function DFFIO:new()
     return setmetatable({
         uvAnimDict = nil,
         clumps = {},
+        others = {},
         version = nil,
     }, { __index = DFFIO })
 end
@@ -52,17 +53,19 @@ function DFFIO:load(pathOrRaw)
     end
     local r = Reader.new(data)
     self.clumps = {}
-    -- 循环读取顶层 Section: UVAnimDict 或 Clump
+    self.others = {}
+    self.uvAnimDict = nil
+    -- 循环读取顶层 Section: 按 typeID 分发
     while r.pos + 12 <= r.len do
         local ok, obj = pcall(SectionRegistry.read, r)
         if not ok then break end
         self.version = obj.version
-        if obj.type == UVAnimDict and UVAnimDict.typeID then
-            self.uvAnimDict = obj
-        elseif obj.type == Clump.typeID then
+        if obj.type == Clump.typeID then
             self.clumps[#self.clumps + 1] = obj
+        elseif obj.type == UVAnimDict.typeID then
+            self.uvAnimDict = obj
         else
-            break
+            self.others[#self.others + 1] = obj
         end
     end
     return self
@@ -71,6 +74,12 @@ end
 -- 保存为文件或返回字符串
 function DFFIO:save(fileName)
     local w = Writer.new()
+    if self.uvAnimDict then
+        self.uvAnimDict:write(w)
+    end
+    for i = 1, #self.others do
+        self.others[i]:write(w)
+    end
     for i = 1, #self.clumps do
         self.clumps[i]:write(w)
     end

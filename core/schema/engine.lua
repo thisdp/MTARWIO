@@ -180,7 +180,20 @@ function Engine._readSingleStruct(r, class, parent)
     obj.size = size
     obj.version = version
     if parent then obj.parent = parent end  -- 在 read 之前设置，供路径引用
-    obj:read(r)
+    local expectedEnd = r.pos + size
+    local ok, err = pcall(obj.read, obj, r)
+    if r.pos < expectedEnd then
+        local gap = expectedEnd - r.pos
+        io.stderr:write(string.format("[RW] Trailing data %d bytes in struct 0x%08X at 0x%X\n",
+            gap, typeID, r.pos))
+        obj._trailingData = r:raw(gap)
+        r.pos = expectedEnd
+    elseif r.pos > expectedEnd then
+        io.stderr:write(string.format("[RW] Overshoot %d bytes in struct 0x%08X at 0x%X\n",
+            r.pos - expectedEnd, typeID, r.pos))
+        r.pos = expectedEnd
+    end
+    if not ok then error(err) end  -- 重新抛出
     return obj
 end
 
@@ -254,18 +267,21 @@ function Engine._readField(self, r, p)
         local count = Engine.resolveCount(self, p.count)
         self[p._name] = {}
         if type(elem) == "table" and (elem.typeID or elem._fields) then
-            -- 结构体数组: raw=true 时不读 Section 头 (裸数据, 如 faces/vertices)
-            if p.raw then
+            -- 有 typeID 就有 section header (Section / Struct(0x01))，RawStruct 没有
+            local hasHeader = elem.typeID ~= nil
+            if not hasHeader then
                 for i = 1, count do
                     local obj = elem:new()
-                    obj.parent = self  -- 必须在 read 前设置, 子字段可能依赖 parent 解析 count
-                    obj:read(r)
+                    obj.parent = self
+                    pcall(obj.read, obj, r)
                     self[p._name][i] = obj
                 end
             else
                 for i = 1, count do
-                    local obj = Engine._readSingleStruct(r, elem, self)
-                    self[p._name][i] = obj
+                    local ok, obj = pcall(Engine._readSingleStruct, r, elem, self)
+                    if ok then
+                        self[p._name][i] = obj
+                    end
                 end
             end
         elseif type(elem) == "table" and elem.marker then
@@ -324,12 +340,19 @@ function Engine._readField(self, r, p)
         local dispatchKey = Engine.resolvePath(self, p.by)
         local Class = p.map[dispatchKey]
         if not Class then
-            -- 未知 dispatch 类型: 按 sizeFrom 跳过剩余数据，没有则尝试读取剩余 section 字节
+            -- 未知 dispatch 类型: 存储 raw 字节（保持可回写）
+            io.stderr:write(string.format("[RW] Unknown dispatch subtype %s in catalogue at 0x%X\n",
+                tostring(dispatchKey), r.pos))
             local remaining = p.sizeFrom and Engine.resolvePath(self, p.sizeFrom)
             if remaining and remaining > 0 then
-                self[p._name] = r:raw(remaining)
+                local raw = r:raw(remaining)
+                self[p._name] = {
+                    _raw = raw,
+                    getSize = function() return #raw end,
+                    write = function(_, w) w:raw(raw) end,
+                }
             else
-                self[p._name] = nil  -- 无法确定大小，跳过
+                self[p._name] = nil
             end
         else
             local obj = Class:new()
@@ -344,8 +367,7 @@ function Engine._readField(self, r, p)
         self[p._name] = {}
         local consumed = 0
         while consumed < self.size do
-            local obj = SectionRegistry.read(r)
-            obj.parent = self
+            local obj = SectionRegistry.read(r, self)
             self[p._name][#self[p._name] + 1] = obj
             consumed = consumed + obj.size + 12
         end
@@ -419,8 +441,9 @@ function Engine._writeField(self, w, p)
         local arr = self[p._name] or {}
         local elem = p.element
         if type(elem) == "table" and (elem.typeID or elem._fields) then
-            if p.raw then
-                for i = 1, #arr do arr[i]:_writeBody(w) end  -- 裸数据: 只写 body
+            local hasHeader = elem.typeID and elem.typeID ~= 0x01
+            if not hasHeader then
+                for i = 1, #arr do arr[i]:_writeBody(w) end
             else
                 for i = 1, #arr do arr[i]:write(w) end
             end
@@ -510,8 +533,9 @@ function Engine._fieldSize(self, p)
         local elem = p.element
         if type(elem) == "table" and (elem.typeID or elem._fields) then
             local total = 0
-            if p.raw then
-                for i = 1, #arr do total = total + arr[i]:_calcSize() end  -- body only
+            local hasHeader = elem.typeID and elem.typeID ~= 0x01
+            if not hasHeader then
+                for i = 1, #arr do total = total + arr[i]:_calcSize() end
             else
                 for i = 1, #arr do total = total + arr[i]:getSize() end
             end

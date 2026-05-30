@@ -2,8 +2,8 @@
 
 -- ====== ClumpStruct (0x01) ======
 ClumpStruct = Struct:define({
-    { name = "atomicCount", type = int32, sync = "atomics" },
-    { name = "lightCount",  type = int32, sync = "lights" },
+    { name = "atomicCount", type = int32, sync = "parent.atomics" },
+    { name = "lightCount",  type = int32, sync = "parent.lights" },
     { name = "cameraCount", type = int32 },
 })
 
@@ -101,13 +101,29 @@ function Clump:read(r)
     -- struct (是 Struct 子类，必须显式指定)
     self.struct = ClumpStruct:readFrom(r, self)
 
-    -- frameList (唯一 typeID=0x0E，走注册表)
-    self.frameList = SectionRegistry.read(r)
-    self.frameList.parent = self
+    -- frameList (唯一 typeID=0x0E，走注册表) — 先读 header 再 pcall 保护
+    local flSave = r.pos
+    local flType, flSize, flVer = r:u32(), r:u32(), r:u32()
+    r.pos = flSave
+    local ok, obj = pcall(SectionRegistry.read, r)
+    if ok then
+        self.frameList = obj
+        self.frameList.parent = self
+    else
+        r.pos = flSave + 12 + flSize  -- 跳过损坏的 FrameList section
+    end
 
-    -- geometryList (唯一 typeID=0x1A，走注册表)
-    self.geometryList = SectionRegistry.read(r)
-    self.geometryList.parent = self
+    -- geometryList (唯一 typeID=0x1A，走注册表) — 先读 header 再 pcall 保护
+    local glSave = r.pos
+    local glType, glSize, glVer = r:u32(), r:u32(), r:u32()
+    r.pos = glSave
+    ok, obj = pcall(SectionRegistry.read, r)
+    if ok then
+        self.geometryList = obj
+        self.geometryList.parent = self
+    else
+        r.pos = glSave + 12 + glSize  -- 跳过损坏的 GeometryList section
+    end
 
     -- 后续所有子 Section 统一按 typeID 分发: Atomics, Lights, Extension
     local bodyEnd = bodyStart + self.size
@@ -133,7 +149,7 @@ function Clump:read(r)
             atomic.type = typeID
             atomic.size = size
             atomic.version = version
-            atomic:read(r)
+            pcall(atomic.read, atomic, r)  -- pcall 保护单个 Atomic 失败
             atomic.parent = self
             self.atomics[#self.atomics + 1] = atomic
         elseif typeID == Struct.typeID then
@@ -146,9 +162,11 @@ function Clump:read(r)
             self.indexStructs[#self.indexStructs + 1] = idx
 
             -- 紧接着是 Light
-            local light = SectionRegistry.read(r)
-            light.parent = self
-            self.lights[#self.lights + 1] = light
+            local ok2, light = pcall(SectionRegistry.read, r)
+            if ok2 then
+                light.parent = self
+                self.lights[#self.lights + 1] = light
+            end
         else
             break  -- 未知 typeID 或 padding，安全退出
         end
@@ -156,6 +174,10 @@ function Clump:read(r)
 end
 
 function Clump:write(w)
+    self:getSize()
+    w:u32(self.type)
+    w:u32(self.size)
+    w:u32(self.version)
     self.struct.atomicCount = #self.atomics
     self.struct.lightCount = #self.lights
     self.struct:write(w)
@@ -174,6 +196,7 @@ function Clump:write(w)
     end
 
     self.extension:write(w)
+    if self._trailingData then w:raw(self._trailingData) end
 end
 
 function Clump:getSize()
@@ -188,9 +211,10 @@ function Clump:getSize()
             total = total + self.lights[i]:getSize()
         end
     end
-    total = total + self.extension:getSize()
-    self.size = total - 12  -- Clump 自身的 header
-    return total
+    local trailingSize = self._trailingData and #self._trailingData or 0
+    total = total + self.extension:getSize() + trailingSize
+    self.size = total  -- body size (children with headers + trailing)
+    return total + 12  -- + Clump header
 end
 
 function Clump:convert(targetVersion)

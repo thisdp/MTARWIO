@@ -9,7 +9,7 @@ UVAnimDict = Section:define(0x2B, {
     { name = "struct", type = UVAnimDictStruct },
 })
 
-UVAnimFrame = Struct:define({
+UVAnimFrame = RawStruct:define({
     { name = "time",          type = float32 },
     { name = "scale",         type = vec3 },
     { name = "position",      type = vec3 },

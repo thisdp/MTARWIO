@@ -1,7 +1,7 @@
 -- dff/geometry.lua — 几何体系统所有 Section
 
 -- 单个 UV 通道 (必须在 GeometryStruct 之前定义)
-TexCoordChannel = Struct:define({
+TexCoordChannel = RawStruct:define({
     { name = "coords", type = vec2, count = "parent.vertexCount" },
 })
 
@@ -24,24 +24,24 @@ GeometryStruct = Struct:define({
     { name = "specular", type = float32, cond = {{"version", "<", GTASA}} },
     { name = "diffuse",  type = float32, cond = {{"version", "<", GTASA}} },
 
-    { name = "vertexColors", type = rgba, count = "vertexCount", raw = true,
+    { name = "vertexColors", type = rgba, count = "vertexCount",
       cond = {{"bVertexColor", "==", true}, {"bNative", "==", false}} },
 
-    { name = "texCoords", type = TexCoordChannel, raw = true,
+    { name = "texCoords", type = TexCoordChannel,
       count = function(self) return self:uvChannelCount() end,
       cond = {{"bNative", "==", false}} },
 
-    { name = "faces", type = Face, count = "faceCount", raw = true,
+    { name = "faces", type = Face, count = "faceCount",
       cond = {{"bNative", "==", false}} },
 
     { name = "boundingSphere", type = vec4 },
     { name = "hasVertices",    type = bool32 },
     { name = "hasNormals",     type = bool32 },
 
-    { name = "vertices", type = vec3, count = "vertexCount", raw = true,
+    { name = "vertices", type = vec3, count = "vertexCount",
       cond = {{"hasVertices", "==", true}} },
 
-    { name = "normals", type = vec3, count = "vertexCount", raw = true,
+    { name = "normals", type = vec3, count = "vertexCount",
       cond = {{"hasNormals", "==", true}} },
 })
 
@@ -66,7 +66,7 @@ Geometry = Section:define(0x0F, {
 
 -- ====== GeometryListStruct ======
 GeometryListStruct = Struct:define({
-    { name = "geometryCount", type = uint32, sync = "geometries" },
+    { name = "geometryCount", type = uint32, sync = function(self) return #(self.parent.geometries) end },
 })
 
 -- ====== GeometryList (0x1A) ======
