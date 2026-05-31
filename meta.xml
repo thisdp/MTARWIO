@@ -20,7 +20,6 @@
 
     <!-- DFF Module -->
     <script src="dff/enums.lua" type="client" />
-    <script src="dff/primitives.lua" type="client" />
     <script src="dff/material.lua" type="client" />
     <script src="dff/plugins.lua" type="client" />
     <script src="dff/uvanim.lua" type="client" />

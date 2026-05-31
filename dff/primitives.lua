@@ -1,1 +1,0 @@
--- dff/primitives.lua — 已拆分: Face → geometry.lua, Texture → material.lua

@@ -18,7 +18,6 @@ local modules = {
     "core/schema/engine.lua",
     "core/base.lua",
     "dff/enums.lua",
-    "dff/primitives.lua",
     "dff/material.lua",
     "dff/plugins.lua",
     "dff/uvanim.lua",

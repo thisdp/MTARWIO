@@ -7,7 +7,6 @@ local modules = {
     "utils/bitops.lua", "utils/math3d.lua", "utils/tableutil.lua",
     "core/schema/types.lua", "core/schema/registry.lua", "core/schema/engine.lua",
     "core/base.lua",
-    "dff/enums.lua", "dff/primitives.lua", "dff/plugins.lua",
     "dff/material.lua", "dff/uvanim.lua", "dff/framelist.lua",
     "dff/geometry.lua", "dff/atomic.lua", "dff/clump.lua", "dff/dffio.lua",
     "txd/txdio.lua", "texture/dds.lua", "texture/bmp.lua", "texture/png.lua",
