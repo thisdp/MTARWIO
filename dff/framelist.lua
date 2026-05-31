@@ -48,6 +48,50 @@ FrameList = Section:define(0x0E, {
 })
 FrameList._typeName = "FrameList"
 
+-- ====== Frame:create 工厂 ======
+-- parent: 所属 FrameList 实例
+-- config 可选字段:
+--   name            - Frame 名称 (默认 "Frame_N")
+--   rotationMatrix  - 3x3 旋转矩阵 (默认单位矩阵)
+--   position        - 位置向量 {x, y, z} (默认 {0, 0, 0})
+--   parentFrame     - 父 Frame 索引, 0-based (默认 -1 = 根节点)
+--   matrixFlags     - Frame 矩阵标志 (默认 0)
+function Frame:create(parent, config)
+    config = config or {}
+    local version = (parent and parent.version) or GTASA
+
+    -- FrameInfo
+    local fi = FrameInfo:new()
+    fi.rotationMatrix = config.rotationMatrix or {{1,0,0},{0,1,0},{0,0,1}}
+    fi.positionVector = config.position or {0, 0, 0}
+    fi.parentFrame = config.parentFrame or -1
+    fi.matrixFlags = config.matrixFlags or 0
+
+    parent.struct.frameInfo = parent.struct.frameInfo or {}
+    local idx = #parent.struct.frameInfo
+    parent.struct.frameInfo[idx + 1] = fi
+    parent.struct.frameCount = #parent.struct.frameInfo
+
+    -- FrameListExtension (包含 Frame 名称)
+    local fle = FrameListExtension:new()
+    fle.parent = parent
+    fle:init(version)
+
+    local frameName = config.name or ("Frame_" .. (idx + 1))
+    local frame = Frame:new()
+    frame.parent = fle
+    frame.type = Frame.typeID
+    frame.version = version
+    frame.name = frameName
+    frame:getSize()
+
+    fle.frame = frame
+    parent.frames = parent.frames or {}
+    parent.frames[idx + 1] = fle
+
+    return fle
+end
+
 function FrameList:dump(out, lvl, limits)
     lvl = lvl or 0
     limits = limits or {}

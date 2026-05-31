@@ -434,13 +434,17 @@ function Engine._writeField(self, w, p)
         w[scalarWriters[p.marker]](w, val)
 
     elseif p.kind == "bits" then
-        -- 从展开的字段重新组装原始值
+        -- 从 raw 值出发; 仅当位字段显式设置时才覆盖对应位
         local val = self[p._name] or 0
         for _, bitDef in ipairs(p.bits) do
             local bitName = bitDef[1]
             local bitPos = bitDef[2]
             local bitLen = bitDef[3] or 1
             local fieldVal = self[bitName]
+            if fieldVal == nil then
+                -- 未显式设置: 从 raw 值中提取, 保持原值
+                fieldVal = bExtract(val, bitPos, bitLen)
+            end
             if bitLen == 1 then fieldVal = fieldVal and 1 or 0 end
             local mask = bitmask(bitLen)
             -- 清除旧位: val = val - (val中该区域的旧值)
@@ -580,6 +584,81 @@ function Engine._fieldSize(self, p)
         return total
     end
     return 0
+end
+
+-- === sync 值计算 ===
+
+-- ====== 位域双向绑定 ======
+-- 安装 __newindex 使 bit 字段与 raw 值自动互相同步
+--   self.bCollisionTest = true  → 自动更新 self.flags
+--   self.flags = 5              → 自动更新 self.bCollisionTest / self.bRender
+
+function Engine.installBitsSync(cls, fields)
+    -- bitName → { parent, pos, len }
+    local bitMap = {}
+    -- parentName → { { name, pos, len }, ... }
+    local parentMap = {}
+
+    for _, f in ipairs(fields) do
+        if f.bits then
+            local parentName = f.name
+            local children = {}
+            for _, bitDef in ipairs(f.bits) do
+                local bitName = bitDef[1]
+                local bitPos  = bitDef[2]
+                local bitLen  = bitDef[3] or 1
+                bitMap[bitName] = { parent = parentName, pos = bitPos, len = bitLen }
+                children[#children + 1] = { name = bitName, pos = bitPos, len = bitLen }
+            end
+            parentMap[parentName] = children
+        end
+    end
+
+    -- 没有位域字段则无需安装
+    if not next(bitMap) then return end
+
+    -- 保存引用供 __newindex / __index 使用
+    cls._bitsBitMap = bitMap
+    cls._bitsParentMap = parentMap
+
+    local existingNewindex = cls.__newindex
+
+    cls.__newindex = function(self, key, value)
+        -- 写入 bit 字段: 同步更新 raw 值
+        local bf = bitMap[key]
+        if bf then
+            rawset(self, key, value)
+            local rawVal = rawget(self, bf.parent) or 0
+            local mask = bitmask(bf.len)
+            rawVal = rawVal - bExtract(rawVal, bf.pos, bf.len) * (2 ^ bf.pos)
+            if bf.len == 1 then value = value and 1 or 0 end
+            rawVal = rawVal + value * (2 ^ bf.pos)
+            rawset(self, bf.parent, rawVal)
+            return
+        end
+
+        -- 写入 raw 字段: 同步展开所有 bit 子字段
+        local children = parentMap[key]
+        if children then
+            rawset(self, key, value)
+            for _, child in ipairs(children) do
+                local bitVal = bExtract(value, child.pos, child.len)
+                if child.len == 1 then
+                    rawset(self, child.name, bitVal == 1)
+                else
+                    rawset(self, child.name, bitVal)
+                end
+            end
+            return
+        end
+
+        -- 普通字段: 直写
+        if existingNewindex then
+            existingNewindex(self, key, value)
+        else
+            rawset(self, key, value)
+        end
+    end
 end
 
 -- === sync 值计算 ===

@@ -41,6 +41,7 @@ function Section:define(typeID, fields)
     cls._readBody = Engine.makeReader(fields)
     cls._writeBody = Engine.makeWriter(fields)
     cls._calcSize = Engine.makeSizeCalc(fields)
+    Engine.installBitsSync(cls, fields)
     -- 仅注册有唯一 typeID 的 Section (跳过 Struct 0x01 / Extension 0x03)
     if cls.typeID ~= 0x01 and cls.typeID ~= 0x03 then
         SectionRegistry.register(cls)
@@ -105,6 +106,12 @@ function Section:convert(targetVersion)
     self.version = targetVersion
 end
 
+-- 默认初始化（Struct/Extension 子类会覆盖此方法）
+function Section:init(version)
+    self.version = version or 0
+    return self
+end
+
 -- ====== Struct (typeID = 0x01) ======
 
 Struct = Section:extend({ typeID = 0x01, _isStruct = true })
@@ -127,6 +134,25 @@ function Extension:init(version)
     self.version = version
     self.size = 0
     return self
+end
+
+function Extension:addPlugin(plugin)
+    if type(plugin) ~= "table" or not plugin.type then
+        error("Bad argument @addPlugin, expected a plugin section", 2)
+    end
+    self.plugins = self.plugins or {}
+    plugin.parent = self
+    table.insert(self.plugins, plugin)
+    return plugin
+end
+
+function Extension:removePlugin(index)
+    if not self.plugins or index < 1 or index > #self.plugins then
+        return false
+    end
+    local removed = self.plugins[index]
+    table.remove(self.plugins, index)
+    return removed
 end
 
 SectionRegistry.register(Extension)
@@ -175,6 +201,7 @@ function RawStruct:define(fields)
     cls._readBody = Engine.makeReader(fields)
     cls._writeBody = Engine.makeWriter(fields)
     cls._calcSize = Engine.makeSizeCalc(fields)
+    Engine.installBitsSync(cls, fields)
 
     -- 从类型标记的 .default 生成默认值
     -- 优先级: f.default > f.value > f.type.default

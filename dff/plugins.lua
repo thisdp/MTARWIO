@@ -228,6 +228,22 @@ Pipline = Section:define(0x1F, {
 Pipline._typeName = "Pipline"
 SectionRegistry.registerPlugin("AtomicExtension", Pipline)
 
+-- ====== ParticlesPLG (0x118) — 粒子效果 ======
+ParticlesPLG = Section:define(0x118, {
+    { name = "particleValue", type = uint32 },
+})
+
+ParticlesPLG._typeName = "ParticlesPLG"
+SectionRegistry.registerPlugin("AtomicExtension", ParticlesPLG)
+
+-- ====== PipelineSet (0x0253F2F3) — 管线集配置 ======
+PipelineSet = Section:define(0x0253F2F3, {
+    { name = "pipelineValue", type = uint32 },
+})
+
+PipelineSet._typeName = "PipelineSet"
+SectionRegistry.registerPlugin("AtomicExtension", PipelineSet)
+
 -- ====== Effect2D (0x0253F2F8) + 子效果类型 ======
 -- 前向声明: Effect2DEntry 需要引用 Effect2D.Effects 分发表
 Effect2D = {}

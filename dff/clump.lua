@@ -25,6 +25,57 @@ Light = Section:define(0x12, {
 })
 Light._typeName = "Light"
 
+-- ====== Light:create 工厂 ======
+-- parent: 所属 Clump 实例
+-- config 可选字段:
+--   radius    - 灯光半径   (默认 10.0)
+--   color     - RGB 颜色   (默认 {1.0, 1.0, 1.0})
+--   direction - 方向       (默认 0.0)
+--   flags     - 灯光标志   (默认 0)
+--   lightType - 灯光类型   (默认 Point = 0x80)
+function Light:create(parent, config)
+    config = config or {}
+    local version = (parent and parent.version) or GTASA
+
+    local light = Light:new()
+    light.parent = parent
+    light.type = Light.typeID
+    light.version = version
+
+    light.struct = LightStruct:new()
+    light.struct.parent = light
+    light.struct:init(version)
+    light.struct.radius = config.radius or 10.0
+    light.struct.red = config.red or config.color and config.color[1] or 1.0
+    light.struct.green = config.green or config.color and config.color[2] or 1.0
+    light.struct.blue = config.blue or config.color and config.color[3] or 1.0
+    light.struct.direction = config.direction or 0.0
+    light.struct.flags = config.flags or 0
+    light.struct.lightType = config.lightType or EnumLightType.Point
+
+    light.extension = Extension:new()
+    light.extension.parent = light
+    light.extension:init(version)
+
+    -- IndexStruct (前置于 Light)
+    local idx = IndexStruct:new()
+    idx.parent = parent
+    idx.type = Struct.typeID
+    idx.version = version
+    idx:init(version)
+    idx.index = #(parent.lights or {})
+
+    parent.lights = parent.lights or {}
+    parent.lights[#parent.lights + 1] = light
+    parent.indexStructs = parent.indexStructs or {}
+    parent.indexStructs[#parent.indexStructs + 1] = idx
+
+    parent.struct.lightCount = #parent.lights
+    parent:getSize()
+
+    return light
+end
+
 function Light:dump(out, lvl, limits)
     lvl = lvl or 0
     limits = limits or {}
@@ -227,10 +278,94 @@ function Clump:convert(targetVersion)
     self:getSize()
 end
 
--- 添加组件: 同时创建 Atomic + Frame + Geometry
-function Clump:addComponent()
-    self.atomics[#self.atomics + 1] = SectionRegistry.read -- placeholder
-    -- TODO: 完整实现创建逻辑
+-- ====== 添加组件: 同时创建 Frame + Geometry + Atomic ======
+-- config 可选字段:
+--   name            - Frame 名称 (默认 "Component_N")
+--   parentFrame     - 父 Frame 索引, 0-based (默认 -1 = 根节点)
+--   position        - 位置向量 {x, y, z} (默认 {0, 0, 0})
+--   rotationMatrix  - 3x3 旋转矩阵 (默认单位矩阵)
+--   matrixFlags     - Frame 矩阵标志 (默认 0)
+--   geometryConfig  - 几何体配置表, 传给 Geometry:create (可选)
+--   flags           - Atomic 标志位 raw 值 (默认: bCollisionTest + bRender)
+function Clump:addComponent(config)
+    config = config or {}
+
+    -- ====== 1. 创建 Frame ======
+    Frame:create(self.frameList, config)
+    local newFrameIdx = #self.frameList.struct.frameInfo - 1  -- 0-indexed
+
+    -- ====== 2. 创建 Geometry ======
+    Geometry:create(self.geometryList, config.geometryConfig or {})
+    local newGeoIdx = #self.geometryList.geometries - 1  -- 0-indexed
+
+    -- ====== 3. 创建 Atomic ======
+    local atomic = Atomic:create(self, {
+        frameIndex = newFrameIdx,
+        geometryIndex = newGeoIdx,
+        flags = config.flags,
+    })
+
+    -- ====== 4. 更新大小 ======
+    self:getSize()
+
+    return atomic
+end
+
+-- ====== 移除组件: 同时删除 Atomic + Frame + Geometry ======
+-- index: Atomic 索引 (1-based), 返回被移除的 Atomic 或 false
+function Clump:removeComponent(index)
+    if not self.atomics or index < 1 or index > #self.atomics then
+        return false
+    end
+
+    local atomic = self.atomics[index]
+    local frameIdx = atomic.struct.frameIndex   -- 0-indexed
+    local geoIdx = atomic.struct.geometryIndex   -- 0-indexed
+
+    -- ====== 1. 移除 Atomic ======
+    table.remove(self.atomics, index)
+
+    -- ====== 2. 移除 Frame ======
+    if self.frameList.struct.frameInfo and frameIdx + 1 <= #self.frameList.struct.frameInfo then
+        table.remove(self.frameList.struct.frameInfo, frameIdx + 1)
+        self.frameList.struct.frameCount = #self.frameList.struct.frameInfo
+    end
+    if self.frameList.frames and frameIdx + 1 <= #self.frameList.frames then
+        table.remove(self.frameList.frames, frameIdx + 1)
+    end
+
+    -- ====== 3. 移除 Geometry ======
+    if self.geometryList.geometries and geoIdx + 1 <= #self.geometryList.geometries then
+        table.remove(self.geometryList.geometries, geoIdx + 1)
+        self.geometryList.struct.geometryCount = #self.geometryList.geometries
+    end
+
+    -- ====== 4. 更新剩余 Atomic 的引用索引 ======
+    for _, a in ipairs(self.atomics) do
+        if a.struct.frameIndex > frameIdx then
+            a.struct.frameIndex = a.struct.frameIndex - 1
+        end
+        if a.struct.geometryIndex > geoIdx then
+            a.struct.geometryIndex = a.struct.geometryIndex - 1
+        end
+    end
+
+    -- ====== 5. 更新 FrameInfo 的 parentFrame 引用 ======
+    if self.frameList.struct.frameInfo then
+        for _, fi in ipairs(self.frameList.struct.frameInfo) do
+            if fi.parentFrame > frameIdx then
+                fi.parentFrame = fi.parentFrame - 1
+            elseif fi.parentFrame == frameIdx then
+                fi.parentFrame = -1  -- 父 Frame 已删除, 转为根节点
+            end
+        end
+    end
+
+    -- ====== 6. 更新计数与大小 ======
+    self.struct.atomicCount = #self.atomics
+    self:getSize()
+
+    return atomic
 end
 
 SectionRegistry.register(Clump)
