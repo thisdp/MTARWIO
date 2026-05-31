@@ -94,16 +94,13 @@ Geometry = Section:define(0x0F, {
 })
 
 -- ====== Geometry:create 工厂 ======
--- parent: 所属 GeometryList 实例 (用于获取版本等信息)
 -- config 可选字段:
 --   faceCount / vertexCount / textureCount / ...  直接透传到 GeometryStruct
---   header / nativeFlag                           位字段 raw 值 (也可用命名位字段)
-function Geometry:create(parent, config)
+function Geometry:create(version, config)
     config = config or {}
-    local version = (parent and parent.version) or GTASA
+    version = version or GTASA
 
     local geo = Geometry:new()
-    geo.parent = nil  -- 由调用方 (addComponent) 设置
     geo.type = Geometry.typeID
     geo.version = version
 
@@ -152,12 +149,7 @@ function Geometry:create(parent, config)
     geo.extension.parent = geo
     geo.extension:init(version)
 
-    -- 自动添加到 parent
-    if parent then
-        return parent:addGeometry(geo)
-    end
-
-    return nil, geo
+    return geo
 end
 
 -- ====== GeometryListStruct ======
@@ -177,7 +169,6 @@ function GeometryList:addGeometry(geo)
     self.geometries = self.geometries or {}
     local idx = #self.geometries
     self.geometries[idx + 1] = geo
-    self.struct.geometryCount = #self.geometries
     return idx, geo
 end
 

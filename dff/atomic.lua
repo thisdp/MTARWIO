@@ -21,26 +21,20 @@ Atomic = Section:define(0x14, {
 Atomic._typeName = "Atomic"
 
 -- ====== Atomic:create 工厂 ======
--- parent: 所属 Clump 实例
--- config 可选字段:
---   frameIndex    - Frame 索引        (默认 0)
---   geometryIndex - Geometry 索引     (默认 0)
---   flags         - 标志位 raw 值     (默认 nil → 使用 bit 字段)
---   bCollisionTest / bRender         - 命名 bit 字段
-function Atomic:create(parent, config)
+-- 仅创建 Atomic 结构, 不添加到 Clump (由 Clump:addAtomic 负责)
+function Atomic:create(version, config)
     config = config or {}
-    local version = (parent and parent.version) or GTASA
+    version = version or GTASA
 
     local atomic = Atomic:new()
-    atomic.parent = parent
     atomic.type = Atomic.typeID
     atomic.version = version
 
     atomic.struct = AtomicStruct:new()
     atomic.struct.parent = atomic
     atomic.struct:init(version)
-    atomic.struct.frameIndex = config.frameIndex or 0
-    atomic.struct.geometryIndex = config.geometryIndex or 0
+    atomic.struct.frameIndex = 0
+    atomic.struct.geometryIndex = 0
 
     if config.flags ~= nil then
         atomic.struct.flags = config.flags

@@ -18,13 +18,9 @@ Texture = Section:define(0x06, {
 })
 
 -- ====== Texture:create 工厂 ======
--- parent: 所属 Material 实例
--- config 可选字段:
---   textureName - 纹理文件名 (默认 "")
---   maskName    - 遮罩文件名 (默认 "")
-function Texture:create(parent, config)
+function Texture:create(version, config)
     config = config or {}
-    local version = (parent and parent.version) or GTASA
+    version = version or GTASA
 
     local tex = Texture:new()
     tex.parent = parent
@@ -131,9 +127,9 @@ function Material:equals(other)
 end
 
 -- 构造工厂
-function Material:create(parent, config)
+function Material:create(version, config)
     config = config or {}
-    local version = (parent and parent.version) or GTASA
+    version = version or GTASA
     local mat = Material:new()
     mat.type = Material.typeID
     mat.version = version
@@ -154,7 +150,7 @@ function Material:create(parent, config)
     mat.extension:init(version)
     -- texture (optional)
     if mat.struct.textureCount ~= 0 then
-        mat.texture = Texture:create(mat, config)
+        mat.texture = Texture:create(version, config)
     end
     return mat
 end
@@ -162,7 +158,7 @@ end
 -- 增删材质
 function MaterialList:addMaterial(material)
     if type(material) ~= "table" or material.type ~= Material.typeID then
-        material = Material:create(self, material)
+        material = Material:create(self.version, material)
     end
     material.parent = self
     self.materials = self.materials or {}

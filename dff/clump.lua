@@ -70,7 +70,6 @@ function Light:create(parent, config)
     parent.indexStructs = parent.indexStructs or {}
     parent.indexStructs[#parent.indexStructs + 1] = idx
 
-    parent.struct.lightCount = #parent.lights
     parent:getSize()
 
     return #parent.lights - 1, light  -- 0-indexed
@@ -223,8 +222,6 @@ function Clump:write(w)
     w:u32(self.type)
     w:u32(self.size)
     w:u32(self.version)
-    self.struct.atomicCount = #self.atomics
-    self.struct.lightCount = #self.lights
     self.struct:write(w)
     self.frameList:write(w)
     self.geometryList:write(w)
@@ -280,15 +277,15 @@ end
 
 -- ====== 添加组件 ======
 
--- 添加 Atomic 到 Clump, 返回 0-indexed 索引 + atomic
-function Clump:addAtomic(atomic, frameIndex, geometryIndex)
+-- 添加 Atomic 到 Clump (frameIndex/geometryIndex 从列表推导, count 由 sync 自动同步)
+-- 返回 0-indexed 索引 + atomic
+function Clump:addAtomic(atomic)
     atomic.parent = self
-    atomic.struct.frameIndex = frameIndex
-    atomic.struct.geometryIndex = geometryIndex
+    atomic.struct.frameIndex = #(self.frameList.frames or {}) - 1
+    atomic.struct.geometryIndex = #(self.geometryList.geometries or {}) - 1
     self.atomics = self.atomics or {}
     local idx = #self.atomics
     self.atomics[idx + 1] = atomic
-    self.struct.atomicCount = #self.atomics
     return idx, atomic
 end
 
@@ -297,9 +294,9 @@ end
 function Clump:addComponent(comp)
     if not comp then return nil end
 
-    local frameIdx = self.frameList:addFrame(comp.frameInfo, comp.frame)
-    local geoIdx = self.geometryList:addGeometry(comp.geometry)
-    local aIdx = self:addAtomic(comp.atomic, frameIdx, geoIdx)
+    self.frameList:addFrame(comp.frameInfo, comp.frame)
+    self.geometryList:addGeometry(comp.geometry)
+    local aIdx = self:addAtomic(comp.atomic)
 
     self:getSize()
     return aIdx, comp.atomic
@@ -310,15 +307,11 @@ end
 function Clump:addEmptyComponent(config)
     config = config or {}
 
-    local frameIdx = Frame:create(self.frameList, config)
-    local geoIdx = Geometry:create(self.geometryList, config.geometry or {})
+    Frame:create(self.frameList, config)
+    self.geometryList:addGeometry(Geometry:create(self.version, config.geometry or {}))
 
-    local atomic = Atomic:create(self, {
-        frameIndex = frameIdx,
-        geometryIndex = geoIdx,
-        flags = config.flags,
-    })
-    local aIdx = self:addAtomic(atomic, frameIdx, geoIdx)
+    local atomic = Atomic:create(self.version, { flags = config.flags })
+    local aIdx = self:addAtomic(atomic)
 
     self:getSize()
     return aIdx, atomic
@@ -370,7 +363,6 @@ function Clump:removeComponent(index)
     -- ====== 2. 移除 Frame ======
     if self.frameList.struct.frameInfo and frameIdx + 1 <= #self.frameList.struct.frameInfo then
         table.remove(self.frameList.struct.frameInfo, frameIdx + 1)
-        self.frameList.struct.frameCount = #self.frameList.struct.frameInfo
     end
     if self.frameList.frames and frameIdx + 1 <= #self.frameList.frames then
         table.remove(self.frameList.frames, frameIdx + 1)
@@ -379,7 +371,6 @@ function Clump:removeComponent(index)
     -- ====== 3. 移除 Geometry ======
     if self.geometryList.geometries and geoIdx + 1 <= #self.geometryList.geometries then
         table.remove(self.geometryList.geometries, geoIdx + 1)
-        self.geometryList.struct.geometryCount = #self.geometryList.geometries
     end
 
     -- ====== 4. 更新剩余 Atomic 的引用索引 ======
@@ -403,8 +394,7 @@ function Clump:removeComponent(index)
         end
     end
 
-    -- ====== 6. 更新计数与大小 ======
-    self.struct.atomicCount = #self.atomics
+    -- ====== 6. 更新大小 ======
     self:getSize()
 
     return atomic

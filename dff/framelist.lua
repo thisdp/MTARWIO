@@ -57,7 +57,6 @@ function FrameList:addFrame(frameInfo, frame)
     self.struct.frameInfo = self.struct.frameInfo or {}
     local idx = #self.struct.frameInfo
     self.struct.frameInfo[idx + 1] = frameInfo
-    self.struct.frameCount = #self.struct.frameInfo
 
     self.frames = self.frames or {}
     self.frames[idx + 1] = frame
@@ -87,6 +86,7 @@ function Frame:create(parent, config)
     fle:init(version)
 
     local frame = Frame:new()
+    frame.parent = fle
     frame.type = Frame.typeID
     frame.version = version
     frame.name = frameName
