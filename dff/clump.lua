@@ -73,7 +73,7 @@ function Light:create(parent, config)
     parent.struct.lightCount = #parent.lights
     parent:getSize()
 
-    return light
+    return #parent.lights - 1, light  -- 0-indexed
 end
 
 function Light:dump(out, lvl, limits)
@@ -278,37 +278,79 @@ function Clump:convert(targetVersion)
     self:getSize()
 end
 
--- ====== 添加组件: 同时创建 Frame + Geometry + Atomic ======
--- config 可选字段:
---   name            - Frame 名称 (默认 "Component_N")
---   parentFrame     - 父 Frame 索引, 0-based (默认 -1 = 根节点)
---   position        - 位置向量 {x, y, z} (默认 {0, 0, 0})
---   rotationMatrix  - 3x3 旋转矩阵 (默认单位矩阵)
---   matrixFlags     - Frame 矩阵标志 (默认 0)
---   geometryConfig  - 几何体配置表, 传给 Geometry:create (可选)
---   flags           - Atomic 标志位 raw 值 (默认: bCollisionTest + bRender)
-function Clump:addComponent(config)
+-- ====== 添加组件 ======
+
+-- 添加 Atomic 到 Clump, 返回 0-indexed 索引 + atomic
+function Clump:addAtomic(atomic, frameIndex, geometryIndex)
+    atomic.parent = self
+    atomic.struct.frameIndex = frameIndex
+    atomic.struct.geometryIndex = geometryIndex
+    self.atomics = self.atomics or {}
+    local idx = #self.atomics
+    self.atomics[idx + 1] = atomic
+    self.struct.atomicCount = #self.atomics
+    return idx, atomic
+end
+
+-- 通过已有数据添加: { frameInfo=, frame=, geometry=, atomic= }
+-- 与 getComponent 返回值兼容, 可直接传入
+function Clump:addComponent(comp)
+    if not comp then return nil end
+
+    local frameIdx = self.frameList:addFrame(comp.frameInfo, comp.frame)
+    local geoIdx = self.geometryList:addGeometry(comp.geometry)
+    local aIdx = self:addAtomic(comp.atomic, frameIdx, geoIdx)
+
+    self:getSize()
+    return aIdx, comp.atomic
+end
+
+-- 创建空组件 (自动生成 Frame + Geometry + Atomic)
+-- config: name, position, rotationMatrix, parentFrame, matrixFlags, geometry, flags
+function Clump:addEmptyComponent(config)
     config = config or {}
 
-    -- ====== 1. 创建 Frame ======
-    Frame:create(self.frameList, config)
-    local newFrameIdx = #self.frameList.struct.frameInfo - 1  -- 0-indexed
+    local frameIdx = Frame:create(self.frameList, config)
+    local geoIdx = Geometry:create(self.geometryList, config.geometry or {})
 
-    -- ====== 2. 创建 Geometry ======
-    Geometry:create(self.geometryList, config.geometryConfig or {})
-    local newGeoIdx = #self.geometryList.geometries - 1  -- 0-indexed
-
-    -- ====== 3. 创建 Atomic ======
     local atomic = Atomic:create(self, {
-        frameIndex = newFrameIdx,
-        geometryIndex = newGeoIdx,
+        frameIndex = frameIdx,
+        geometryIndex = geoIdx,
         flags = config.flags,
     })
+    local aIdx = self:addAtomic(atomic, frameIdx, geoIdx)
 
-    -- ====== 4. 更新大小 ======
     self:getSize()
+    return aIdx, atomic
+end
 
-    return atomic
+-- ====== 获取组件 ======
+
+-- 按 Atomic 索引 (1-based) 返回 { atomic=, frameInfo=, frame=, geometry= }
+function Clump:getComponent(index)
+    if not self.atomics or index < 1 or index > #self.atomics then
+        return nil
+    end
+    local atomic = self.atomics[index]
+    local fi, fr = atomic:getFrame()
+    return { atomic = atomic, frameInfo = fi, frame = fr, geometry = atomic:getGeometry() }
+end
+
+-- 按 Frame 名称查找
+function Clump:getComponentByName(name)
+    if not self.frameList or not self.frameList.frames then return nil end
+    for i, fle in ipairs(self.frameList.frames) do
+        if fle.frame and fle.frame.name == name then
+            local frameIdx = i - 1
+            for _, a in ipairs(self.atomics or {}) do
+                if a.struct.frameIndex == frameIdx then
+                    local fi, fr = a:getFrame()
+                    return { atomic = a, frameInfo = fi, frame = fr, geometry = a:getGeometry() }
+                end
+            end
+        end
+    end
+    return nil
 end
 
 -- ====== 移除组件: 同时删除 Atomic + Frame + Geometry ======

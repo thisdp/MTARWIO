@@ -48,6 +48,22 @@ FrameList = Section:define(0x0E, {
 })
 FrameList._typeName = "FrameList"
 
+-- 添加 FrameInfo + FrameListExtension, 返回 0-indexed frame 索引
+function FrameList:addFrame(frameInfo, frame)
+    local version = self.version or GTASA
+    frame.parent = self
+    if not frame.version or frame.version == 0 then frame:init(version) end
+
+    self.struct.frameInfo = self.struct.frameInfo or {}
+    local idx = #self.struct.frameInfo
+    self.struct.frameInfo[idx + 1] = frameInfo
+    self.struct.frameCount = #self.struct.frameInfo
+
+    self.frames = self.frames or {}
+    self.frames[idx + 1] = frame
+    return idx, frame
+end
+
 -- ====== Frame:create 工厂 ======
 -- parent: 所属 FrameList 实例
 -- config 可选字段:
@@ -60,36 +76,24 @@ function Frame:create(parent, config)
     config = config or {}
     local version = (parent and parent.version) or GTASA
 
-    -- FrameInfo
     local fi = FrameInfo:new()
     fi.rotationMatrix = config.rotationMatrix or {{1,0,0},{0,1,0},{0,0,1}}
     fi.positionVector = config.position or {0, 0, 0}
     fi.parentFrame = config.parentFrame or -1
     fi.matrixFlags = config.matrixFlags or 0
 
-    parent.struct.frameInfo = parent.struct.frameInfo or {}
-    local idx = #parent.struct.frameInfo
-    parent.struct.frameInfo[idx + 1] = fi
-    parent.struct.frameCount = #parent.struct.frameInfo
-
-    -- FrameListExtension (包含 Frame 名称)
+    local frameName = config.name or ("Frame_" .. (#(parent.frames or {}) + 1))
     local fle = FrameListExtension:new()
-    fle.parent = parent
     fle:init(version)
 
-    local frameName = config.name or ("Frame_" .. (idx + 1))
     local frame = Frame:new()
-    frame.parent = fle
     frame.type = Frame.typeID
     frame.version = version
     frame.name = frameName
     frame:getSize()
-
     fle.frame = frame
-    parent.frames = parent.frames or {}
-    parent.frames[idx + 1] = fle
 
-    return fle
+    return parent:addFrame(fi, fle)
 end
 
 function FrameList:dump(out, lvl, limits)

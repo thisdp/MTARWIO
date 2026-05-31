@@ -154,12 +154,10 @@ function Geometry:create(parent, config)
 
     -- 自动添加到 parent
     if parent then
-        parent.geometries = parent.geometries or {}
-        parent.geometries[#parent.geometries + 1] = geo
-        parent.struct.geometryCount = #parent.geometries
+        return parent:addGeometry(geo)
     end
 
-    return geo
+    return nil, geo
 end
 
 -- ====== GeometryListStruct ======
@@ -172,6 +170,16 @@ GeometryList = Section:define(0x1A, {
     { name = "struct",     type = GeometryListStruct },
     { name = "geometries", type = Geometry, count = "struct.geometryCount" },
 })
+
+-- 添加预创建的 Geometry, 返回 0-indexed geometry 索引
+function GeometryList:addGeometry(geo)
+    geo.parent = self
+    self.geometries = self.geometries or {}
+    local idx = #self.geometries
+    self.geometries[idx + 1] = geo
+    self.struct.geometryCount = #self.geometries
+    return idx, geo
+end
 
 -- ====== mergeGeometry (手动逻辑) ======
 -- target: 被合并的 Geometry

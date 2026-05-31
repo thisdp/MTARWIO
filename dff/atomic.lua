@@ -54,10 +54,6 @@ function Atomic:create(parent, config)
     atomic.extension.parent = atomic
     atomic.extension:init(version)
 
-    parent.atomics = parent.atomics or {}
-    parent.atomics[#parent.atomics + 1] = atomic
-    parent.struct.atomicCount = #parent.atomics
-
     return atomic
 end
 
