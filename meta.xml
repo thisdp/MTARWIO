@@ -2,49 +2,53 @@
     <info author="thisdp" name="MTA Lua RW Loader v2" description="RenderWare binary format loader with declarative Schema engine" />
 
     <!-- Core: Binary I/O -->
-    <script src="core/binary/reader.lua" type="client" />
-    <script src="core/binary/writer.lua" type="client" />
+    <script src="core/binary/reader.lua" type="shared" />
+    <script src="core/binary/writer.lua" type="shared" />
 
     <!-- Utils -->
-    <script src="utils/bitops.lua" type="client" />
-    <script src="utils/math3d.lua" type="client" />
-    <script src="utils/tableutil.lua" type="client" />
+    <script src="utils/bitops.lua" type="shared" />
+    <script src="utils/math3d.lua" type="shared" />
+    <script src="utils/tableutil.lua" type="shared" />
 
     <!-- Core: Schema System -->
-    <script src="core/schema/types.lua" type="client" />
-    <script src="core/schema/registry.lua" type="client" />
-    <script src="core/schema/engine.lua" type="client" />
+    <script src="core/schema/types.lua" type="shared" />
+    <script src="core/schema/registry.lua" type="shared" />
+    <script src="core/schema/engine.lua" type="shared" />
 
     <!-- Core: Base Classes -->
-    <script src="core/base.lua" type="client" />
+    <script src="core/base.lua" type="shared" />
 
     <!-- DFF Module -->
-    <script src="dff/enums.lua" type="client" />
-    <script src="dff/material.lua" type="client" />
-    <script src="dff/plugins.lua" type="client" />
-    <script src="dff/uvanim.lua" type="client" />
-    <script src="dff/framelist.lua" type="client" />
-    <script src="dff/geometry.lua" type="client" />
-    <script src="dff/atomic.lua" type="client" />
-    <script src="dff/clump.lua" type="client" />
-    <script src="dff/dffio.lua" type="client" />
+    <script src="dff/enums.lua" type="shared" />
+    <script src="dff/material.lua" type="shared" />
+    <script src="dff/plugins.lua" type="shared" />
+    <script src="dff/uvanim.lua" type="shared" />
+    <script src="dff/framelist.lua" type="shared" />
+    <script src="dff/geometry.lua" type="shared" />
+    <script src="dff/atomic.lua" type="shared" />
+    <script src="dff/clump.lua" type="shared" />
+    <script src="dff/dffio.lua" type="shared" />
 
     <!-- TXD Module -->
-    <script src="txd/txdio.lua" type="client" />
+    <script src="txd/txdio.lua" type="shared" />
 
     <!-- TXD Platform Support (before texture modules for decoder priority) -->
-    <script src="txd/platform/mta.lua" type="client" />
+    <script src="txd/platform/mta.lua" type="shared" />
 
     <!-- Texture Module -->
-    <script src="texture/dds.lua" type="client" />
-    <script src="texture/bmp.lua" type="client" />
-    <script src="texture/png.lua" type="client" />
+    <script src="texture/dds.lua" type="shared" />
+    <script src="texture/bmp.lua" type="shared" />
+    <script src="texture/png.lua" type="shared" />
 
     <!-- COL Module -->
-    <script src="col/colio.lua" type="client" />
+    <script src="col/colio.lua" type="shared" />
 
     <!-- IMG Module -->
-    <script src="img/imgloader.lua" type="client" />
+    <script src="img/imgloader.lua" type="shared" />
+
+    <script src="test_create_box.lua" type="server" />
+    <file src="hillwork.dff" />
+    <script src="test_load_box_c.lua" type="client" />
 
     <oop>true</oop>
 </meta>

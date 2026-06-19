@@ -23,7 +23,6 @@ function Texture:create(version, config)
     version = version or GTASA
 
     local tex = Texture:new()
-    tex.parent = parent
     tex.type = Texture.typeID
     tex.version = version
 
@@ -34,12 +33,14 @@ function Texture:create(version, config)
     local texName = config.textureName or ""
     tex.textureName = String:new()
     tex.textureName.parent = tex
+    tex.textureName.version = version
     tex.textureName.string = texName
     tex.textureName.size = #texName
 
     local maskName = config.maskName or ""
     tex.maskName = String:new()
     tex.maskName.parent = tex
+    tex.maskName.version = version
     tex.maskName.string = maskName
     tex.maskName.size = #maskName
 
@@ -126,7 +127,92 @@ function Material:equals(other)
     return true
 end
 
--- 构造工厂
+-- ====== Material 简化工厂 ======
+
+-- 快速创建材质，只需指定颜色和纹理名
+-- config.color:    {r,g,b,a} 默认白色
+-- config.texture:  纹理名字符串 (如 "vehiclegeneric256")
+-- config.ambient:  环境光 (默认 0.3)
+-- config.specular: 高光 (默认 1.0)
+-- config.diffuse:  漫反射 (默认 1.0)
+function Material:createSimple(version, config)
+    config = config or {}
+    version = version or GTASA
+    local texName = config.texture or ""
+    local mat = Material:create(version, {
+        color = config.color or {255, 255, 255, 255},
+        textureCount = (texName ~= "") and 1 or 0,
+        textureName = texName,
+        ambient = config.ambient or 0.3,
+        specular = config.specular or 1.0,
+        diffuse = config.diffuse or 1.0,
+    })
+
+    -- MaterialExtension 留空 (匹配 emptyNewDff.dff 模板格式)
+
+    return mat
+end
+
+-- 添加反射插件 (ReflectionMaterial)
+-- coefficient: 反射强度 (0.0-1.0, 默认 1.0)
+function Material:addReflection(coefficient)
+    local version = self.version or GTASA
+    local ext = self.extension
+    if not ext then return nil end
+
+    -- 移除旧反射
+    local newPlugins = {}
+    for _, p in ipairs(ext.plugins or {}) do
+        if p.type ~= ReflectionMaterial.typeID then
+            newPlugins[#newPlugins + 1] = p
+        end
+    end
+
+    local refl = ReflectionMaterial:new()
+    refl.type = ReflectionMaterial.typeID
+    refl.version = version
+    refl.envMapScaleX = 1.0
+    refl.envMapScaleY = 1.0
+    refl.envMapOffsetX = 0
+    refl.envMapOffsetY = 0
+    refl.reflectionIntensity = coefficient or 1.0
+    refl.envTexturePtr = 0
+    refl.parent = ext
+    refl:getSize()
+    newPlugins[#newPlugins + 1] = refl
+    ext.plugins = newPlugins
+    return refl
+end
+
+-- 添加高光插件 (SpecularMaterial)
+-- level:   高光强度 (0.0-1.0)
+-- texName: 高光贴图名 (默认空字符串)
+function Material:addSpecular(level, texName)
+    local version = self.version or GTASA
+    local ext = self.extension
+    if not ext then return nil end
+
+    -- 移除旧高光
+    local newPlugins = {}
+    for _, p in ipairs(ext.plugins or {}) do
+        if p.type ~= SpecularMaterial.typeID then
+            newPlugins[#newPlugins + 1] = p
+        end
+    end
+
+    local spec = SpecularMaterial:new()
+    spec.type = SpecularMaterial.typeID
+    spec.version = version
+    spec.specularLevel = level or 1.0
+    spec.textureName = texName or ""  -- str24 类型
+    spec.parent = ext
+    spec:getSize()
+    newPlugins[#newPlugins + 1] = spec
+    ext.plugins = newPlugins
+    return spec
+end
+
+-- ====== 构造工厂 ======
 function Material:create(version, config)
     config = config or {}
     version = version or GTASA
@@ -139,7 +225,7 @@ function Material:create(version, config)
     mat.struct:init(version)
     mat.struct.flags = config.flags or 0
     mat.struct.color = config.color or {255, 255, 255, 255}
-    mat.struct.unused = 0
+    mat.struct.unused = version >= GTASA and 16688092 or 1629820
     mat.struct.textureCount = config.textureCount or 0
     mat.struct.ambient = config.ambient or 1.0
     mat.struct.specular = config.specular or 1.0
@@ -151,6 +237,7 @@ function Material:create(version, config)
     -- texture (optional)
     if mat.struct.textureCount ~= 0 then
         mat.texture = Texture:create(version, config)
+        mat.texture.parent = mat
     end
     return mat
 end
@@ -165,7 +252,7 @@ function MaterialList:addMaterial(material)
     self.struct.materialIndices = self.struct.materialIndices or {}
     local idx = #self.materials + 1
     self.materials[idx] = material
-    self.struct.materialIndices[idx] = idx - 1
+    self.struct.materialIndices[idx] = -1  -- SA 标准: 始终 -1
     self.struct.materialCount = #self.struct.materialIndices
     return material
 end
@@ -182,7 +269,6 @@ function MaterialList:removeMaterial(index)
             if matIdx == index - 1 then
                 error(string.format("Cannot remove material %d: still referenced by faces", index), 2)
             elseif matIdx > index - 1 then
-                face[3] = matIdx - 1
                 face[3] = matIdx - 1
             end
         end

@@ -22,10 +22,10 @@ function Face:getMaterial()
 end
 
 function Face:init(v1, v2, v3, matIdx)
-    self[Face.V1] = v1 or 0
-    self[Face.V2] = v2 or 0
-    self[Face.V3] = v3 or 0
-    self[Face.Mat] = matIdx or 0
+    self[1] = v2 or 0      -- self[1] = v2 (RW order: v2, v1, mat, v3)
+    self[2] = v1 or 0      -- self[2] = v1
+    self[3] = matIdx or 0  -- self[3] = mat
+    self[4] = v3 or 0      -- self[4] = v3
     return self
 end
 
@@ -109,10 +109,19 @@ function Geometry:create(version, config)
     geo.struct.parent = geo
     geo.struct:init(version)
 
+    -- 初始化所有 header 位字段 (避免 nil 导致 bit 写入异常)
+    geo.struct.bTristrip = false
+    geo.struct.bPosition = false
+    geo.struct.bTextured = false
+    geo.struct.bVertexColor = false
+    geo.struct.bNormal = false
+    geo.struct.bLight = false
+    geo.struct.bModulateMaterialColor = false
+    geo.struct.bTextured2 = false
     if config.header ~= nil then
         geo.struct.header = config.header
     end
-    geo.struct.textureCount = config.textureCount or 1
+    geo.struct.textureCount = config.textureCount or 0
     if config.nativeFlag ~= nil then
         geo.struct.nativeFlag = config.nativeFlag
     end
@@ -416,6 +425,153 @@ function Geometry:addFaces(faces)
     return self
 end
 
+-- ====== 网格替换 ======
+
+-- 清空所有顶点/面/法线/顶点色数据
+function Geometry:clearMesh()
+    local gs = self.struct
+    gs.vertices = {}
+    gs.normals = {}
+    gs.faces = {}
+    gs.vertexColors = nil
+    gs.vertexCount = 0
+    gs.faceCount = 0
+    return self
+end
+
+-- 一次性设置网格数据 (顶点 + 法线 + 三角形)
+-- verts:  {{x,y,z}, ...} 顶点位置
+-- norms:  {{nx,ny,nz}, ...} 法线 (可选, 与 verts 等长)
+-- triVerts: {{v1,v2,v3}, ...} 三角形顶点索引 (0-based)
+-- 自动设置 bTristrip=false (triangle list 模式)
+function Geometry:setMesh(verts, norms, triVerts)
+    self:clearMesh()
+    local gs = self.struct
+
+    -- 自动设置 header flags (显式初始化所有位, 避免残留 nil)
+    gs.bTristrip = false
+    gs.bPosition = true
+    gs.bTextured = false
+    gs.bVertexColor = false
+    gs.bNormal = (norms ~= nil and #norms > 0)
+    gs.bLight = true
+    gs.bModulateMaterialColor = true
+    gs.bTextured2 = false
+
+    gs.hasVertices = true
+    gs.hasNormals = (norms ~= nil and #norms > 0)
+
+    -- 批量添加顶点
+    self:addVertices(verts)
+
+    -- 法线 (如果没提供, 后面可再设置)
+    if norms and #norms > 0 then
+        for i = 1, #norms do
+            if gs.normals and i <= #gs.normals then
+                gs.normals[i] = {norms[i][1], norms[i][2], norms[i][3]}
+            end
+        end
+    end
+
+    -- 批量添加面 (格式: {v1, v2, v3, material})
+    if triVerts then
+        for _, tri in ipairs(triVerts) do
+            self:addFace({tri[1], tri[2], tri[3], tri[4] or 0})
+        end
+    end
+
+    return self
+end
+
+-- 设置 UV 坐标
+-- channel: 1 或 2
+-- coords: {{u,v}, ...} 与顶点一一对应
+function Geometry:setTexCoords(channel, coords)
+    local gs = self.struct
+    if not gs.texCoords then gs.texCoords = {} end
+    if not gs.texCoords[channel] then
+        gs.texCoords[channel] = TexCoordChannel:new()
+    end
+    gs.texCoords[channel].coords = {}
+    for i, uv in ipairs(coords) do
+        gs.texCoords[channel].coords[i] = {uv[1], uv[2]}
+    end
+    -- 自动设 texture flags
+    if channel == 1 then gs.bTextured = true end
+    if channel == 2 then gs.bTextured2 = true end
+    return self
+end
+
+-- 重建 BinMeshPLG: 从三角形数据创建新的 BinMeshPLG (替换旧的或新建)
+-- triVerts: {{v1,v2,v3}, ...} 0-based 顶点索引
+-- materialIndex: 材质索引 (默认 0)
+function Geometry:rebuildBinMeshPLG(triVerts, materialIndex)
+    materialIndex = materialIndex or 0
+    local version = self.version or GTASA
+    local ext = self.extension
+    if not ext then return nil end
+
+    local newBM = BinMeshPLG:new()
+    newBM.type = BinMeshPLG.typeID
+    newBM.version = version
+    newBM.faceType = 0           -- triangle list mode
+    newBM.materialSplitCount = 1
+
+    local split = BinMeshSplit:new()
+    split.faceCount = #triVerts * 3      -- 三角形数 × 3 = 顶点索引数
+    split.materialIndex = materialIndex
+    split.faceList = {}
+    for _, tri in ipairs(triVerts) do
+        split.faceList[#split.faceList + 1] = tri[1]
+        split.faceList[#split.faceList + 1] = tri[2]
+        split.faceList[#split.faceList + 1] = tri[3]
+    end
+    split.parent = newBM
+    newBM.materialSplits = {split}
+    newBM.parent = ext
+    newBM:getSize()
+
+    -- 替换旧 BinMeshPLG (如果存在), 否则追加
+    local newPlugins = {}
+    local replaced = false
+    for _, p in ipairs(ext.plugins or {}) do
+        if p.type == BinMeshPLG.typeID then
+            newPlugins[#newPlugins + 1] = newBM
+            replaced = true
+        else
+            newPlugins[#newPlugins + 1] = p
+        end
+    end
+    if not replaced then
+        newPlugins[#newPlugins + 1] = newBM
+    end
+    ext.plugins = newPlugins
+    return newBM
+end
+
+-- ====== 材质操作 ======
+
+-- 设置材质: 完全替换已有材质为新材质
+-- 新材质通过 Material:createSimple 创建，所有 String 字段正确初始化
+-- matOrConfig: config table {color, texture, ambient, specular, diffuse}
+-- 设置材质: 完整替换材质对象
+-- matOrConfig: config table {color, texture, ambient, specular, diffuse}
+-- 设置材质: 清空+用默认模板重建
+function Geometry:setMaterial(matOrConfig)
+    self:clearMaterials()
+    return self.materialList:addMaterial(
+        Material:createSimple(self.version or GTASA, matOrConfig or {}))
+end
+
+-- 清空所有材质
+function Geometry:clearMaterials()
+    local ml = self.materialList
+    ml.materials = {}
+    ml.struct.materialIndices = {-1}
+    ml.struct.materialCount = 0
+    return self
+end
+
 -- ====== Dump ======
 Geometry._typeName = "Geometry"
 
@@ -477,7 +633,7 @@ function Geometry:dump(out, lvl, limits)
             for i = 1, math.min(#gs.faces, maxF) do
                 local f = gs.faces[i]
                 out[#out+1] = indent .. string.format("  [%d] v1=%d v2=%d v3=%d mat=%d",
-                    i, f[1] or 0, f[2] or 0, f[3] or 0, f[4] or 0)
+                    i, f[2] or 0, f[1] or 0, f[4] or 0, f[3] or 0)
             end
             if #gs.faces > maxF then
                 out[#out+1] = indent .. string.format("  ... +%d more", #gs.faces - maxF)

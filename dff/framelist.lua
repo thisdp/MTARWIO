@@ -39,7 +39,7 @@ HAnimPLG = Section:define(0x11E, {
 
 FrameListExtension = Extension:define({
     { name = "HAnimPLG", type = HAnimPLG, optional = true },
-    { name = "frame",    type = Frame, cond = {{"size", "~=", 0}} },
+    { name = "frame",    type = Frame },
 })
 
 FrameList = Section:define(0x0E, {
