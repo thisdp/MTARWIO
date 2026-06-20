@@ -96,6 +96,18 @@ function Frame:create(parent, config)
     return parent:addFrame(fi, fle)
 end
 
+-- 按名称查找 Frame, 返回 0-based 索引或 nil
+function FrameList:findFrameByName(name)
+    if not self.frames then return nil end
+    for i = 1, #self.frames do
+        local fle = self.frames[i]
+        if fle.frame and fle.frame.name == name then
+            return i - 1  -- 0-based
+        end
+    end
+    return nil
+end
+
 function FrameList:dump(out, lvl, limits)
     lvl = lvl or 0
     limits = limits or {}
@@ -104,7 +116,8 @@ function FrameList:dump(out, lvl, limits)
         local indent = string.rep("  ", lvl + 1)
         out[#out+1] = indent .. string.format("frameCount = %d", self.struct.frameCount or 0)
         if self.struct.frameInfo then
-            for i, fi in ipairs(self.struct.frameInfo) do
+            for i = 1, #self.struct.frameInfo do
+                local fi = self.struct.frameInfo[i]
                 out[#out+1] = indent .. string.format("--- FrameInfo [%d] ---", i)
                 out[#out+1] = indent .. "  rotationMatrix:"
                 for row = 1, 3 do
@@ -118,7 +131,8 @@ function FrameList:dump(out, lvl, limits)
         end
     end
     if self.frames then
-        for i, fr in ipairs(self.frames) do
+        for i = 1, #self.frames do
+            local fr = self.frames[i]
             if fr and fr.frame then
                 local indent = string.rep("  ", lvl + 1)
                 out[#out+1] = indent .. string.format("Frame[%d] name = \"%s\"", i, fr.frame.name or "")

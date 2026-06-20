@@ -18,9 +18,9 @@ Texture = Section:define(0x06, {
 })
 
 -- ====== Texture:create 工厂 ======
-function Texture:create(version, config)
+function Texture:create(config)
     config = config or {}
-    version = version or GTASA
+    local version = GTASA
 
     local tex = Texture:new()
     tex.type = Texture.typeID
@@ -135,11 +135,10 @@ end
 -- config.ambient:  环境光 (默认 0.3)
 -- config.specular: 高光 (默认 1.0)
 -- config.diffuse:  漫反射 (默认 1.0)
-function Material:createSimple(version, config)
+function Material:createSimple(config)
     config = config or {}
-    version = version or GTASA
     local texName = config.texture or ""
-    local mat = Material:create(version, {
+    local mat = Material:create({
         color = config.color or {255, 255, 255, 255},
         textureCount = (texName ~= "") and 1 or 0,
         textureName = texName,
@@ -162,7 +161,9 @@ function Material:addReflection(coefficient)
 
     -- 移除旧反射
     local newPlugins = {}
-    for _, p in ipairs(ext.plugins or {}) do
+    local plugins = ext.plugins or {}
+    for i = 1, #plugins do
+        local p = plugins[i]
         if p.type ~= ReflectionMaterial.typeID then
             newPlugins[#newPlugins + 1] = p
         end
@@ -194,7 +195,9 @@ function Material:addSpecular(level, texName)
 
     -- 移除旧高光
     local newPlugins = {}
-    for _, p in ipairs(ext.plugins or {}) do
+    local plugins = ext.plugins or {}
+    for i = 1, #plugins do
+        local p = plugins[i]
         if p.type ~= SpecularMaterial.typeID then
             newPlugins[#newPlugins + 1] = p
         end
@@ -212,10 +215,23 @@ function Material:addSpecular(level, texName)
     return spec
 end
 
+-- 设置材质颜色 (便捷方法)
+function Material:setColor(r, g, b, a)
+    self.struct.color = {r, g, b, a or 255}
+    return self
+end
+
+-- 移除纹理
+function Material:removeTexture()
+    self.struct.textureCount = 0
+    self.texture = nil
+    return self
+end
+
 -- ====== 构造工厂 ======
-function Material:create(version, config)
+function Material:create(config)
     config = config or {}
-    version = version or GTASA
+    local version = GTASA
     local mat = Material:new()
     mat.type = Material.typeID
     mat.version = version
@@ -236,7 +252,7 @@ function Material:create(version, config)
     mat.extension:init(version)
     -- texture (optional)
     if mat.struct.textureCount ~= 0 then
-        mat.texture = Texture:create(version, config)
+        mat.texture = Texture:create(config)
         mat.texture.parent = mat
     end
     return mat
@@ -245,7 +261,7 @@ end
 -- 增删材质
 function MaterialList:addMaterial(material)
     if type(material) ~= "table" or material.type ~= Material.typeID then
-        material = Material:create(self.version, material)
+        material = Material:create(material)
     end
     material.parent = self
     self.materials = self.materials or {}
@@ -253,7 +269,7 @@ function MaterialList:addMaterial(material)
     local idx = #self.materials + 1
     self.materials[idx] = material
     self.struct.materialIndices[idx] = -1  -- SA 标准: 始终 -1
-    self.struct.materialCount = #self.struct.materialIndices
+    self.struct.materialCount = #self.materials
     return material
 end
 
@@ -264,7 +280,9 @@ function MaterialList:removeMaterial(index)
     local removed = self.materials[index]
     -- 检查面引用
     if self.parent and self.parent.struct and self.parent.struct.faces then
-        for _, face in ipairs(self.parent.struct.faces) do
+        local faces = self.parent.struct.faces
+        for i = 1, #faces do
+            local face = faces[i]
             local matIdx = face[3]  -- Face.Mat
             if matIdx == index - 1 then
                 error(string.format("Cannot remove material %d: still referenced by faces", index), 2)
@@ -275,7 +293,7 @@ function MaterialList:removeMaterial(index)
     end
     table.remove(self.materials, index)
     table.remove(self.struct.materialIndices, index)
-    self.struct.materialCount = #self.struct.materialIndices
+    self.struct.materialCount = #self.materials
     return removed
 end
 
@@ -285,7 +303,8 @@ function MaterialList:dump(out, lvl, limits)
     limits = limits or {}
     Section.dump(self, out, lvl, limits)
     if self.materials then
-        for i, m in ipairs(self.materials) do
+        for i = 1, #self.materials do
+            local m = self.materials[i]
             m._dumpIndex = i
             m:dump(out, lvl + 1, limits)
         end

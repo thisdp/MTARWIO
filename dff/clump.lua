@@ -123,7 +123,7 @@ end
 
 function COLSection:write(w)
     self.size = #(self.collisionRaw or "")
-    w:u32(self.type):u32(self.size):u32(self.version)
+    w:u32(self.type):u32(self.size):u32(self:getVersion())
     w:raw(self.collisionRaw or "")
 end
 
@@ -275,14 +275,32 @@ function Clump:convert(targetVersion)
     self:getSize()
 end
 
+-- 添加 Geometry 到 Clump 的 GeometryList (便捷封装)
+function Clump:addGeometry(geo)
+    return self.geometryList:addGeometry(geo)
+end
+
 -- ====== 添加组件 ======
+
+-- 创建 Frame 并添加到 FrameList (便捷封装)
+-- config: name, position, rotationMatrix, parentFrame, matrixFlags
+function Clump:createFrame(config)
+    return Frame:create(self.frameList, config)
+end
+
+-- 创建 Atomic 并添加到 Clump (便捷封装)
+-- config: flags, bCollisionTest, bRender
+function Clump:createAtomic(config)
+    local atomic = Atomic:create(config or {})
+    return self:addAtomic(atomic)
+end
 
 -- 添加 Atomic 到 Clump (frameIndex/geometryIndex 从列表推导, count 由 sync 自动同步)
 -- 返回 0-indexed 索引 + atomic
 function Clump:addAtomic(atomic)
     atomic.parent = self
-    atomic.struct.frameIndex = #(self.frameList.frames or {}) - 1
-    atomic.struct.geometryIndex = #(self.geometryList.geometries or {}) - 1
+    atomic.struct.frameIndex = math.max(0, #(self.frameList.frames or {}) - 1)
+    atomic.struct.geometryIndex = math.max(0, #(self.geometryList.geometries or {}) - 1)
     self.atomics = self.atomics or {}
     local idx = #self.atomics
     self.atomics[idx + 1] = atomic
@@ -308,9 +326,9 @@ function Clump:addEmptyComponent(config)
     config = config or {}
 
     Frame:create(self.frameList, config)
-    self.geometryList:addGeometry(Geometry:create(self.version, config.geometry or {}))
+    self.geometryList:addGeometry(Geometry:create(config.geometry or {}))
 
-    local atomic = Atomic:create(self.version, { flags = config.flags })
+    local atomic = Atomic:create({ flags = config.flags })
     local aIdx = self:addAtomic(atomic)
 
     self:getSize()

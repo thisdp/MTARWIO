@@ -43,3 +43,18 @@ function bReplace(num, bit, pos)
     local newBit = ((p == 1) or (bit == 1)) and 1 or 0
     return num - p * (2 ^ pos) + newBit * (2 ^ pos)
 end
+
+-- 位或: bitOr(a, b) = a | b
+function bitOr(a, b)
+    local result = 0
+    local shift = 0
+    while a > 0 or b > 0 do
+        if (a % 2 == 1) or (b % 2 == 1) then
+            result = result + 2 ^ shift
+        end
+        a = math.floor(a / 2)
+        b = math.floor(b / 2)
+        shift = shift + 1
+    end
+    return result
+end

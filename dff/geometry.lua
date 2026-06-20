@@ -36,7 +36,7 @@ TexCoordChannel = RawStruct:define({
 
 -- ====== GeometryStruct — 核心几何数据 ======
 GeometryStruct = Struct:define({
-    { name = "header", type = uint16, bits = {
+    { name = "headerFlags", type = uint16, bits = {
         {"bTristrip", 0}, {"bPosition", 1}, {"bTextured", 2},
         {"bVertexColor", 3}, {"bNormal", 4}, {"bLight", 5},
         {"bModulateMaterialColor", 6}, {"bTextured2", 7},
@@ -96,9 +96,9 @@ Geometry = Section:define(0x0F, {
 -- ====== Geometry:create 工厂 ======
 -- config 可选字段:
 --   faceCount / vertexCount / textureCount / ...  直接透传到 GeometryStruct
-function Geometry:create(version, config)
+function Geometry:create(config)
     config = config or {}
-    version = version or GTASA
+    local version = GTASA
 
     local geo = Geometry:new()
     geo.type = Geometry.typeID
@@ -109,22 +109,9 @@ function Geometry:create(version, config)
     geo.struct.parent = geo
     geo.struct:init(version)
 
-    -- 初始化所有 header 位字段 (避免 nil 导致 bit 写入异常)
-    geo.struct.bTristrip = false
-    geo.struct.bPosition = false
-    geo.struct.bTextured = false
-    geo.struct.bVertexColor = false
-    geo.struct.bNormal = false
-    geo.struct.bLight = false
-    geo.struct.bModulateMaterialColor = false
-    geo.struct.bTextured2 = false
-    if config.header ~= nil then
-        geo.struct.header = config.header
-    end
+    geo.struct.headerFlags = config.headerFlags or config.header or 0
     geo.struct.textureCount = config.textureCount or 0
-    if config.nativeFlag ~= nil then
-        geo.struct.nativeFlag = config.nativeFlag
-    end
+    geo.struct.nativeFlag = config.nativeFlag or 0
     geo.struct.faceCount = config.faceCount or 0
     geo.struct.vertexCount = config.vertexCount or 0
     geo.struct.morphTargetCount = config.morphTargetCount or 1
@@ -219,7 +206,7 @@ function Geometry:mergeGeometry(target, clone, mergeMaterials)
             end
             if not found then
                 sml.materials[#sml.materials + 1] = tml.materials[ti]
-                sml.struct.materialIndices[#sml.materials] = #sml.materials - 1
+                sml.struct.materialIndices[#sml.materials] = -1  -- SA 标准
                 tMatMap[ti - 1] = #sml.materials - 1
             end
         end
@@ -227,7 +214,7 @@ function Geometry:mergeGeometry(target, clone, mergeMaterials)
         -- 直接追加
         for ti = 1, #tml.materials do
             sml.materials[#sml.materials + 1] = tml.materials[ti]
-            sml.struct.materialIndices[#sml.materials] = #sml.materials - 1
+            sml.struct.materialIndices[#sml.materials] = -1  -- SA 标准
             tMatMap[ti - 1] = #sml.materials - 1
         end
     end
@@ -295,7 +282,8 @@ function Geometry:mergeGeometry(target, clone, mergeMaterials)
         sBm.materialSplitCount = #sBm.materialSplits
         -- 更新顶点总数
         local totalVerts = 0
-        for _, sp in ipairs(sBm.materialSplits) do
+        for i = 1, #sBm.materialSplits do
+        local sp = sBm.materialSplits[i]
             totalVerts = totalVerts + #sp.faceList
         end
         sBm.vertexCount = totalVerts
@@ -345,14 +333,15 @@ function Geometry:addVertex(x, y, z, nx, ny, nz)
         gs.normals = gs.normals or {}
         gs.normals[idx] = {nx or 0, ny or 0, nz or 0}
     end
-    if gs.vertexColors and #gs.vertexColors >= idx - 1 then
+    if gs.bVertexColor then
+        gs.vertexColors = gs.vertexColors or {}
         gs.vertexColors[idx] = {255, 255, 255, 255}
     end
     if gs.texCoords then
-        for _, tc in ipairs(gs.texCoords) do
-            if tc.coords and #tc.coords >= idx - 1 then
-                tc.coords[idx] = {0, 0}
-            end
+        for i = 1, #gs.texCoords do
+            local tc = gs.texCoords[i]
+            tc.coords = tc.coords or {}
+            tc.coords[idx] = {0, 0}
         end
     end
     gs.vertexCount = #gs.vertices
@@ -366,9 +355,11 @@ function Geometry:removeVertex(index)
     end
     -- 检查面引用：不允许删除被面引用的顶点
     if gs.faces then
-        for fi, face in ipairs(gs.faces) do
-            for _, vk in ipairs({Face.V1, Face.V2, Face.V3}) do
-                if face[vk] == index - 1 then
+        for fi = 1, #gs.faces do
+            local face = gs.faces[fi]
+            local faceKeys = {Face.V1, Face.V2, Face.V3}
+            for k = 1, 3 do
+                if face[faceKeys[k]] == index - 1 then
                     error(string.format("Cannot remove vertex %d: referenced by face %d", index, fi), 2)
                 end
             end
@@ -383,7 +374,8 @@ function Geometry:removeVertex(index)
         table.remove(gs.vertexColors, index)
     end
     if gs.texCoords then
-        for _, tc in ipairs(gs.texCoords) do
+        for i = 1, #gs.texCoords do
+            local tc = gs.texCoords[i]
             if tc.coords and #tc.coords >= index then
                 table.remove(tc.coords, index)
             end
@@ -391,9 +383,11 @@ function Geometry:removeVertex(index)
     end
     -- 更新面顶点引用：索引 > 该顶点的全部 -1
     if gs.faces then
-        for _, face in ipairs(gs.faces) do
-            for _, vk in ipairs({Face.V1, Face.V2, Face.V3}) do
-                if face[vk] > index - 1 then
+        for i = 1, #gs.faces do
+            local face = gs.faces[i]
+            local faceKeys = {Face.V1, Face.V2, Face.V3}
+            for k = 1, 3 do
+                if face[faceKeys[k]] > index - 1 then
                     face[vk] = face[vk] - 1
                 end
             end
@@ -425,6 +419,183 @@ function Geometry:addFaces(faces)
     return self
 end
 
+-- ====== 顶点色 ======
+
+-- 设置单个顶点色 (index 从 1 开始)
+function Geometry:setVertexColor(index, r, g, b, a)
+    local gs = self.struct
+    gs.bVertexColor = true
+    gs.vertexColors = gs.vertexColors or {}
+    gs.vertexColors[index] = {r, g, b, a or 255}
+    return self
+end
+
+-- 批量替换所有顶点色 (长度必须等于 vertexCount)
+-- colors: {{r,g,b,a}, ...}
+function Geometry:setVertexColors(colors)
+    local gs = self.struct
+    local n = gs.vertexCount or 0
+    if #colors ~= n then
+        error(string.format("Vertex color count mismatch: got %d, expected %d", #colors, n), 2)
+    end
+    gs.bVertexColor = true
+    gs.vertexColors = {}
+    for i = 1, n do
+        local c = colors[i]
+        gs.vertexColors[i] = {c[1], c[2], c[3], c[4] or 255}
+    end
+    return self
+end
+
+-- 清除顶点色
+function Geometry:removeVertexColors()
+    local gs = self.struct
+    gs.bVertexColor = false
+    gs.vertexColors = nil
+    return self
+end
+
+-- ====== NightVertexColor (夜晚顶点色) ======
+
+-- 设置单个夜晚顶点色 (index 从 1 开始)
+function Geometry:setNightVertexColor(index, r, g, b, a)
+    local ext = self.extension
+    if not ext then return self end
+    local nvc = ext.nightVertexColor
+    if not nvc then
+        nvc = NightVertexColor:new()
+        nvc.type = NightVertexColor.typeID
+        nvc.version = self.version or GTASA
+        nvc.hasColor = 1
+        nvc.colors = {}
+        nvc.parent = ext
+        ext.plugins = ext.plugins or {}
+        ext.plugins[#ext.plugins + 1] = nvc
+    end
+    nvc.hasColor = 1
+    nvc.colors = nvc.colors or {}
+    nvc.colors[index] = {r, g, b, a or 255}
+    return self
+end
+
+-- 批量替换所有夜晚顶点色 (长度必须等于 vertexCount)
+function Geometry:setNightVertexColors(colors)
+    local gs = self.struct
+    local n = gs.vertexCount or 0
+    if #colors ~= n then
+        error(string.format("Night vertex color count mismatch: got %d, expected %d", #colors, n), 2)
+    end
+    local ext = self.extension
+    if not ext then return self end
+    local nvc = ext.nightVertexColor
+    if not nvc then
+        nvc = NightVertexColor:new()
+        nvc.type = NightVertexColor.typeID
+        nvc.version = self.version or GTASA
+        nvc.parent = ext
+        ext.plugins = ext.plugins or {}
+        ext.plugins[#ext.plugins + 1] = nvc
+    end
+    nvc.hasColor = 1
+    nvc.colors = {}
+    for i = 1, n do
+        local c = colors[i]
+        nvc.colors[i] = {c[1], c[2], c[3], c[4] or 255}
+    end
+    return self
+end
+
+-- 清除夜晚顶点色
+function Geometry:removeNightVertexColors()
+    local ext = self.extension
+    if not ext or not ext.plugins then return self end
+    local newPlugins = {}
+    for i = 1, #(ext.plugins) do
+        local p = ext.plugins[i]
+        if p.type ~= NightVertexColor.typeID then
+            newPlugins[#newPlugins + 1] = p
+        end
+    end
+    ext.plugins = newPlugins
+    return self
+end
+
+-- ====== 工具函数 ======
+
+-- 从原始数据创建完整 Geometry (一次调用完成 setMesh + UV + 顶点色)
+-- verts:  {{x,y,z}, ...}
+-- norms:  {{nx,ny,nz}, ...} (可选, 与 verts 等长)
+-- triVerts: {{v1,v2,v3,material?}, ...} 三角形顶点索引 (0-based)
+-- texCoords: {[1]={{u,v},...}, [2]=...} 可选
+-- vertexColors: {{r,g,b,a}, ...} 可选
+-- config: {textureCount, ...} 可选
+function Geometry:createMesh(verts, norms, triVerts, texCoords, vertexColors, config)
+    config = config or {}
+
+    self:setMesh(verts, norms, triVerts)
+
+    -- textureCount
+    local chCount = 0
+    if texCoords then
+        for ch = 1, #texCoords do
+            if texCoords[ch] then chCount = chCount + 1 end
+        end
+    end
+    self.struct.textureCount = config.textureCount or chCount
+
+    -- UV
+    if texCoords then
+        for ch = 1, #texCoords do
+            local coords = texCoords[ch]
+            if coords then
+                self:setTexCoords(ch, coords)
+            end
+        end
+    end
+
+    -- 顶点色
+    if vertexColors then
+        self:setVertexColors(vertexColors)
+    end
+
+    -- 自动重建 BinMeshPLG
+    self:rebuildBinMeshPLG(triVerts, config.binMeshMaterialIndex or 0)
+
+    return self
+end
+
+-- 根据顶点位置重建 boundingSphere (自动计算中心+半径)
+function Geometry:rebuildBoundingSphere()
+    local verts = self.struct.vertices
+    if not verts or #verts == 0 then
+        self.struct.boundingSphere = {0, 0, 0, 0}
+        return self
+    end
+    -- 计算包围盒中心
+    local minX, minY, minZ = verts[1][1], verts[1][2], verts[1][3]
+    local maxX, maxY, maxZ = minX, minY, minZ
+    for i = 1, #verts do
+        local v = verts[i]
+        if v[1] < minX then minX = v[1] end
+        if v[1] > maxX then maxX = v[1] end
+        if v[2] < minY then minY = v[2] end
+        if v[2] > maxY then maxY = v[2] end
+        if v[3] < minZ then minZ = v[3] end
+        if v[3] > maxZ then maxZ = v[3] end
+    end
+    local cx, cy, cz = (minX + maxX) / 2, (minY + maxY) / 2, (minZ + maxZ) / 2
+    -- 计算最大距离
+    local maxR2 = 0
+    for i = 1, #verts do
+        local v = verts[i]
+        local dx, dy, dz = v[1] - cx, v[2] - cy, v[3] - cz
+        local r2 = dx*dx + dy*dy + dz*dz
+        if r2 > maxR2 then maxR2 = r2 end
+    end
+    self.struct.boundingSphere = {cx, cy, cz, math.sqrt(maxR2)}
+    return self
+end
+
 -- ====== 网格替换 ======
 
 -- 清空所有顶点/面/法线/顶点色数据
@@ -434,6 +605,7 @@ function Geometry:clearMesh()
     gs.normals = {}
     gs.faces = {}
     gs.vertexColors = nil
+    gs.bVertexColor = false
     gs.vertexCount = 0
     gs.faceCount = 0
     return self
@@ -448,34 +620,30 @@ function Geometry:setMesh(verts, norms, triVerts)
     self:clearMesh()
     local gs = self.struct
 
-    -- 自动设置 header flags (显式初始化所有位, 避免残留 nil)
+    -- bit field 自动同步 headerFlags (依赖 __newindex)
     gs.bTristrip = false
     gs.bPosition = true
-    gs.bTextured = false
-    gs.bVertexColor = false
     gs.bNormal = (norms ~= nil and #norms > 0)
     gs.bLight = true
     gs.bModulateMaterialColor = true
-    gs.bTextured2 = false
 
     gs.hasVertices = true
     gs.hasNormals = (norms ~= nil and #norms > 0)
 
-    -- 批量添加顶点
+    -- 批量添加顶点 (法线在 addVertex 中自动初始化为 0,0,0)
     self:addVertices(verts)
 
-    -- 法线 (如果没提供, 后面可再设置)
+    -- 覆盖法线为实际值
     if norms and #norms > 0 then
-        for i = 1, #norms do
-            if gs.normals and i <= #gs.normals then
-                gs.normals[i] = {norms[i][1], norms[i][2], norms[i][3]}
-            end
+        for i = 1, math.min(#norms, #gs.normals) do
+            gs.normals[i] = {norms[i][1], norms[i][2], norms[i][3]}
         end
     end
 
     -- 批量添加面 (格式: {v1, v2, v3, material})
     if triVerts then
-        for _, tri in ipairs(triVerts) do
+        for i = 1, #triVerts do
+            local tri = triVerts[i]
             self:addFace({tri[1], tri[2], tri[3], tri[4] or 0})
         end
     end
@@ -493,10 +661,10 @@ function Geometry:setTexCoords(channel, coords)
         gs.texCoords[channel] = TexCoordChannel:new()
     end
     gs.texCoords[channel].coords = {}
-    for i, uv in ipairs(coords) do
+    for i = 1, #coords do
+        local uv = coords[i]
         gs.texCoords[channel].coords[i] = {uv[1], uv[2]}
     end
-    -- 自动设 texture flags
     if channel == 1 then gs.bTextured = true end
     if channel == 2 then gs.bTextured2 = true end
     return self
@@ -521,7 +689,8 @@ function Geometry:rebuildBinMeshPLG(triVerts, materialIndex)
     split.faceCount = #triVerts * 3      -- 三角形数 × 3 = 顶点索引数
     split.materialIndex = materialIndex
     split.faceList = {}
-    for _, tri in ipairs(triVerts) do
+    for i = 1, #triVerts do
+        local tri = triVerts[i]
         split.faceList[#split.faceList + 1] = tri[1]
         split.faceList[#split.faceList + 1] = tri[2]
         split.faceList[#split.faceList + 1] = tri[3]
@@ -534,7 +703,9 @@ function Geometry:rebuildBinMeshPLG(triVerts, materialIndex)
     -- 替换旧 BinMeshPLG (如果存在), 否则追加
     local newPlugins = {}
     local replaced = false
-    for _, p in ipairs(ext.plugins or {}) do
+    local plugins = ext.plugins or {}
+    for i = 1, #plugins do
+        local p = plugins[i]
         if p.type == BinMeshPLG.typeID then
             newPlugins[#newPlugins + 1] = newBM
             replaced = true
@@ -551,25 +722,44 @@ end
 
 -- ====== 材质操作 ======
 
--- 设置材质: 完全替换已有材质为新材质
--- 新材质通过 Material:createSimple 创建，所有 String 字段正确初始化
+-- 设置材质: 清空旧材质并用默认模板创建新材质
 -- matOrConfig: config table {color, texture, ambient, specular, diffuse}
--- 设置材质: 完整替换材质对象
--- matOrConfig: config table {color, texture, ambient, specular, diffuse}
--- 设置材质: 清空+用默认模板重建
 function Geometry:setMaterial(matOrConfig)
     self:clearMaterials()
-    return self.materialList:addMaterial(
-        Material:createSimple(self.version or GTASA, matOrConfig or {}))
+    local mat = self.materialList:addMaterial(
+        Material:createSimple(matOrConfig or {}))
+    -- 同步 textureCount (有纹理时至少为 1)
+    if mat.struct.textureCount and mat.struct.textureCount > 0 then
+        self.struct.textureCount = mat.struct.textureCount
+    end
+    return mat
 end
 
 -- 清空所有材质
 function Geometry:clearMaterials()
     local ml = self.materialList
     ml.materials = {}
-    ml.struct.materialIndices = {-1}
+    ml.struct.materialIndices = {}
     ml.struct.materialCount = 0
     return self
+end
+
+-- 添加材质 (便捷代理)
+function Geometry:addMaterial(matOrConfig)
+    return self.materialList:addMaterial(matOrConfig)
+end
+
+-- 移除材质 (便捷代理)
+function Geometry:removeMaterial(index)
+    return self.materialList:removeMaterial(index)
+end
+
+-- ====== 自动重建包围球 ======
+-- 覆盖 write，在序列化前自动根据顶点数据重建 boundingSphere
+local _Geometry_write = Geometry.write
+function Geometry:write(w)
+    self:rebuildBoundingSphere()
+    return _Geometry_write(self, w)
 end
 
 -- ====== Dump ======
@@ -597,7 +787,7 @@ function Geometry:dump(out, lvl, limits)
         if gs.bLight then bits[#bits+1] = "bLight" end
         if gs.bModulateMaterialColor then bits[#bits+1] = "bModulateMaterialColor" end
         if gs.bTextured2 then bits[#bits+1] = "bTextured2" end
-        out[#out+1] = indent .. string.format("header       = 0x%04X  bits: %s", gs.header or 0, table.concat(bits, ", "))
+        out[#out+1] = indent .. string.format("headerFlags  = 0x%04X  bits: %s", gs.headerFlags or 0, table.concat(bits, ", "))
         out[#out+1] = indent .. string.format("faceCount    = %d  vertexCount = %d  morphTarget = %d",
             gs.faceCount or 0, gs.vertexCount or 0, gs.morphTargetCount or 1)
         out[#out+1] = indent .. string.format("bNative      = %s  hasV=%s  hasN=%s",
@@ -682,7 +872,8 @@ function GeometryList:dump(out, lvl, limits)
         out[#out+1] = indent .. string.format("geometryCount = %d", self.struct.geometryCount or #self.geometries)
     end
     if self.geometries then
-        for i, geo in ipairs(self.geometries) do
+        for i = 1, #self.geometries do
+            local geo = self.geometries[i]
             geo._dumpIndex = i
             geo:dump(out, lvl + 1, limits)
         end

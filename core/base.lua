@@ -18,6 +18,19 @@ function Section:new()
     return obj
 end
 
+-- 沿 parent 链追溯到 DFFIO 根节点获取 version
+-- 无法追溯则返回 0
+function Section:getVersion()
+    local node = self
+    while node do
+        if rawget(node, "clumps") then
+            return node.version or 0
+        end
+        node = rawget(node, "parent")
+    end
+    return 0
+end
+
 -- 创建子类（继承当前 Section）
 function Section:extend(overrides)
     local cls = setmetatable(overrides or {}, { __index = self })
@@ -57,7 +70,7 @@ function Section:define(typeID, fields)
         self:getSize()
         w:u32(self.type or self.typeID)
         w:u32(self.size)
-        w:u32(self.version)
+        w:u32(self:getVersion())
         self:_writeBody(w)
         if self._trailingData then w:raw(self._trailingData) end
     end
@@ -93,7 +106,7 @@ function Section:write(w)
     self:getSize()
     w:u32(self.type or self.typeID)
     w:u32(self.size or 0)
-    w:u32(self.version or 0)
+    w:u32(self:getVersion())
 end
 
 -- 获取 body 大小（不含头部）
@@ -180,7 +193,7 @@ function String:write(w)
     self.size = #self.string
     w:u32(self.type)
     w:u32(self.size)
-    w:u32(self.version)
+    w:u32(self:getVersion())
     w:str(self.string, self.size)
 end
 

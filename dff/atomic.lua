@@ -22,9 +22,9 @@ Atomic._typeName = "Atomic"
 
 -- ====== Atomic:create 工厂 ======
 -- 仅创建 Atomic 结构, 不添加到 Clump (由 Clump:addAtomic 负责)
-function Atomic:create(version, config)
+function Atomic:create(config)
     config = config or {}
-    version = version or GTASA
+    local version = GTASA
 
     local atomic = Atomic:new()
     atomic.type = Atomic.typeID
@@ -49,6 +49,12 @@ function Atomic:create(version, config)
     atomic.extension:init(version)
 
     return atomic
+end
+
+-- 设置 Atomic 标志
+function Atomic:setFlags(flags)
+    self.struct.flags = flags
+    return self
 end
 
 -- ====== 便捷导航 ======

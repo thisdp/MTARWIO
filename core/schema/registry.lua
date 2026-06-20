@@ -47,7 +47,7 @@ function SectionRegistry.read(r, parent)
         obj.getSize = function(self) return #(self.rawData or "") + 12 end
         obj.write = function(self, w)
             self.size = #(self.rawData or "")
-            w:u32(self.type):u32(self.size):u32(self.version)
+            w:u32(self.type):u32(self.size):u32(self:getVersion())
             w:raw(self.rawData or "")
         end
         return obj

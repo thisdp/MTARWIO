@@ -13,7 +13,9 @@ BinMeshPLG = Section:define(0x50E, {
     { name = "materialSplitCount",type = uint32, sync = "materialSplits" },
     { name = "vertexCount",       type = uint32, sync = function(self)
         local total = 0
-        for _, split in ipairs(self.materialSplits or {}) do
+        local splits = self.materialSplits or {}
+        for i = 1, #splits do
+            local split = splits[i]
             total = total + (split.faceCount or 0)
         end
         return total

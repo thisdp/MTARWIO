@@ -17,7 +17,8 @@ function DFFIO:dump(limits)
     if self.uvAnimDict then
         self.uvAnimDict:dump(out, 0, limits)
     end
-    for ci, clump in ipairs(self.clumps) do
+    for ci = 1, #self.clumps do
+        local clump = self.clumps[ci]
         table.insert(out, "")
         table.insert(out, string.rep("=", 70))
         table.insert(out, string.format("  CLUMP [%d/%d]", ci, #self.clumps))
@@ -32,12 +33,12 @@ function DFFIO:dump(limits)
 end
 
 -- ====== I/O ======
-function DFFIO:new()
+function DFFIO:new(version)
     return setmetatable({
         uvAnimDict = nil,
         clumps = {},
         others = {},
-        version = nil,
+        version = version or GTASA,
     }, { __index = DFFIO })
 end
 
@@ -94,7 +95,7 @@ function DFFIO:save(fileName)
     return str
 end
 
--- 版本转换 ("GTASA" / "GTAVC")
+-- 版本转换 ("GTASA" / "GTAVC") — 只需修改根节点 version，子节点自动继承
 function DFFIO:convert(target)
     if type(target) ~= "string" then
         error("Bad argument @convert, expected a string got " .. type(target), 2)
@@ -103,9 +104,7 @@ function DFFIO:convert(target)
     if not targetVer then
         error("Bad argument @convert, invalid type '" .. target .. "'", 2)
     end
-    for i = 1, #self.clumps do
-        self.clumps[i]:convert(targetVer)
-    end
+    self.version = targetVer
     return true
 end
 
@@ -116,25 +115,42 @@ function DFFIO:update()
     end
 end
 
--- 创建新 Clump
-function DFFIO:createClump(version)
+-- 创建新 Clump (已完全初始化, 无需手动设置子结构)
+function DFFIO:createClump()
     local clump = Clump:new()
     clump.parent = self
-    clump.version = version or EnumRWVersion.GTASA
+    clump.version = self.version
     clump.type = Clump.typeID
-    -- 初始化子组件
+
+    -- ClumpStruct
     clump.struct = ClumpStruct:new()
     clump.struct.parent = clump
     clump.struct:init(clump.version)
+    clump.struct.cameraCount = 0
+
+    -- FrameList
     clump.frameList = FrameList:new()
     clump.frameList.parent = clump
     clump.frameList:init(clump.version)
+    clump.frameList.struct = FrameListStruct:new()
+    clump.frameList.struct.parent = clump.frameList
+    clump.frameList.struct:init(clump.version)
+    clump.frameList.frames = {}
+
+    -- GeometryList
     clump.geometryList = GeometryList:new()
     clump.geometryList.parent = clump
     clump.geometryList:init(clump.version)
+    clump.geometryList.struct = GeometryListStruct:new()
+    clump.geometryList.struct.parent = clump.geometryList
+    clump.geometryList.struct:init(clump.version)
+    clump.geometryList.geometries = {}
+
+    -- Extension
     clump.extension = ClumpExtension:new()
     clump.extension.parent = clump
     clump.extension:init(clump.version)
+
     clump.atomics = {}
     clump.lights = {}
     clump.indexStructs = {}
